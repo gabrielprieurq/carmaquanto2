@@ -1,0 +1,31 @@
+{
+  "gaussian": {
+    "mean": 1.347448739519166e-05,
+    "variance": 0.0001357805683308646,
+    "std": 0.011652491936528625,
+    "m_rate": 1.347448739519166e-05,
+    "nu2_rate": 0.0001357805683308646,
+    "N": 17520
+  },
+  "nig": {
+    "mu": 0.0005499197221270852,
+    "delta": 0.00977841411358794,
+    "alpha": 72.9241178431271,
+    "beta": -3.9946224840545925,
+    "gamma": 72.81462733824965,
+    "scipy_a": 0.7130822231381843,
+    "scipy_b": -0.039061072876535145,
+    "scipy_loc": 0.0005499197221270852,
+    "scipy_scale": 0.00977841411358794,
+    "loglik": 54519.05079239345,
+    "mean": 1.3474308555404399e-05,
+    "variance": 0.00013469606253742436,
+    "std": 0.011605863282730172,
+    "skew": -0.19475216051290295,
+    "excess_kurtosis": 4.2639858263990345,
+    "success": true,
+    "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "N": 17520
+  },
+  "source": "recovered hourly Levy increments from france/france24+25/03mle.ipynb"
+}

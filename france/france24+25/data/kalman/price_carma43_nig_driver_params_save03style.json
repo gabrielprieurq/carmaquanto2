@@ -1,0 +1,24 @@
+{
+  "mu": 0.025394060025232798,
+  "delta": 0.7352384130113159,
+  "alpha": 0.7410515835457306,
+  "beta": -0.024765297817066906,
+  "gamma": 0.7406376506090323,
+  "loglik": -23076.9136355366,
+  "AIC": 46161.8272710732,
+  "mean": 0.0008093008656087017,
+  "variance": 0.9938199506934916,
+  "std": 0.996905186411171,
+  "skew": -0.13586243146091784,
+  "excess_kurtosis": 5.533795497784567,
+  "init": {
+    "mu": 0.0008093115141840736,
+    "sigma": 0.9998531076788556,
+    "skew": 0.14166052008381974,
+    "raw_kurtosis": 10.95964402008469
+  },
+  "success": true,
+  "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+  "N": 17520,
+  "fit_type": "save03_manual_nig_on_standardized_recovered_increments"
+}

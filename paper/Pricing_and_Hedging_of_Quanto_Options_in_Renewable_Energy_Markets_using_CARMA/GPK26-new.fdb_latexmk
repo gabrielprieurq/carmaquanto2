@@ -2,12 +2,12 @@
 ["bibtex GPK26-new"] 0 "GPK26-new.aux" "GPK26-new.bbl" "GPK26-new" 0 -1
   "./literature.bib" 1778159157 7501 f1690d6fb51d8fccec92956b0b0debe3 ""
   "C:/Users/gabri/AppData/Local/Programs/MiKTeX/bibtex/bst/natbib/plainnat.bst" 1284455456 26816 ffe5423d2019860bad9f54bc402fac15 ""
-  "GPK26-new.aux" 1778231562 28968 f39571a63add8c32d0743fa0e83ccefc "pdflatex"
+  "GPK26-new.aux" 1779877777 28968 f39571a63add8c32d0743fa0e83ccefc "pdflatex"
   (generated)
   "GPK26-new.bbl"
   "GPK26-new.blg"
   (rewritten before read)
-["pdflatex"] 1778231559.45963 "c:/Users/gabri/Documents/quant-projects/carma_quanto/paper/Pricing_and_Hedging_of_Quanto_Options_in_Renewable_Energy_Markets_using_CARMA/GPK26-new.tex" "GPK26-new.pdf" "GPK26-new" 1778231564.77166 2
+["pdflatex"] 1779877774.85256 "c:/Users/gabri/Documents/quant-projects/FR_carma_quanto/paper/Pricing_and_Hedging_of_Quanto_Options_in_Renewable_Energy_Markets_using_CARMA/GPK26-new.tex" "GPK26-new.pdf" "GPK26-new" 1779877779.37402 2
   "C:/Users/gabri/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1778231430 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/gabri/AppData/Local/MiKTeX/fonts/pk/ljfour/public/bbm/dpi600/bbm10.pk" 1778231451 6984 fcf9665fe8091acc24ad55e506d3555b ""
   "C:/Users/gabri/AppData/Local/MiKTeX/fonts/tfm/public/bbm/bbm10.tfm" 1778231438 560 39fd35b5e4a6aca3672660cc548ba860 ""
@@ -164,11 +164,11 @@
   "C:/Users/gabri/AppData/Local/Programs/MiKTeX/tex/latex/translations/dicts/translations-basic-dictionary-english.trsl" 1644048522 5588 0c1628daf15f4411ff1f463114c634a3 ""
   "C:/Users/gabri/AppData/Local/Programs/MiKTeX/tex/latex/translations/translations.sty" 1644048522 44247 2188b95d0ee74e31eca4d316263c58a7 ""
   "C:/Users/gabri/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
-  "GPK26-new.aux" 1778231562 28968 f39571a63add8c32d0743fa0e83ccefc "pdflatex"
+  "GPK26-new.aux" 1779877777 28968 f39571a63add8c32d0743fa0e83ccefc "pdflatex"
   "GPK26-new.bbl" 1778231552 3701 cbb2e34869600146d0c73cb5e841a922 "bibtex GPK26-new"
-  "GPK26-new.out" 1778231562 6746 44e4d15e16b7fb316dcceecd42719e36 "pdflatex"
+  "GPK26-new.out" 1779877777 6746 44e4d15e16b7fb316dcceecd42719e36 "pdflatex"
   "GPK26-new.tex" 1778159157 79184 e8610ebbe7a75ce4d5e08acd7f8819d2 ""
-  "c:/Users/gabri/Documents/quant-projects/carma_quanto/paper/Pricing_and_Hedging_of_Quanto_Options_in_Renewable_Energy_Markets_using_CARMA/GPK26-new.tex" 1778159157 79184 e8610ebbe7a75ce4d5e08acd7f8819d2 ""
+  "c:/Users/gabri/Documents/quant-projects/FR_carma_quanto/paper/Pricing_and_Hedging_of_Quanto_Options_in_Renewable_Energy_Markets_using_CARMA/GPK26-new.tex" 1778159157 79184 e8610ebbe7a75ce4d5e08acd7f8819d2 ""
   "carma_mle_diagnostics" 0 -1 0 ""
   "coupling_ccf" 0 -1 0 ""
   "deseas_diagnostics" 0 -1 0 ""

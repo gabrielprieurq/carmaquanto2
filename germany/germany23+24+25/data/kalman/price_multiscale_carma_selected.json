@@ -1,0 +1,89 @@
+{
+  "selected": {
+    "Kr": 3,
+    "Kc": 1,
+    "order": 5
+  },
+  "roots": [
+    [
+      -0.2634604113677052,
+      0.0
+    ],
+    [
+      -0.02416094967544432,
+      0.0
+    ],
+    [
+      -0.0002406761043610921,
+      0.0
+    ],
+    [
+      -0.004003984536373364,
+      0.2617993877991494
+    ],
+    [
+      -0.004003984536373364,
+      -0.2617993877991494
+    ]
+  ],
+  "ar_coefficients": [
+    0.2958700062202573,
+    0.07729481896410595,
+    0.01978742866013761,
+    0.00044114125953069737,
+    1.0502704985226061e-07
+  ],
+  "b_coefficients": [
+    7.835422790599863e-06,
+    0.007187125701291853,
+    0.07131651871880872,
+    0.1304484581179006,
+    1.0
+  ],
+  "metrics": {
+    "rmse_multiscale": 0.022390542275042318,
+    "wssr_multiscale": 0.274208465446922,
+    "rmse_spectral": 0.022390542277624867,
+    "wssr_spectral": 0.2742084654455484
+  },
+  "components": [
+    {
+      "kind": "osc",
+      "half_life_h": 173.11435003387103,
+      "half_life_d": 7.21309791807796,
+      "period_h": 24.0,
+      "share": 0.054732251974688284
+    },
+    {
+      "kind": "real",
+      "half_life_h": 2.630934860238022,
+      "half_life_d": 0.10962228584325091,
+      "period_h": null,
+      "share": 0.2875304808861806
+    },
+    {
+      "kind": "real",
+      "half_life_h": 28.68873905500564,
+      "half_life_d": 1.1953641272919018,
+      "period_h": null,
+      "share": 0.5440089531672361
+    },
+    {
+      "kind": "real_fixed",
+      "half_life_h": 2880.0,
+      "half_life_d": 120.0,
+      "period_h": null,
+      "share": 0.1137283139718952
+    }
+  ],
+  "calibration": {
+    "acf_fit_horizon_h": 4320,
+    "acf_fit_horizon_d": 180.0,
+    "acf_diagnostic_horizon_h": 2520,
+    "acf_diagnostic_horizon_d": 105.0,
+    "max_half_life_h": 720.0,
+    "max_half_life_d": 30.0,
+    "n_fit_lags": 350
+  },
+  "note": "Kr=3 Kc=1 period=24h fixed; ACF fit on 1h-336h; all half-lives <= 30 days. CARMA(5,4). Monic b[-1]=1 (book convention)."
+}

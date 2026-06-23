@@ -1,0 +1,15 @@
+{
+  "b_coefficients": [
+    0.01853536500459734,
+    0.08186999098016273,
+    0.3193733753912061,
+    1.0
+  ],
+  "AR_order": 4,
+  "MA_order": 3,
+  "acf_rmse_spectral": 0.06030643726613792,
+  "acf_rmse_multiscale": 0.06030643726613793,
+  "calibration_sample": "2024_train",
+  "source": "data\\seasonality\\price_panel_2024_train.csv",
+  "note": "CARMA(4,3) spectral b. Monic b[-1]=1 (book convention)."
+}

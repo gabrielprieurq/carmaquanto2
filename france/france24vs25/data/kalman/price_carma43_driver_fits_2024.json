@@ -1,0 +1,34 @@
+{
+  "gaussian": {
+    "mean": 6.91228602708708e-07,
+    "variance": 9.214069700692856e-05,
+    "std": 0.00959899458312841,
+    "m_rate": 6.91228602708708e-07,
+    "nu2_rate": 9.214069700692856e-05,
+    "loglik": 28344.132084146575,
+    "N": 8783
+  },
+  "nig": {
+    "mu": 0.0005579779618879289,
+    "delta": 0.008038965299839974,
+    "alpha": 86.37076642578744,
+    "beta": -5.973165324558904,
+    "gamma": 86.16397500686361,
+    "scipy_a": 0.6943315942174887,
+    "scipy_b": -0.048018068774336405,
+    "scipy_loc": 0.0005579779618879289,
+    "scipy_scale": 0.008038965299839974,
+    "loglik": 28931.66250693453,
+    "mean": 6.908964930071307e-07,
+    "variance": 9.374681518972042e-05,
+    "std": 0.009682293901226114,
+    "skew": -0.2492849596145544,
+    "excess_kurtosis": 4.413929033001109,
+    "success": true,
+    "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "N": 8783
+  },
+  "sample": "2024_train",
+  "source": "recovered hourly Levy increments from carmacheck/03check.ipynb",
+  "qmle_source": "data\\kalman\\price_carma43_qmle_result.json"
+}

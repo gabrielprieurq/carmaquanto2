@@ -1,0 +1,28 @@
+{
+  "m_qmle": -2.3250179269876466e-05,
+  "nu2_qmle": 9.258584831709529e-05,
+  "loglik_qmle": 29377.384731112288,
+  "stationary_mean": -0.00044383018304860696,
+  "carma_order": [
+    4,
+    3
+  ],
+  "model_name": "CARMA(4,3)",
+  "calibration_sample": "2024_train",
+  "validation_sample": "2025_test",
+  "source": "carmacheck/03check.ipynb",
+  "model_source": "data\\kalman\\price_multiscale_carma_selected.json",
+  "train": {
+    "n_obs": 8784,
+    "loglik": 29377.384731112288,
+    "standardized_innovation_mean": 0.002182567945905596,
+    "standardized_innovation_std": 0.9999976181957444
+  },
+  "test": {
+    "n_obs": 8760,
+    "loglik_fixed_params": 24760.26048743607,
+    "standardized_innovation_mean": 0.019796492793972945,
+    "standardized_innovation_std": 1.4266813920251378,
+    "standardized_innovation_rmse": 1.4268187325227148
+  }
+}

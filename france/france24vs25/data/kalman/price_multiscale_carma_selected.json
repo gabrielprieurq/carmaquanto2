@@ -1,0 +1,74 @@
+{
+  "selected": {
+    "Kr": 2,
+    "Kc": 1,
+    "order": 4
+  },
+  "roots": [
+    [
+      -0.5366663861603944,
+      0.0
+    ],
+    [
+      -0.026317802939599313,
+      0.0
+    ],
+    [
+      -0.014440566261664897,
+      0.2617993877991494
+    ],
+    [
+      -0.014440566261664897,
+      -0.2617993877991494
+    ]
+  ],
+  "ar_coefficients": [
+    0.5918653216233235,
+    0.0991309505751794,
+    0.03911164071217455,
+    0.000970980739140687
+  ],
+  "b_coefficients": [
+    0.01853536500459734,
+    0.08186999098016273,
+    0.3193733753912061,
+    1.0
+  ],
+  "metrics": {
+    "rmse_multiscale": 0.06030643726613793,
+    "wssr_multiscale": 0.6125300697738502,
+    "rmse_spectral": 0.06030643726613792,
+    "wssr_spectral": 0.6125300697738506
+  },
+  "components": [
+    {
+      "kind": "osc",
+      "half_life_h": 48.000000000002096,
+      "half_life_d": 2.0000000000000875,
+      "period_h": 24.0,
+      "share": 0.027984681459809712
+    },
+    {
+      "kind": "real",
+      "half_life_h": 1.2915792724025448,
+      "half_life_d": 0.0538158030167727,
+      "period_h": null,
+      "share": 0.12368193074695419
+    },
+    {
+      "kind": "real",
+      "half_life_h": 26.337577728306314,
+      "half_life_d": 1.097399072012763,
+      "period_h": null,
+      "share": 0.8483333877932362
+    }
+  ],
+  "calibration": {
+    "sample": "2024_train",
+    "input_file": "data\\seasonality\\price_panel_2024_train.csv",
+    "n_obs": 8784,
+    "variance_target": 0.0005638791706896753,
+    "mean_removed": true
+  },
+  "note": "Kr=2 Kc=1 period=24h fixed; all half-lives <= 70 days. CARMA(4,3). Monic b[-1]=1 (book convention)."
+}

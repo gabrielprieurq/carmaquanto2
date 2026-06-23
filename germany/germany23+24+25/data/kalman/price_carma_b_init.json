@@ -1,0 +1,14 @@
+{
+  "b_coefficients": [
+    7.835422790599863e-06,
+    0.007187125701291853,
+    0.07131651871880872,
+    0.1304484581179006,
+    1.0
+  ],
+  "AR_order": 5,
+  "MA_order": 4,
+  "acf_rmse_spectral": 0.022390542277624867,
+  "acf_rmse_multiscale": 0.022390542275042318,
+  "note": "CARMA(5,4) spectral b from 14-day ACF calibration. Monic b[-1]=1 (book convention)."
+}

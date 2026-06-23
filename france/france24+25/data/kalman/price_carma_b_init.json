@@ -1,0 +1,14 @@
+{
+  "b_coefficients": [
+    1.9216978975206263e-05,
+    0.015254428090017712,
+    0.07728508244203283,
+    0.2605488633981983,
+    1.0
+  ],
+  "AR_order": 5,
+  "MA_order": 4,
+  "acf_rmse_spectral": 0.032190814628285665,
+  "acf_rmse_multiscale": 0.03219081462808685,
+  "note": "CARMA(5,4) spectral b. Monic b[-1]=1 (book convention)."
+}

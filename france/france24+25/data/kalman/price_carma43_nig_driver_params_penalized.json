@@ -1,0 +1,33 @@
+{
+  "scipy_shape_a": 0.3784993840813888,
+  "scipy_shape_b": 0.010977281448712354,
+  "scipy_loc": -0.00017264369407834232,
+  "scipy_scale": 0.006240595314645419,
+  "alpha": 60.65116627465444,
+  "beta": 1.7590119043532413,
+  "delta": 0.006240595314645419,
+  "mu": -0.00017264369407834232,
+  "mean": 8.422914476614992e-06,
+  "variance": 0.00010302320041888286,
+  "std": 0.0101500345033346,
+  "skew": 0.14145218178596505,
+  "excess_kurtosis": 7.95605045694255,
+  "source": "03mle.ipynb recovered CARMA(4,3) Levy increments",
+  "fit_type": "moment_penalized_mle",
+  "target_moments": {
+    "mean": 8.213868604092412e-06,
+    "std": 0.01014742472208352,
+    "skew": 0.1416847802531521,
+    "excess_kurtosis": 7.963510183992804
+  },
+  "objective": -3.2690985821474747,
+  "success": true,
+  "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+  "moment_weights": [
+    1000.0,
+    100.0,
+    10.0,
+    10.0
+  ],
+  "N": 17520
+}

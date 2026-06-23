@@ -1,0 +1,11 @@
+{
+  "m_qmle": -7.762076878903256e-06,
+  "nu2_qmle": 0.00019850418217853727,
+  "loglik_qmle": 77388.13733736532,
+  "stationary_mean": -0.00024146782072107724,
+  "carma_order": [
+    5,
+    4
+  ],
+  "source": "germany/germany23+24+25/03mle.ipynb"
+}

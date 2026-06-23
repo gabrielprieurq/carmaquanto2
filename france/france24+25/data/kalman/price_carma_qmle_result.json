@@ -1,0 +1,11 @@
+{
+  "m_qmle": -3.805413393153271e-05,
+  "nu2_qmle": 0.0001368839580421327,
+  "loglik_qmle": 55631.80179830345,
+  "stationary_mean": -0.002285221162524056,
+  "carma_order": [
+    5,
+    4
+  ],
+  "source": "france/france24+25/03mle.ipynb"
+}

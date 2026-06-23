@@ -1,3 +1,0 @@
-series,model,loglik,n_params,AIC,BIC,delta_AIC
-price_idiosyncratic_driver,Gaussian,-25505.73840461009,2,51015.47680922018,51031.82993616538,13585.856104068836
-price_idiosyncratic_driver,NIG,-18710.81035257567,4,37429.62070515134,37462.32695904173,0.0

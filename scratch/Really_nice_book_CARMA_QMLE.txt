@@ -1,0 +1,841 @@
+ QML estimation for CARMA processes
+
+Abstract: This chapter is devoted to quasi maximum likelihood estimation (QMLE) of
+the CARMA parameters and estimation of the Lévy increments of the driving process.
+Inference based on irregularly sampled data is dealt with in Section 19.1, but subsequent
+sections are concerned with inference based on observations made at regular intervals.
+An important aspect of this is the relation between the parameters of the CARMA pro-
+cess and the ARMA sequence obtained by sampling it at regular intervals. The sampling
+problem was dealt with by Theorem 18.33. In this chapter, we need a corresponding
+result for embedding an ARMA sequence into a CARMA process with matching auto-
+correlation structure at discrete lags. This is dealt with by Theorem 19.5. An alternative
+approach to estimation of CARMA parameters is via Whittle estimation, an excellent ac-
+count of which is given by Fasen–Hartmann and Mayer [43]. However, we shall restrict
+attention here to QMLE (or its large-sample equivalent, least squares estimation). Illus-
+trative examples are given with R programs, which can be copied and pasted into R,
+after ﬁrst loading the package yuima (Brouste et al. [31]), to reproduce the results. Addi-
+tional R programs to generate a variety of Lévy increments are included in Appendix A
+at the end of the book.
+
+
+
+19.1 QML estimation for CARMA processes based on observations
+     at ﬁxed times t , . . . , tn
+Parameter estimation for discrete-time ARMA sequences is usually based on maximiza-
+tion of the Gaussian likelihood, i. e., the likelihood of the observations under the assump-
+tion that the ARMA sequence is driven by a Gaussian white noise sequence. This estima-
+tion procedure is frequently referred to as quasi maximum likelihood estimation (QML
+estimation, or QMLE) and can be shown to have certain optimality properties (see Brock-
+well and Davis [22]), even when the underlying ARMA sequence is not Gaussian. We shall
+adopt the same procedure for CARMA processes.
+     When doing maximum likelihood estimation, we shall assume that all zeros of
+both the autoregressive polynomial a(z) and the moving average polynomial b(z) of
+the CARMA(p, q) process Y lie in the open left half-plane (causality condition and in-
+vertibility condition). We shall further assume then that the autoregressive polynomial
+a(z) and the moving average polynomial b(z) have real-valued coeﬃcients, and that the
+driving Lévy process L has mean m and ﬁnite non-zero variance ν2 .
+     To compute the Gaussian likelihood we shall assume, whether it is true or not, that
+the driving Lévy process L is Gaussian with mean (L1 ) = m and Var(L1 ) = ν2 ∈ (0, ∞)
+and determine the likelihood as a function of the coeﬃcients of a causal CARMA(p, q)
+model and the parameters m and ν2 . The goal of QML estimation is then to maximize
+this function with respect to its p + q + 2 arguments.
+
+https://doi.org/10.1515/9783111325033-019
+ � 19 QML estimation for CARMA processes
+
+
+
+     With the aid of the state-space representation of Y and the discrete-time Kalman
+recursions, it is possible to develop an algorithm (see Jones [54], who applied this al-
+gorithm to the problem of modeling time series observed at irregularly-spaced times)
+for the recursive calculation of the Gaussian likelihood. The remainder of this section is
+devoted to the algorithm.
+     Denoting Bt := (Lt − mt)/ν, the process B = (Bt ) is a Lévy process with mean 0 and
+variance 1, and since we assume it to be Gaussian, it is a standard Brownian motion.
+Denote by W = (Wt )t∈ℝ the CARMA(p, q) process driven by νB but otherwise the same
+parameters as Y , and denote the corresponding strictly stationary state vector process
+by (Ut ). Let (Xt ) be the strictly stationary state vector process of Y . Then, with A, ep and b
+as deﬁned in (18.7),
+
+                                t
+
+                  Ut = ν ∫ eA(t−u) ep dBt ,
+                            −∞
+                            t
+
+                  Xt = ∫ eA(t−u) ep d(νBt + mt) = Ut + m[1, 0, . . . , 0]T /ap ,
+                       −∞
+                        T
+                 W t = b Ut           and
+                            T
+                  Yt = b Xt = Wt + mb0 /ap .
+
+Now let t1 ∄ t2 ∄ ⋅ ⋅ ⋅ ∄ tn and observations Yt1 = y1 , . . . , Ytn = yn be given. Denote the
+corresponding observations of Wti by wi = yi − mb0 /ap , and the unobserved realizations
+of the corresponding state vectors by xi and ui , respectively. From (18.4) and (18.9) we
+immediately obtain the following discrete state-space representation of Wt1 , . . . , Wtn ,
+
+                                           W ti = b T U ti ,   i = 1, . . . , n,                              (19.1)
+
+and
+                                                  ti+1
+                           A(ti+1 −ti )
+               Uti+1 = e                  Uti + ν ∫ eA(ti+1 −u) ep dBu ,           i = 1, 2, . . . , n − 1,   (19.2)
+                                                   ti
+
+
+where each Uti has the multivariate normal distribution with mean zero and covariance
+                      ∞                      T
+matrix given by ν2 0 eAt ep eTp eA t dt, the latter from Corollary 17.5; the multivariate nor-
+mal distribution follows from the construction of the OIP integral as a limit of integrals
+of simple functions with respect to Brownian motion. Observe that in the special case
+when p = 1, b and A take the scalar values 1 and −a1 , respectively.
+     The observation equation (19.1) and state equation (19.2) are in precisely the form
+required for application of the discrete-time Kalman recursions (see, e. g., Brockwell and
+Davis [22, Sections 12.1 and 12.2]) in order to compute numerically the best one-step linear
+predictors of Wt1 , . . . , Wtn , their mean-squared errors, and hence the Gaussian likelihood
+              19.1 QML estimation for CARMA processes based on observations at ﬁxed times                    �   
+
+
+
+of the observations w1 , . . . , wn in terms of ν2 and the coeﬃcients {aj , 1 ≤ j ≤ p; bj , 0 ≤ j ∄
+q}; from this we obtain the Gaussian likelihood of the observations y1 , . . . , yn in terms of
+m, ν2 and {aj , 1 ≤ j ≤ p; bj , 0 ≤ j ∄ q}. Jones [54] used this representation, together with
+numerical maximization of the calculated Gaussian likelihood, to compute maximum
+Gaussian likelihood estimates of the parameters for time series with irregularly spaced
+data. A similar approach was used in a more general setting by Bergstrom [12].
+     To apply the Kalman recursions to (19.1) and (19.2), we rewrite them in the notation
+of Brockwell and Davis [22, Proposition 12.2.2], as
+
+                                             W ti = b T U ti ,       i = 1, 2, . . . ,
+
+and
+
+                                     Uti+1 = Fi Uti + Vi ,              i = 1, 2, . . . ,
+
+where the matrices Fi and vectors Vi are given by
+
+                                                      Fi = eA(ti+1 −ti )
+
+and
+                                                        ti+1
+
+                                             Vi = ν ∫ eA(ti+1 −u) ep dBu ,
+                                                        ti
+
+
+respectively. The vector Vi is multivariate Gaussian with mean zero and covariance ma-
+trix
+                                                        ti+1 −ti
+                                                                                T
+                                                    2
+                                         Qi = ν           ∫ eAt ep eTp eA t dt
+                                                             0
+
+and the vectors V1 , V2 , . . . , are independent (cf., Corollary 16.16 and Theorem 16.7).
+      Now let X̂ ti , Û ti , Ŷti and Ŵ ti denote the componentwise orthogonal projections in 
+(cf., Section 2.6) of Xti , Uti , Yti and Wti onto the closed linear span of {1, Ytj , j ∄ i}. Since Ytj
+and Wtj diﬀer only by a constant, the latter is equal to the closed linear span of {1, Wtj , j ∄
+i}. Given the realizations y1 , . . . , yn (equivalently, w1 , . . . , wn ), denote the corresponding
+realizations of the predictors by x̂ i , û i , ŷi and ŵ i (i. e., if X̂ ti = Ci [1, Yt1 , . . . , Yti−1 ]T for a
+matrix Ci ∈ ℝp×i , then x̂ i = Ci [1, y1 , . . . , yi−1 ]T and similarly for the other quantities).
+Then by the Kalman recursions (see Brockwell and Davis [22, Prop. 12.2.2]), the predic-
+tors Û ti and their error covariance matrices Ωi = [(Uti − Û ti )(Uti − Û ti )T ] are uniquely
+determined by the initial conditions (recalling that Ut1 = 0),
+
+                                         ∞
+                                                                 T
+                                     2
+               Û t1 = 0,   Π1 = ν ∫ eAt ep eTp eA t dt,                  Ψ1 = 0p×p ,       Ω1 = Π1 − Ψ1 ,
+                                         0
+ � 19 QML estimation for CARMA processes
+
+
+
+the recursions,
+                                              T
+                                   
+                                    Δi = b Ωi b
+                                   
+                                   
+                                   
+                                    Θi = Fi Ωi b
+                                   
+                                   
+                                   
+                                    Πi+1 = Fi Πi FiT + Qi
+                                   
+                                   
+                                   
+                                   
+                                   
+                                    Ψi+1 = Fi Ψi FiT + Δ−1    T
+                                                         i Θi Θi
+                                   
+                                   
+                                   Ωi+1 = Πi+1 − Ψi+1
+
+and
+                                                                    T ̂
+                                 Û ti+1 = Fi Û ti + Θi Δ−1
+                                                          i Wti − b Uti .
+
+
+The best linear predictor of Wti in terms of {1, Wtk , k ∄ i} is
+
+                                               Ŵ ti = bT Û ti
+
+and its mean-squared error is
+
+                                   (Wti − Ŵ ti )2  = Δi = bT Ωi b
+
+(from which it is easily seen that Δi  0). Notice that the mean-squared errors of Ŵ ti+1
+can be expressed as
+
+                            (Wti+1 − Ŵ ti+1 )2  = ri ν2 ,      i = 0, 1, 2, . . . ,         (19.3)
+
+where the coeﬃcients ri are equal to the corresponding mean-squared errors when ν2
+is replaced in the Kalman recursions by 1. The matrices Di+1 ∈ ℝ1×(i+1) (i. e., row vectors)
+such that Ŵ ti+1 = Di+1 [1, Wt1 , . . . , Wti ]T are not aﬀected by the value of ν from the derived
+form of the predictors (observe also that the ﬁrst entry of Di+1 is zero as a consequence of
+Wt1 = ⋅ ⋅ ⋅ = Wti+1 = 0 and Exercise 2.12(a)). Hence we can use the Kalman recursions
+with ν set equal to 1 to determine both the predictors and the constants ri in (19.3). The
+realizations of the predictors, based on realizations Wt1 = w1 , . . . , Wtn = wn , can now be
+calculated as
+                                                      T
+                      û i+1 = Fi û i + Θi Δ−1
+                                             i wi − b û i       and       ŵ i = bT û i .
+
+The Gaussian likelihood of the observations w1 , . . . , wn under the Gaussian CARMA
+model W with parameters a := (a1 , . . . , ap )T , b := (b0 , . . . , bq−1 )T and ν2 , can then be
+written as (cf., Brockwell and Davis [22, equation (8.7.4) and Section 12.3]),
+
+                    LW a, b, ν2 |w1 , . . . , wn 
+                                                                                          2
+                                       1                           1 n (wj − ŵ j )
+                        =                             exp{−           ∑             }.
+                            (2πν2 )n r0 ⋅ ⋅ ⋅ rn−1               2ν2 j=1 rj−1
+            19.1 QML estimation for CARMA processes based on observations at ﬁxed times              �    
+
+
+
+Since Yti = Wti + mb0 /ap , yi = wi + mb0 /ap and ŷi = ŵ i + mb0 /ap , the Gaussian like-
+lihood L = LY of the observations y1 , . . . , yn under the Gaussian CARMA model Y with
+parameters a := (a1 , . . . , ap )T , b := (b0 , . . . , bq−1 )T , m and ν2 , can then be written as
+
+                       La, b, m, ν2 |y1 , . . . , yn 
+                           = LW a, b, ν2 |y1 − mb0 /ap , . . . , yn − mb0 /ap 
+                                                                                     2
+                                           1                         1 n (yj − ŷj )
+                           =                              exp{−         ∑            }.
+                               (2πν2 )n r0 ⋅ ⋅ ⋅ rn−1              2ν2 j=1 rj−1
+
+
+Diﬀerentiating log L(a, b, m, ν2 |y1 , . . . , yn ) partially with respect to ν2 and noting that yj −
+ŷj = wj − ŵ j = (1 − Dj [1, w1 , . . . , wj−1 ]T )wj and rj do not depend on ν2 , we ﬁnd that the
+maximum likelihood estimators a,̂ b,̂ m̂ and ν̂ 2 satisfy
+
+                                      ν̂ 2 = n−1 S(a,̂ b,̂ m|y
+                                                            ̂ 1 , . . . , yn ),                          (19.4)
+
+where
+                                                               n
+                               S(a, b, m|y1 , . . . , yn ) = ∑(yj − ŷj )2 /rj−1 ,
+                                                              j=1
+
+
+and a,̂ b̂ and m̂ are the values of a, b and m that minimize the reduced likelihood,
+                                                                                         n
+             ℓ(a, b, m|y1 , . . . , yn ) = logn−1 S(a, b, m|y1 , . . . , yn ) + n−1 ∑ log rj−1 .       (19.5)
+                                                                                         j=1
+
+
+(Setting the derivative of log L with respect to ν2 equal to zero, we ﬁnd that maximum of
+log L must lie on the manifold described by ν2 = n−1 S(a, b, m). Inserting this expression
+for ν2 leads to the minimization problem of the reduced likelihood.) For any given pa-
+rameter vectors a, b and m, the reduced likelihood, ℓ(a, b, m|y1 , . . . , yn ), can be computed
+from the data and the Kalman recursions as described above. A numerical search algo-
+rithm is then used to determine values of a, b and m that minimize ℓ(a, b, m|y1 , . . . , yn ).
+These are the QML estimators of a and b and m respectively. The corresponding QML
+estimator of ν2 is obtained by substituting these values in (19.4). Notice that the reduced
+likelihood of the data under the model (18.2) depends only on a, b, m and the observed
+data, so that the QML estimation of a, b and m can be carried out regardless of the nature
+of the driving Lévy process L (provided it has ﬁnite mean m).
+
+Remark .. We have assumed that the causality and invertibility conditions are satis-
+ﬁed. The causality condition was used for the derivation of the predictors in the Kalman
+recursions (giving independence of innovations and observed past). For each Brown-
+ian motion driven CARMA model satisfying the causality and invertibility condition, by
+Remark 18.23 there are non-causal and non-invertible Brownian motion driven models
+ � 19 QML estimation for CARMA processes
+
+
+
+with the same mean and same spectral density, hence the same autocovariance func-
+tion, and hence with the same Gaussian likelihood. This is one reason why we constrain
+to causal and invertible models and therefore also the maximization to models in which
+the zeros of both a(z) and b(z) are in the open left half-plane of ℂ. The restrictions on
+b(z) also ensure that the state vector Xt and the increments {Lu − Ls , s ≤ u ≤ t} are re-
+coverable from the past observations {Yu , u ≤ t}, as we have seen in Theorem 7.19 and
+Proposition 7.20.
+
+Remark .. The terms weighted least squares (WLS) estimates is frequently used to
+denote values of a, b and m which minimize S(a, b, m) and least squares (LS) estimates
+to denote values of a, b and m that minimize nj=1 (yj − ŷj )2 .
+
+
+
+19.2 QML estimation for regularly sampled CARMA processes
+In Section 19.1, we showed how the reduced Gaussian likelihood ℓ(a, b, m) deﬁned in
+(19.5) and based on the observed values y1 , . . . , yn of Yt1 , . . . , Ytn can be computed, inde-
+pendently of the driving Lévy process, using the Kalman recursions. The QML estimators
+of the parameters a, b and m are values that minimize ℓ(a, b, m). They are not unique,
+since to any causal invertible set of minimizing parameters there is a number of non-
+causal and/or non-invertible models with the same reduced likelihood. For this reason,
+we constrain the minimization of reduced likelihood to causal invertible models.
+     If the observations of Y are made at uniformly spaced times, say tk = kΔ, k = 1, . . . , n,
+the method of Section 19.1 clearly applies with the simpliﬁcations that Fi = eAΔ and
+           Δ            T
+Qi = ν2 0 eAt ep eTp eA dt. In this case, there is yet another source of non-uniqueness of
+QML estimates due to the fact that integer multiples of 2πi/Δ can be added to the zeros
+of a(z) without changing the Gaussian likelihood, as discussed in Remark 18.34(b). This
+phenomenon is called aliasing and we deal with it by constraining the minimization of
+the reduced likelihood to models such that the imaginary part of each zero λj of a(z) lies
+in (−π/Δ, π/Δ). This condition is always satisﬁed for Δ suﬃciently small.
+     Using the fact (cf., Section 18.7) that the sequence Y Δ observed when a CARMA(p, q)
+process Y is sampled at ﬁxed intervals of length Δ is an ARMA(p, r) sequence (with r ∄ p
+and r = p − 1 in all but exceptional cases), the idea was suggested by Phillips [71] and fur-
+ther developed by Durbin [38], Phillips [72], Robinson [74] and others, that to ﬁt a CARMA
+model of autoregressive order p to regularly sampled observations, an ARMA(p, p − 1)
+model could be ﬁtted to the uniformly spaced observations and a CARMA process deter-
+mined with the same mean and autocovariance function restricted to the observation
+times as those of the ﬁtted ARMA(p, p − 1). We shall refer to the determination of the
+corresponding CARMA model as the embedding problem, essentially the inverse of the
+sampling problem considered in Section 18.7. However, the embedding problem is com-
+plicated by the fact that there exist discrete-time ARMA processes which do not have
+the second-order structure of any regularly sampled CARMA process (see, e. g., Brock-
+                                                            19.3 The embedding problem     �     
+
+
+
+well and Brockwell [20]), so that a QML ARMA(p, p − 1) model may not be embeddable
+in a CARMA model of autoregressive order p. However, if this is the case, the resulting
+CARMA model will be a QML CARMA model of autoregressive order p.
+     The estimation procedure thus consists of ﬁtting, by maximizing the discrete-time
+Gaussian likelihood, a causal and invertible discrete-time ARMA(p, p − 1) model to the
+sampled data and then attempting to ﬁnd a corresponding CARMA model of autore-
+gressive order p whose Δ-sampled process has the same mean and autocovariance
+function as the ARMA model. If such a CARMA process Y exists, we shall say that U is
+Δ-embeddable in Y .
+     Theorem 19.5 of the next section gives conditions under which an ARMA(p, q) model
+can be embedded in a CARMA process of autoregressive order p and speciﬁes the pa-
+rameters of the CARMA process. This is the key to the implementation of the estimation
+procedure described in the preceding paragraph.
+
+
+
+19.3 The embedding problem
+Following the exposition in [30], the embedding theorem to be established in this sec-
+tion depends on the following characterization of CARMA autocovariance functions. Let
+Y be a causal CARMA(p, q) process with ﬁnite variance and real-valued coeﬃcients and
+assume that the zeros λ1 , . . . , λp of the autoregressive polynomial a(z) all have multiplic-
+ity 1. From Proposition 7.6(a), we know that the autocovariance function of Y has the
+               p
+form γ(h) := j=1 cj eλj |h| , h ∈ ℝ, with complex coeﬃcients c1 , . . . , cp , and is clearly real-
+valued. Further, if a(z) does not have common zeros with b(z)b(−z), then all of the cj are
+diﬀerent from zero. The following theorem establishes conditions under which such a
+linear combination of exponentials is in fact the autocovariance function of a CARMA
+process and speciﬁes the parameters of a CARMA process which has γ as its autocovari-
+ance function.
+
+Theorem . (Characterization of CARMA autocovariance functions). Suppose that γ is a
+real-valued function of the form,
+                                             p
+                                   γ(h) := ∑ cj eλj |h| ,   h ∈ ℝ,
+                                            j=1
+
+
+where cj ∈ ℂ \ {0}, ℜ(λj ) ∄ 0, j = 1, . . . , p, and λi ≠ λj if i ≠ j. Deﬁne the polynomial g(z) by
+
+                                             p
+                                    g(z) := ∑ cj λj ∏z + λ2m .
+                                            j=1      m=j̸
+
+
+(a) Then the following statements are equivalent:
+    (i) γ is the autocovariance function of a mean-square continuous weakly stationary
+        process.
+0 � 19 QML estimation for CARMA processes
+
+
+
+    (ii) γ is non-negative deﬁnite.
+    (iii) g(z) ≤ 0 for all z ≥ 0.
+    (iv) γ is the autocovariance function of a CARMA(p′ , q) process with ﬁnite variance
+          for some 0 ≤ q ∄ p′ ≤ p, where the autoregressive polynomial has no zeros on
+          the imaginary axis.
+    (v) γ is the autocovariance function of a CARMA(p′ , q) process with ﬁnite variance
+          for some 0 ≤ q ∄ p′ ≤ p such that all coeﬃcients are real-valued, such that all
+          zeros of the autoregressive polynomial lie in the open left half-plane and all zeros
+          of the moving average polynomial lie in the closed left half-plane.
+(b) If one and hence all of the equivalent conditions (i)–(v) above are satisﬁed, then the
+    orders p′ and q, the autoregressive polynomial a(z), the moving average polynomial
+    b(z) as well as the variance ν2 ∈ (0, ∞) of the driving Lévy process L of the CARMA
+    process appearing in (v) are unique, and a(z) and b(z) do not have common zeros. We
+                              p
+    have p′ = p, a(z) = j=1 (z − λj ), q is the order of the polynomial g(z) (which is not
+    the zero-polynomial) and ν2 = −2S  0, where S is the leading coeﬃcient of g(z). The
+    moving average polynomial b(z) is given by
+
+                                                 q
+                                        b(z) = ∏1 + rj eiθj ,
+                                                j=1
+
+                                                                                    q
+    where the numbers rj eiθj , j = 1, . . . , q, are found by writing g(z) = S j=1 (z + rj2 e2iθj )
+    with rj ≥ 0 and −π/2 ≤ θj ≤ π/2. The numbers rj2 e2iθj are real or appear in pairs
+    of complex conjugates, hence a similar statement is true for the rj eiθj if rj2 e2iθj ∈
+    ℂ \ (−∞, 0); if rj2 e2iθj ∈ (−∞, 0) for some j (i. e. rj  0 and θj ∈ {−π/2, π/2}), then
+    the number of indices k ∈ {1, . . . , q} such that rk2 e2iθk = rj2 e2iθj is even, and the corre-
+    sponding θk ∈ {−π/2, π/2} have to be chosen in such a way that the rk eiθk also appear
+    in pairs of complex conjugates. The CARMA process (Yt )t∈ℝ appearing in (v) is hence
+    the CARMA(p, q) process satisfying the formal diﬀerential equation
+
+                                  p                   q
+                                 ∏(D − λj )Yt = ∏D + rj eiθj DLt .                          (19.6)
+                                 j=1                 j=1
+
+
+(c) The CARMA(p, q) process Y of (v) (i. e., by uniqueness, the one speciﬁed in (19.6)) sat-
+    isﬁes the invertibility condition (i. e. all zeros of the moving average polynomial lie in
+    the open left half-plane) if and only if g(z) ∄ 0 for all z ≥ 0.
+
+Proof. First observe that since γ is real-valued,
+
+                                          p                p
+                     0 = γ(h) − γ(h) = ∑ cj eλj |h| − ∑ cj eλj |h|   ∀ h ∈ ℝ.
+                                         j=1               j=1
+                                                                  19.3 The embedding problem       �   
+
+
+
+Using cj ≠ 0 and the linear independence of complex exponentials, we deduce that cj ∈ ℝ
+if λj ∈ ℝ, and that for j such that λj ∈ ℂ \ ℝ, there must exist an index i ≠ j such that
+λj = λi and cj = ci . In particular, the constants λ1 , . . . , λp are real-valued or appear in
+pairs of complex conjugates.
+      (a) That (v) implies (iv) is clear, and that (iv) implies (i) follows from the fact that
+CARMA processes are strictly stationary and those with ﬁnite variance also weakly sta-
+tionary and mean-square continuous by Theorem 18.22. The equivalence of (i) and (ii)
+is an immediate consequence of Corollary 3.2, Remark 3.3 and Proposition 3.6 since γ is
+continuous and even.
+      If (i) holds, then, since γ is continuous and in L1 (ℝ; ℂ), Theorem 5.15 shows that Y
+has a spectral density given by
+
+                                           1
+                                f (ω) =      ∫ γ(h)e−iωh dh,         ω ∈ ℝ.
+                                          2π
+                                             ℝ
+
+
+Direct evaluation of the integral deﬁning f gives
+
+                           p
+                         j=1 cj λj m=j̸ (λ2m + ω2 )                g(ω2 )
+             f (ω) = −            p                       =−      p               ,       ω ∈ ℝ,
+                               π j=1 (λ2j + ω2 )              π j=1 (λ2j + ω2 )
+
+and non-negativity of f and the fact that the λj are real or appear in pairs of complex
+conjugates implies condition (iii).
+                                                                                      2
+    For the implication that (iii) implies (i), deﬁne f (ω) := − π ∏pg(ω  )
+                                                                       (λ2 +ω2 )
+                                                                                 for ω ∈ ℝ. Then
+                                                                                j=1   j
+f ≥ 0 by assumption, and it is clearly integrable, hence by Bochner’s theorem (Theo-
+rem 5.1), it is the spectral density of some autocovariance function γ̃ : ℝ → ℂ of a MSC
+stationary process, i. e., γ̃(h) = ℝ eihω f (ω) dω. On the other hand, as seen above, 2πf
+is the Fourier transform of γ, and the Fourier inversion theorem (Theorem 2.63) shows
+γ = γ̃, giving (i). Also observe that g cannot be the zero-polynomial, for otherwise f and
+hence γ would be the zero-functions. We have seen that (i)–(iii) are equivalent and that
+(v) implies (iv), which in turn implies (i).
+     Now let the equivalent conditions (i)–(iii) be satisﬁed. Let us show that these imply
+(v) and that a possible choice for the CARMA process is given by (19.6). Since g(z) is not
+the zero-polynomial, we can factorize it as
+
+                                                    q
+                                      g(z) = S ∏z + rj2 e2iθj ,
+                                                    j=1
+
+
+where rj ≥ 0, −π/2 ≤ θj ≤ π/2, q ∈ {0, . . . , p − 1} is the order of the polynomial g(z)
+                                                                            p
+and S is the coeﬃcient of zq , which is necessarily strictly negative. (If j=1 cj λj ≠ 0 then
+                      p
+q = p − 1 and S = j=1 cj λj .) Since g(z) is real-valued on [0, ∞), it has real coeﬃcients,
+hence the numbers rj2 e2iθj are real or appear in pairs of complex conjugates. Hence so
+ � 19 QML estimation for CARMA processes
+
+
+
+do the numbers rj eiθj if they lie in ℂ \ (−∞, 0). If rj2 e2iθj ∈ (−∞, 0) for some j, i. e., if
+rj  0 and θj ∈ {−π/2, π/2}, then g has a zero at −rj2 e2iθj ∈ (0, ∞). Since g(z) ≤ 0 for all
+z ≥ 0, this can only happen if the multiplicity of this zero is even. Hence we can choose
+the θj ∈ {−π/2, π/2} also in this case in such a way that all the rj eiθj are real or appear
+                                                                            q
+in pairs of complex conjugates. In particular, the polynomial b(z) := j=1 (z + rj eiθj ) has
+                                                                  p
+real-valued coeﬃcients, as does the polynomial a(z) := j=1 (z − λj ). Now deﬁne again
+
+                                                     q  2    2 2iθj
+                            g(ω2 )           −2S j=1 (ω + rj e ) −2S |b(iω)|2
+           f (ω) := −      p               =         p              =             .
+                        π j=1 (λ2j + ω2 )   2π   j=1 (λ2j + ω2 )    2π |a(iω)|2
+
+By Theorem 18.22, f is then the spectral density of the CARMA(p, q) process (Yt )t∈ℝ satis-
+fying the formal diﬀerential equation a(D)Yt = b(D)DLt , with Var(L1 ) = −2S. Since 2πf
+is the Fourier transform of γ as seen above, we see that γ is the autocovariance function
+of Y . That all zeros of a(z) lie in the open left half-plane and all zeros of b(z) in the closed
+left half-plane is clear.
+     (b) We have already seen that the CARMA(p, q) process deﬁned by (19.6) satisﬁes (v),
+so we only have to show uniqueness and that the autoregressive and moving average
+polynomial do not have common zeros. So let Y be a CARMA(p′ , q) process satisfying
+a(D)Yt = b(D)DLt , where a(z) and b(z) have real-valued coeﬃcients and degrees p′ ≤ p
+and q ∄ p′ with zeros lying in the open and closed left half-plane, respectively, and L
+has variance ν2  0, then we deduce from (7.2) and the facts that c1 , . . . , cp ≠ 0 and
+λi ≠ λj for i ≠ j, that p′ = p and that the zeros of a(z) all have multiplicity 1. Hence
+                                                                 p
+by (7.3) they coincide with λ1 , . . . , λp . This shows a(z) = j=1 (z − λj ). From equation (7.4)
+                        b(λ )b(−λ )
+we deduce cj = ν2 a′ (λj )a(−λj ) for j = 1, . . . , p. Since cj ≠ 0, a(z) and b(z) do not have
+                           j     j
+common zeros and we see that ν2 b(λj )b(−λj ), j = 1, . . . , p, are uniquely determined by γ.
+Now deﬁne the polynomial B(z) := ν2 b(z)b(−z). This has real-valued coeﬃcients, degree
+2q and leading coeﬃcient ν2 . The values of B(z) at λ1 , . . . , λp are known, and since B(z)
+is symmetric, also its values at −λ1 , . . . , −λp are known. Hence the values of B(z) at 2p
+distinct points are known, and since B(z) has degree less than or equal to 2(p − 1), we
+conclude that B(z) is uniquely determined by γ, in particular, so are its degree 2q and
+its leading coeﬃcient ν2 . Since all zeros of b(z) lie in the closed left half-plane, we can
+                          q
+factorize b(z) = j=1 (z − μj ) with ℜ(μj ) ∄ 0 for j = 1, . . . , r, where r ≤ q, and ℜ(μj ) = 0
+for j = r + 1, . . . , q. Since the coeﬃcients of b(z) are real, the zeros μj are real or appear
+in pairs of complex conjugates. In particular, if μj ∈ iℝ \ {0} is a zero of b(z), then so is
+−μj . Hence the factorization of B(z) can be written as
+
+                                      r         r           q
+                   B(z) = ν2 (−1)q ∏(z − μj ) ∏(z + μj ) ∏ (z − μj )(z + μj )
+                                      j=1      j=1        j=r+1
+                                      r         r           q
+                         = ν2 (−1)q ∏(z − μj ) ∏(z + μj ) ∏ (z − μj )2 .
+                                      j=1      j=1        j=r+1
+                                                                    19.3 The embedding problem   �    
+
+
+
+Since B(z) is uniquely determined by γ, so are its zeros, and its zeros on the imagi-
+nary axis have twice the multiplicity of the corresponding zeros of b(z). It follows that
+also μ1 , . . . , μq and hence b(z) are uniquely determined by γ. Since the process speciﬁed
+                                                                q
+in (19.6) has the required properties, we conclude b(z) = j=1 (z + rj eiθj ).
+     (c) By (b), the zeros of b(z) are given by −rj eiθj . They clearly lie in the closed left half-
+plane, since θj ∈ [−π/2, π/2]. The invertibility condition is hence satisﬁed if none of the
+zeros lies on the imaginary axis, i. e., if b(iω) ≠ 0 for all ω ∈ ℝ. But since g(ω2 ) = S|b(iω)|2 ,
+as seen in the proof of (a), this is clearly equivalent to g(z) ∄ 0 for all z ≥ 0.
+
+     We shall need the following result for ARMA sequences.
+
+Proposition . (Autocovariance function of ARMA processes). Suppose that (Un )n∈ℤ is
+the ARMA(p, s) sequence with mean c satisfying the equations, with p  s,
+
+                                 ϕ(B)(Un − c) = θ(B)Zn ,              n ∈ ℤ,                         (19.7)
+
+where (Zn )n∈ℤ is zero-mean white noise with variance σ 2  0, B is the backward shift
+                      p
+operator, ϕ(z) := j=1 (1 − ξj z) and θ(z) := sj=1 (1 − ηj z). Suppose also that ξi ≠ ξj for i ≠ j,
+that ξi ≠ ηj for all i and j, that 0 ∄ |ξi | ∄ 1 and 0 ∄ |ηj | ∄ 1 for all i and j, and that the
+coeﬃcients of the polynomials ϕ(z) and θ(z) are real-valued. Deﬁne
+
+                                           θ(ξj )θ(ξj−1 )
+                                Gj = −ξj                      ,   j = 1, . . . , p.                  (19.8)
+                                           ϕ(ξj )ϕ′ (ξj−1 )
+
+Then the autocovariance function γ of (Un )n∈ℤ can be expressed as
+
+                                                  p
+                                    γ(h) = σ 2 ∑ Gj ξj|h| ,         h ∈ ℤ.
+                                                 j=1
+
+
+Proof. See Brockwell [21, Equation (3.14)], or Exercise 19.1.
+
+     Observe that as a consequence of the real-valued coeﬃcients of ϕ(z) and θ(z), the
+ξj are real or appear in pairs of complex conjugates, and consequently the same is true
+for the Gj from (19.8).
+     If the ARMA sequence in (19.7) is Δ-embeddable in a CARMA(p, q) process for some
+q ∄ p there exist parameters m = (L1 ), ν2 = Var(L1 ) and α = (a1 , . . . , ap , b0 , . . . , bq−1 )T ,
+or equivalently θ = (m, ν2 , λ1 , . . . , λp , μ1 , . . . , μq )T , such that the autocovariance at lag nΔ
+and the mean of a CARMA process with these parameters coincides with those of U at
+lag n. The following theorem gives conditions under which this is the case and speciﬁes
+the parameters of a CARMA process into which the ARMA process is Δ-embeddable.
+
+Theorem . (Embedding an ARMA sequence. Embedding Theorem). Let Δ  0 and sup-
+pose that (Un )n∈ℤ is the ARMA(p, s) sequence speciﬁed in (19.7), with the same assumptions
+ � 19 QML estimation for CARMA processes
+
+
+
+and notations valid as in Proposition 19.4. Additionally assume that ξj ∉ (−∞, 0) for all j.
+With Gj as in (19.8), deﬁne the polynomial of degree q ≤ p − 1,
+
+                                      p
+                      g(z) := σ 2 Δ−1 ∑ Gj log(ξj ) ∏z + Δ−2 (log ξm )2 ,
+                                     j=1                  m=j̸
+
+
+where log denotes the principal branch of the complex logarithm. (Observe that q = p − 1
+         p
+when j=1 Gj log(ξj ) ≠ 0.) Then the polynomial g has real-valued coeﬃcients, is not the
+zero-polynomial, and the following statements (i) and (ii) are equivalent:
+(i) The process (Un )n∈ℤ is Δ-embeddable into a CARMA(p′ , q′ ) process Y with ﬁnite vari-
+     ance and real-valued coeﬃcients such that q′ ≤ p′ ≤ p, such that all zeros of the au-
+     toregressive CARMA polynomial lie in the half-strip {z ∈ ℂ : ℜ(z) ∄ 0, |ℑ(z)| ∄ π/Δ}
+     and all zeros of the moving average polynomial in the closed left half-plane.
+(ii) g(z) ≤ 0 for all z ≥ 0.
+
+If one and hence all of the equivalent conditions (i) and (ii) are satisﬁed, and if (Un )n∈ℤ
+is Δ-embeddable into Y subject to the conditions of (i), then the mean and variance of
+the Lévy process driving Y are uniquely determined, as are the orders p′ and q′ and the
+autoregressive polynomial a(z) and the moving average polynomial b(z). We have p′ = p,
+                        p
+q′ = q and a(z) = j=1 (z − Δ−1 log ξj ). The moving average polynomial b(z) is found
+                         q
+by writing g(z) = S j=1 (z + rj2 e2iθj ), with rj ≥ 0 and −π/2 ≤ θj ≤ π/2, and setting
+          q
+b(z) = j=1 (z + rj eiθj ) (with corresponding complex conjugate choices of the rj eiθj , as in
+Theorem 19.3(b)). The unique mean m and variance ν2 of the driving Lévy process are given
+by
+
+                                            p
+                                          j=1 log ξj
+                         m = c(−Δ)   −p
+                                                               and   ν2 = −2S.            (19.9)
+                                          rj=1 rj eiθj
+
+Hence Y = (Yt )t∈ℝ satisﬁes the formal diﬀerential equation
+
+                             p                             q
+                          ∏D − Δ−1 log ξj Yt = ∏D + rj eiθj DLt .                    (19.10)
+                             j=1                          j=1
+
+
+The autoregressive polynomial a(z) and the moving average polynomial b(z) of Y do not
+have common zeros. Finally, the zeros of the moving average polynomial b(z) all lie in the
+open left half-plane (i. e., Y satisﬁes the invertibility condition) if and only if g(z) ∄ 0 for
+all z ≥ 0.
+
+Proof. By Proposition 19.4, the autocovariance function of the ARMA process deﬁned by
+(19.7) is
+                                                                        19.3 The embedding problem    �   
+
+
+                                                p
+                                  κ(h) = σ 2 ∑ Gj ξj|h| ,               h ∈ ℤ.
+                                                j=1
+
+
+Deﬁne the function γ : ℝ → ℂ by
+
+                                           p
+                                                          −1
+                              γ(h) := σ 2 ∑ Gj e|h|Δ           log ξj
+                                                                        ,   h ∈ ℝ.                    (19.11)
+                                          j=1
+
+
+The values γ(hΔ) clearly coincide with κ(h) for h ∈ ℤ. Since Δ−1 log ξj , j = 1, . . . , p are
+pairwise disjoint and are real or appear in pairs of complex conjugates, and since Gj =
+Gk when ξj = ξk , we conclude that γ is real-valued. Also observe that all of the Gj are
+diﬀerent from zero by the assumptions of Proposition 19.4.
+     To show that (i) implies (ii), let Y = (Yt )t∈ℝ be a CARMA(p′ , q′ ) process as in (i),
+in which (Un )n∈ℤ is Δ-embeddable, and denote its autocovariance function by γY . Then
+γY (Δh) = κ(h) for all h ∈ ℤ. Denote the distinct zeros of the autoregressive polynomial
+of Y by λ1 , . . . , λr and their multiplicities by nj , so that p′ = ri=1 nj . By (7.2), γY (h) =
+       n −1
+rj=1 k=0
+        j
+           cj,k hk eλj h for all h ≥ 0 with constants cj,k ∈ ℂ. Hence
+
+                  p                                   r nj −1
+                                                                                     h
+              σ 2 ∑ Gj ξjh = κ(h) = γY (Δh) = ∑ ∑ cj,k Δk hk eΔλj                      ∀ h ∈ ℕ0 .
+                 j=1                                  j=1 k=0
+
+
+Since ℑ(λj ) ∈ (−π/Δ, π/Δ), the quantities eΔλj , j = 1, . . . , r, are all distinct. Since sequences
+of the form (hkl αlh )h∈ℕ0 with kl ∈ ℕ0 are linearly independent (e. g., Brockwell and
+Davis [22, Theorem 3.6.2]) we conclude that r = p, nj = 1 for all j = 1, . . . , p, and (after a
+suitable enumeration) that ξj = eΔλj and σ 2 Gj = cj,0 . However, this implies λj = Δ−1 log ξj
+and hence γY (h) = γ(h) for all h ∈ ℝ. Hence γ is the autocovariance function of some
+CARMA(p′ , q′ ) process and Theorem 19.3 implies that g(z) ≤ 0 for all z ≥ 0, which is (ii).
+Further, we have seen that any CARMA(p′ , q′ ) subject to the conditions of (i) must have
+autocovariance function γ.
+     To show that (ii) implies (i), assume that g(z) ≤ 0 for all z ≥ 0. By Theorem 19.3,
+γ is the autocovariance function of the CARMA(p, q) process Y speciﬁed by (19.10) and
+(19.9). Since γ(Δh) = κ(h) for all h ∈ ℤ and since Yt = c by Lemma 18.19, we conclude
+that (Un )n∈ℤ is Δ-embeddable into the process (Yt )t∈ℝ . The zeros of the autoregressive
+polynomial of Y clearly lie in the half-strip {z ∈ ℂ : ℜ(z) ∄ 0, |ℑ(z)| ∄ π/Δ} and the
+zeros of the moving average polynomial in the closed left half-plane. This shows (i). Also
+observe from Theorem 19.3 that the obtained autoregressive polynomial and moving av-
+erage polynomial do not have common zeros, and that all zeros of the moving average
+polynomial lie in the open left half-plane if and only if g(z) ∄ 0 for all z ≥ 0. Note also
+that the obtained process Y is the unique CARMA(p′ , q′ ) process subject to the conditions
+of Theorem 19.3(a)(v) having γ as autocovariance function, and since any CARMA(p′ , q′ )
+ � 19 QML estimation for CARMA processes
+
+
+
+process subject to the condition (i) into which (Un )n∈ℤ is Δ-embeddable must have auto-
+covariance function γ, as seen above, we obtain the uniqueness assertion.
+
+Example . (The case p = 2). If p = 2, then, deﬁning λj := Δ−1 log ξj , j = 1, 2, the condi-
+tion g(z) ≤ 0 for all z ≥ 0 can be expressed as
+
+                           G 1 λ1 + G 2 λ2 ≤ 0       and     G1 λ2 + G2 λ1 ≤ 0,
+
+where, when s = p − 1 = 1 and θ(z) = 1 − ηz,
+
+                                                  (1 − ηξ1 )(1 − η/ξ1 )
+                               G1 = −ξ1
+                                              (ξ2 − ξ1 )(1 − ξ12 )(1 − ξ1 ξ2 )
+
+and G2 is the same with subscripts 1 and 2 interchanged (when s = 0 and θ(z) = 1
+the above formulas are still true when setting η := 0). If these conditions are satisﬁed,
+then the ARMA process is embeddable in the CARMA process satisfying (19.10). When
+G1 λ1 + G2 λ2 ∄ 0, this process is the CARMA(2, 1) process, given by
+
+                                (D − λ1 )(D − λ2 )Yt = (D − μ)DLt ,
+
+where
+                                              1/2
+                          G 1 λ2 + G 2 λ1
+            μ = −(λ1 λ2                   )         and      Var(L1 ) = −2σ 2 (G1 λ1 + G2 λ2 ).
+                          G 1 λ1 + G 2 λ2
+
+When G1 λ1 + G2 λ2 = 0, it is the CAR(2) process given by
+
+                                     (D − λ1 )(D − λ2 )Yt = DLt ,
+
+where
+
+                                Var(L1 ) = −2σ 2 λ1 λ2 (G1 λ2 + G2 λ1 ).
+
+Remark .. If g(z)  0 for some z ≥ 0, then the function γ in (19.11) is not non-negative
+deﬁnite and is therefore not the autocovariance function of any CARMA process. How-
+ever, there may be other choices of the logarithms, equal modulo(2πi) to the principial
+branch used in the theorem, for which the condition g(z) ≤ 0 for all z ≥ 0 is satisﬁed. In
+this case, the conclusions hold with the revised values of the logarithms, however, with
+the imaginary parts of the autoregressive zeros no longer being bounded by π/Δ.
+
+Remark .. Since g(z) is a polynomial, the condition that g(z) ≤ 0 for all z ≥ 0 is easily
+checked by evaluating g(0), limz→∞ g(z) and the values of g at each of the positive values
+of z where g ′ (z) = 0. It is automatically satisﬁed if Y Δ is known to be the Δ-sampled
+sequence of some CARMA process with autoregressive zeros in the strip {z ∈ ℂ : ℜ(z) ∄
+0, |ℑ(z)| ∄ π/Δ}.
+                                                          19.3 The embedding problem    �     
+
+
+
+Remark . (The case of strictly negative ξi ). In Theorem 19.5, we excluded the case that
+some of the ξi are strictly negative, since if ξi was strictly negative for some i, then neces-
+sarily λi satisfying eλi Δ = ξi , would not be real, and since ξj ≠ ξi for all j ≠ i, there would
+be no complex conjugate of λi within the other λj , so that the derived autoregressive
+polynomial a(z) would not have real-valued coeﬃcients. For example, the AR(1) process
+Un + 0.5Un−1 = Zn with (Zn )n∈ℤ being zero-mean white noise with variance σ 2  0 is
+clearly not 1-embeddable into a CAR(1) process with real-valued coeﬃcients, since the
+autoregressive root would necessarily have to be of the form λ = − log 2 + (2l + 1)πi with
+some l ∈ ℤ. The autocovariance function of (Un )n∈ℤ is γ(h) = 43 σ 2 (−0.5)|h| for h ∈ ℤ, and
+by (7.4), at integer times this coincides with the autocovariance function of the CAR(2)
+process given by (D + log 2 + iπ)(D + log 2 − iπ)Yt = DLt , where L has mean zero and vari-
+ance Var(L1 ) = 16σ 2 (log 2)(π 2 + (log 2)2 )/3. Observe that the autoregressive polynomial
+a(z) = (z + log 2 + iπ)(z + log 2 − iπ) = (z + log 2)2 + π 2 has real-valued coeﬃcients. Hence
+(Un )n∈ℤ is 1-embeddable into the CAR(2) process Y , although it is not 1-embeddable into
+a CAR(1) process with real-valued coeﬃcients. We shall not go into further details of the
+embedding problem of ARMA(p, s) processes into CARMA processes of autoregressive
+order higher than p.
+
+Example .0 (Sampling and recovering a CARMA(2, 1) process).
+(a) Consider the Δ-sampled sequence Y Δ , Δ = 0.1, of the stationary CARMA(2, 1) process
+    deﬁned by the formal diﬀerential equation,
+
+                                (D + 0.5)(D + 1)Yt = (D + 0.25)DLt ,
+
+    where D as usual denotes diﬀerentiation with respect to t and the driving Lévy pro-
+    cess L has moments L1 = 0 and (L21 ) = 1. Taking λ1 = −0.5 and λ2 = −1, we ﬁnd
+    immediately that the constants K1 and K2 in the Sampling Theorem 18.33 are given
+    by
+
+                                   K1 = −0.25    and    K2 = 0.625.
+
+    Since K1 sinh(−0.05) + K2 sinh(−0.1) ≠ 0, we deduce from the theorem that the
+    Δ-sampled sequence Y Δ with Δ = 0.1 satisﬁes the ARMA(2, 1) equation,
+
+              1 − e−0.05 B1 − e−0.1 BYnΔ = (1 − ηB)Zn ,   {Zn } ∼ WN0, σ 2 ,          (19.12)
+
+    where η and σ 2 are to be determined. From Example 18.35, we ﬁnd that k1 =
+    1.0003132479211. Hence, by Theorem 18.33,
+
+                                  η = k1 − k12 − 1 = 0.9752813889
+
+    and
+
+                   σ 2 = 2K1 sinh(0.05) + K2 sinh(0.1) e−0.15 /η = 0.08842703.
+ � 19 QML estimation for CARMA processes
+
+
+
+(b) Suppose, on the other hand, that we were to start with the ARMA sequence for Y Δ
+    (where Δ = 0.1) deﬁned by (19.12) with η and σ 2 as speciﬁed, and wish to ﬁnd a
+    CARMA(2, q) process of which it is the Δ-sampled sequence. To do so, we apply The-
+    orem 19.5 or, more simply (since p = 2), the results of Example 19.6.
+    Thus λ1 = Δ−1 log ξ1 = −0.5, λ2 = Δ−1 log ξ2 = −1, η = 0.9752813889 and σ 2 =
+    0.08842703. From Example 19.6, we readily ﬁnd that
+
+                            G1 = −2.8271899       and    G2 = 7.0679747,
+
+    and that
+
+                            G 1 λ1 + G 2 λ2 ∄ 0   and    G1 λ2 + G2 λ1 ∄ 0.
+
+    Hence the ARMA sequence is Δ-embeddable in the CARMA(2, 1) process deﬁned by
+
+                                 (D − λ1 )(D − λ2 )Yt = (D − μ)DLt ,
+
+                                              G λ +G λ
+    where λ1 = −0.5, λ2 = −1, μ = −(λ1 λ2 G1 λ2 +G2 λ1 )1/2 = −0.25 and Var(L1 ) = −2σ 2 (G1 λ1 +
+                                             1 1  2 2
+    G2 λ2 ) = 1, as, of course, we already knew from part (a).
+
+
+
+19.4 Examples, stochastic volatility
+All R programs and data sets presented in this and the next section can be downloaded
+from
+
+                           https://doi.org/10.1515/9783111325033.
+
+In this section, we illustrate the application of QML estimation as described in the previ-
+ous sections by applying it, using the package R, to two series connected with stochastic
+volatility. The use of Lévy driven CARMA processes in this connection was initiated by
+the seminal paper of Barndorﬀ-Nielsen and Shephard [7], who introduced a stationary
+Lévy driven Ornstein-Uhlenbeck (i. e., a CARMA(1, 0)) process to replace the constant
+spot volatility in the geometric Brownian motion model for the price process (Pt )t≥0 of
+an asset such as a ﬁnancial stock.
+     The geometric Brownian motion model for (Pt )t≥0 is deﬁned by the Itô stochastic
+diﬀerental equation,
+
+                          dPt = Pt (μ dt + v dBt ),      with P0  0,
+
+where μ ∈ ℝ, v  0 and B is standard Brownian motion. In terms of Xt := log Pt (the log
+asset price), this can be written, using Itô’s formula, as
+
+                                dXt = (μ − v/2) dt + v dBt .                             (19.13)
+

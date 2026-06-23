@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.5.8)  8 MAY 2026 11:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.5.8)  27 MAY 2026 12:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**c:/Users/gabri/Documents/quant-projects/carma_quanto/paper/Pricing_and_Hedging_of_Quanto_Options_in_Renewable_Energy_Markets_using_CARMA/GPK26-new.tex
-(c:/Users/gabri/Documents/quant-projects/carma_quanto/paper/Pricing_and_Hedging_of_Quanto_Options_in_Renewable_Energy_Markets_using_CARMA/GPK26-new.tex
+**c:/Users/gabri/Documents/quant-projects/FR_carma_quanto/paper/Pricing_and_Hedging_of_Quanto_Options_in_Renewable_Energy_Markets_using_CARMA/GPK26-new.tex
+(c:/Users/gabri/Documents/quant-projects/FR_carma_quanto/paper/Pricing_and_Hedging_of_Quanto_Options_in_Renewable_Energy_Markets_using_CARMA/GPK26-new.tex
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-03-20>
 (C:\Users\gabri\AppData\Local\Programs\MiKTeX\tex/latex/amscls\amsart.cls
@@ -785,7 +785,7 @@ Package natbib Warning: Citation `Car99' on page 11 undefined on input line 986.
 LaTeX Warning: Reference `prop:fourier_pricing' on page 1 undefined on input line 993.
 
 
-c:/Users/gabri/Documents/quant-projects/carma_quanto/paper/Pricing_and_Hedging_of_Quanto_Options_in_Renewable_Energy_Markets_using_CARMA/GPK26-new.tex:1010: LaTeX Error: Unicode character α (U+03B1)
+c:/Users/gabri/Documents/quant-projects/FR_carma_quanto/paper/Pricing_and_Hedging_of_Quanto_Options_in_Renewable_Energy_Markets_using_CARMA/GPK26-new.tex:1010: LaTeX Error: Unicode character α (U+03B1)
                not set up for use with LaTeX.
 
 See the LaTeX manual or LaTeX Companion for explanation.
@@ -1376,12 +1376,12 @@ Package rerunfilecheck Info: Checksums for `GPK26-new.out':
  ) 
 Here is how much of TeX's memory you used:
  18434 strings out of 467691
- 364639 string characters out of 5414988
+ 364666 string characters out of 5414988
  746595 words of memory out of 5000000
  46917 multiletter control sequences out of 15000+600000
  712372 words of font info for 97 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
- 75i,15n,79p,717b,1289s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,15n,79p,720b,1289s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\gabri\AppData\Local\MiKTeX\fonts/pk/ljfour/public/bbm/dpi600\bbm10.pk><C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx9.pfb><C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi5.pfb><C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi6.pfb><C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi7.pfb><C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi9.pfb><C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr5.pfb><C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr6.pfb><C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr7.pfb><C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr9.pfb><C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri8.pfb><C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy5.pfb><C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy6.pfb><C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy7.pfb><C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy9.pfb><C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt8.pfb><C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm5.pfb><C:/Users/gabri/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
 Output written on GPK26-new.pdf (27 pages, 664479 bytes).
 PDF statistics:
