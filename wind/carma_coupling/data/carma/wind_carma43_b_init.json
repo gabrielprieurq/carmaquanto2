@@ -1,13 +1,13 @@
 {
   "b_coefficients": [
-    0.00042731465250152957,
-    0.0685465311014695,
-    0.047215840648201154,
+    0.0004273146375995686,
+    0.06854653108379201,
+    0.04721584127066555,
     1.0
   ],
   "AR_order": 4,
   "MA_order": 3,
-  "acf_rmse_spectral": 0.022571426856897555,
-  "acf_rmse_multiscale": 0.022571426856894665,
+  "acf_rmse_spectral": 0.02257142673407341,
+  "acf_rmse_multiscale": 0.02257142673407535,
   "note": "CARMA(4,3) spectral b from ACF calibration with free half-lives and manual bounds. Monic b[-1]=1 (book convention)."
 }
