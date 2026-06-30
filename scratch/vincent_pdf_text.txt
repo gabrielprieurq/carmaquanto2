@@ -1,0 +1,1761 @@
+This is a Working Paper // Version: November 10, 2025
+
+
+
+
+                     PRICING AND HEDGING OF RENEWABLE ENERGY QUANTO
+                                 OPTIONS IN CARMA MODELS
+
+
+                                            Vincent Gachon                Sven Karbach
+                                         [vincegachon@gmail.com]         [sven@karbach.org]
+
+                             Abstract. This paper investigates the pricing and hedging of Quanto op-
+                             tions in renewable energy markets, utilizing continuous-time autoregressive
+                             moving-average (CARMA) processes to model the dynamics of electricity spot
+                             prices and weather-related variables. Quanto options, which are European-
+                             style derivatives, are written on both the electricity spot or forward price and
+                             a weather or climate variable such as temperature, wind speed, or solar ir-
+                             radiance. These options provide renewable energy ﬁrms with the means to
+                             hedge against both price ﬂuctuations and volumetric risk, enabling better risk
+                             management in the renewable energy sector. We demonstrate how CARMA
+                             models oﬀer a ﬂexible and powerful framework for accurately pricing these
+                             contracts while eﬀectively addressing both the price and weather-dependent
+                             risk. By applying CARMA-driven models to joint price and weather dynamics,
+                             we extend the classical Ornstein-Uhlenbeck processes to capture more complex
+                             market behaviors, in particular allow for a more complex autocorrelation struc-
+                             ture of the underyling price and weather components.
+
+                             Keywords: Quanto Options, Renewable Energy Markets, CARMA, Volu-
+                             metric Risk, Weather Derivative
+
+
+                                                         1. Introduction
+                        Continuous-time autoregressive moving average (CARMA) processes have gained
+                     signicant attention in nancial modeling due to their exibility and ability to
+                     capture complex time series dynamics. By generalizing the classical discrete-time
+                     ARMA models to continuous time, CARMA processes oer a robust framework for
+                     modeling phenomena where continuous-time dynamics are essential, such as in the
+                     pricing and hedging of nancial derivatives. These processes provide a rich structure
+                     for capturing various characteristics of time series data, including mean reversion,
+                     volatility clustering, and long-memory eects, which are prevalent in nancial and
+                     energy markets.
+                        CARMA processes have been widely applied across various elds, from engineer-
+                     ing and meteorology to nance, particularly in modeling interest rates, stochastic
+                     volatility, and commodity prices [? ? ? ]. In the context of energy markets, ac-
+                     curately modeling the dynamics of variables such as wind speed, solar irradiance,
+                     and temperature is crucial. These environmental variables exhibit complex behav-
+                     iors that traditional models, such as Ornstein-Uhlenbeck (OU) processes, may not
+                     fully capture. For example, wind speed and solar irradiance have been successfully
+                     modeled using higher-order ARMA and CARMA processes to account for their
+                     temporal dependencies and autocovariance structures [].
+                        In recent years, there has been growing interest in hybrid derivatives that com-
+                     bine price and volumetric risk, particularly in the energy sector, where weather
+                     variability can signicantly impact both energy production and demand. Renew-
+                     able energy quanto options are a prime example of such derivatives, as their payos
+
+                        Informatics Institute and Korteweg-de Vries Institute for Mathematics at the Uni-
+                     versity of Amsterdam, Science Park 105-107, 1098 XG Amsterdam, Netherlands
+                                                                    1
+2            PRICING AND HEDGING OF QUANTOS IN CARMA MODELS
+
+
+depend on both the electricity spot price and a weather-related variable such as tem-
+perature. Previous work by Alfonsi and Vadillo [? ] modeled day-ahead electricity
+prices and average daily temperatures using non-homogeneous Ornstein-Uhlenbeck
+processes, demonstrating the relevance of weather-driven models for energy deriva-
+tives. However, their use of OU processes, while tractable, may not capture the full
+complexity of the market behavior.
+   To address these limitations, we propose modeling both energy prices and weather-
+related variables such as temperature using higher-order CARMA processes. CARMA
+processes oer greater exibility by allowing for more sophisticated autocovariance
+structures and the ability to capture complex market behaviors such as volatility
+clustering, jumps, and heavy tails, which are frequently observed in energy prices
+and weather data []. For instance, temperature variations, a key driver of energy
+demand, have been eectively modeled using CARMA processes, providing a bet-
+ter t to data with long-range dependencies and mean-reversion []. Similarly, solar
+irradiance and wind speed, both crucial for renewable energy production, can be
+modeled using ARMA and CARMA models of appropriate order to capture their
+stochastic nature [].
+
+1.1. Background on CARMA Processes. Continuous-time autoregressive mov-
+ing average (CARMA) processes extend the classical discrete-time ARMA models
+to continuous time, oering a powerful tool for modeling continuous-time stochas-
+tic dynamics. They are dened as solutions to higher-order stochastic dierential
+equations (SDEs) of the form:
+
+
+       Dp Xt + a1 Dp−1 Xt + · · · + ap Xt = b0 Dq Lt + b1 Dq−1 Lt + · · · + bq Lt ,   (1)
+               d
+   where D =      denotes dierentiation, ai and bj are coecients, and Lt is a Lévy
+               dt
+process driving the system. This equation generalizes classical ARMA models to
+continuous time, capturing dynamics with rich temporal dependencies and exible
+autocovariance structures.
+   In nancial applications, CARMA processes are particularly valuable for model-
+ing time series that exhibit mean reversion and short-memory behavior—common
+features in nancial data such as asset returns, interest rates, and volatility. The
+Ornstein-Uhlenbeck process is a well-known example of a CARMA(1,0) process,
+widely used due to its tractability and mean-reverting properties. However, higher-
+order CARMA processes provide greater exibility by allowing more complex au-
+tocorrelation structures, capable of capturing a wider range of dynamic behaviors
+observed in nancial markets.
+
+1.2. Relevance to Energy Markets. Energy markets are characterized by sig-
+nicant volatility and are inuenced by various stochastic factors, including com-
+modity prices and weather variables like temperature. Accurate modeling of these
+factors is crucial for pricing and hedging energy derivatives, such as energy quanto
+options, which are nancial instruments whose payos depend on both the price of
+a commodity and a weather-related variable.
+   Traditional models often rely on Ornstein-Uhlenbeck processes to model these
+factors; however, the limitations of OU processes—such as their inability to capture
+complex temporal dependencies and higher-order autocorrelations—motivate the
+use of higher-order CARMA processes. By modeling both the commodity price and
+the temperature using higher-order CARMA processes driven by Lévy processes,
+we can capture the intricate dynamics and interactions between these variables
+more accurately.
+              PRICING AND HEDGING OF QUANTOS IN CARMA MODELS                         3
+
+
+   In our framework, we consider correlated CARMA processes to model the joint
+behavior of the commodity price and temperature, capturing both individual dy-
+namics and co-movement between these variables. This joint modeling is essen-
+tial for accurately pricing energy quanto options and developing eective hedging
+strategies.
+1.3. Main Contributions. In this paper, we propose a joint modeling frame-
+work for energy spot prices and temperature indices driven by correlated CARMA
+processes. This extension provides several advantages over traditional OU-based
+models, particularly in capturing the intricate behaviors observed in real market
+data. By introducing multivariate Lévy processes to drive these dynamics, we ac-
+commodate jumps, heavy tails, and skewness, which are often present in energy
+prices and other nancial time series. Additionally, the CARMA framework allows
+for a parsimonious state-space representation, enabling ecient pricing and hedging
+of complex derivatives like energy quanto options.
+   Our contributions are as follows:
+     (1) Extension of Energy Market Modeling: We incorporate higher-order
+         CARMA processes for both commodity prices and temperature, providing a
+         more exible and accurate framework compared to traditional OU models.
+         This allows for capturing complex temporal dependencies and interactions
+         between these variables.
+     (2) Derivation of Pricing Formulas: We derive analytical pricing formu-
+         las and ecient numerical methods for energy quanto options within this
+         framework, accounting for complex covariance structures and potential
+         jumps in the underlying processes.
+     (3) Development of Hedging Strategies: We compute the Greeks for the
+         options and develop hedging strategies that allow practitioners to eectively
+         manage risks associated with movements in both commodity prices and
+         temperature.
+1.4. Organization of the Paper. The remainder of this paper is organized as fol-
+lows. In Section ??, we provide a detailed overview of CARMA processes, including
+their mathematical properties and state-space representations. Section 2 introduces
+the modeling framework for energy markets using correlated CARMA processes and
+discusses the derivation of covariance structures and conditional expectations nec-
+essary for option pricing. In Section 3, we present the pricing methodology for
+energy quanto options, including the derivation of analytical expressions and con-
+siderations for numerical implementation. Section ?? discusses hedging strategies,
+including the computation of the Greeks and the construction of hedging portfolios.
+Finally, Section ?? concludes the paper and suggests directions for future research.
+4              PRICING AND HEDGING OF QUANTOS IN CARMA MODELS
+
+
+      2. Coupled CARMA Models for Renewable Energy Markets
+   In this section, we introduce a coupled CARMA model to capture the dynamics
+of time-dependent variables in renewable energy markets. Specically, we focus on
+the joint behavior of power prices and renewable energy sources such as temper-
+ature, wind speed, or solar irradiation, all of which can be eectively modeled by
+higher-order CARMA processes, as outlined in the introduction. Accurate mod-
+eling of these factors, particularly the covariance structure, is essential for pricing
+and hedging renewable energy quanto options, which depend on both energy prices
+and weather-related variables.
+
+2.1. Notation and Preliminaries. Throughout this paper, we adopt the fol-
+lowing notation. Let N denote the set of natural numbers {1, 2, 3, ▷ ▷ ▷}, and let
+N0 = N ∪ {0} represent the set of non-negative integers. For a complex number
+z = a + ib ∈ C, its real part is denoted by ℜ(z) = a and its imaginary part by
+ℑ(z) = b. For d ∈ N, we let Rd denote the d-dimensional Euclidean space equipped
+with the standard inner product ⟨·, ·⟩, while {e 1 , e2 , ▷ ▷ ▷ , ed } represents the standard
+basis vectors in Rd . We also denote by Rn×m the space of real n × m matrices, and
+by Rn the space of real n-dimensional
+                                    column vectors. The Euclidean norm of a
+                                      d
+vector x ∈ R is dened as ∥x∥ =
+             d                                2
+                                         i=1 xi .
+
+
+2.1.1. Lévy Processes. Let (Ω, F , F, P) be a ltered probability space satisfying the
+usual conditions of completeness and right-continuity. Let {L t }t≥0 be a real-valued
+Lévy process dened on this probability space. Recall that a Lévy process is a
+stochastic process with stationary and independent increments, càdlàg paths, and
+L0 = 0 almost surely.
+   The characteristic function of Lt is given by
+                                        
+                                E eiθLt = etψL (θ) ,
+
+where ψL (θ) is the characteristic exponent, given by the Lévy-Khintchine formula:
+                                    
+                          1 2 2              iθx               
+           ψL (θ) = iθγ − θ σ +              e − 1 − iθx {|x|≤1} ν(dx),        (2)
+                          2           R∩{0}
+
+for θ ∈ R. Here, γ ∈ R is the drift parameter, σ 2 ≥ 0 is the variance of the Gaussian
+component, and ν is a measure on R ∩ {0} satisfying
+                             
+                                     (1 ∧ x2 ) ν(dx) < ∞▷
+                                    R∩{0}
+
+   The measure ν is called the Lévy measure of the process L.
+   We say that a Lévy process L is integrable if E[|Lt |] < ∞ for all t ≥ 0, and
+square-integrable if E[L2t ] < ∞ for all t ≥ 0. For a square-integrable Lévy process
+L, the mean of L1 is denoted by µL and is given by
+                                          
+                               µL = γ +         x ν(dx)▷
+                                              |x|>1
+
+Moreover, the variance of L1 is given by
+                                                 
+                              Var(L1 ) = σ 2 +           x2 ν(dx)▷
+                                                     R
+
+                              (1)
+   For any Lévy process {Lt }t≥0 dened on the positive real line R+ , we can dene
+a two-sided Lévy process {Lt }t∈R by choosing a second independent and identically
+                PRICING AND HEDGING OF QUANTOS IN CARMA MODELS                       5
+
+                                 (2)
+distributed Lévy process {Lt }t≥0 and setting
+                                        
+                                             (1)
+                                            Lt ,      if t ≥ 0,
+                                 Lt =          (2)                                 (3)
+                                            −L−t− ,   if t < 0,
+
+        (2)               (2)
+where Lt− = lims↗t Ls for all t ≥ 0. This construction allows us to dene
+processes over the entire real line.
+Example 2.1 (Normal Inverse Gaussian Process). The Normal Inverse Gaussian
+(NIG) process is a Lévy process dened by the characteristic function:
+                                                            
+              E eiθLt = exp iθµt − δt    α2 − β 2 − α2 − (β + iθ)2 ,
+
+where the parameters α > 0, |β| < α, µ ∈ R, and δ > 0 control the shape of the
+distribution. Here α governs the steepness of the distribution’s tails; β controls the
+asymmetry or skewness of the distribution; δ is a scaling parameter and µ represents
+the drift.
+Example 2.2 (Alpha-Stable Lévy process). The alpha-stable Lévy process is a
+Lévy process with the following characteristic function:
+                                                              πα  
+              E eiθLt = exp t iθγ − σ α |θ|α (1 − iβ sign(θ) tan       ) ,
+                                                                    2
+
+where the parameters satisfy 0 < α ≤ 2, |β| ≤ 1, σ > 0, and γ ∈ R. Here α is
+the stability parameter, controlling the heaviness of the tails (with smaller values
+of α corresponding to heavier tails); β is the skewness parameter, determining the
+asymmetry of the distribution; σ is the scale parameter, controlling the dispersion of
+the process and γ is the drift parameter, governing the location of the distribution.
+   Alpha-stable Lévy processes are known for their ability to model distributions
+with innite variance (for α < 2), which makes them suitable for capturing extreme
+market events, such as price spikes or signicant drops, that may occur in energy
+markets. These processes are also characterized by heavy tails, which are often
+observed in nancial and energy data.
+   In the context of energy markets, alpha-stable Lévy processes can be used to
+model the stochastic dynamics of prices or demand, allowing for the possibility of
+large, infrequent changes in market conditions. This feature makes alpha-stable
+processes particularly useful for modeling renewable energy sources where variabil-
+ity is driven by extreme weather conditions (e.g., wind gusts or sudden changes in
+solar irradiance).
+
+
+2.1.2. Lévy-Driven CARMA(p,q) Processes. To model the joint dynamics of com-
+modity prices and temperature, we employ coupled CARMA processes driven by
+real-valued Lévy processes. This approach captures both the temporal dependencies
+within each variable and the cross-dependencies between them, which are essential
+for accurately pricing and hedging renewable energy quanto options.
+
+Deﬁnition 2.3. A Lévy-driven CARMA(p, q) process, with 0 ≤ q < p, is dened as
+Y (t) = C ⊤ X(t) (output equation), where X(t) ∈ Rp is the solution of the following
+stochastic dierential equation (state equation):
+
+                                dX(t) = AX(t) dt + B dL(t),                        (4)
+6                 PRICING AND HEDGING OF QUANTOS IN CARMA MODELS
+
+
+with
+                                                                         
+                                   0     1        0          ···       0
+                              0         0        1          ···       0 
+                                                                         
+                              ..        .
+                                         ..        ..        ..        ..  ,
+                         A= .                      .           .       .                     (5)
+                                                                         
+                              0         0        0          ···       1 
+                               −ap −ap−1 −ap−2               ···      −a1
+                              
+                               0             
+                              0             b1
+                                           b2 
+                         B =  ...  , C =  .  ,
+                                           
+                                                                                               (6)
+                                           .. 
+                              0
+                                             bp
+                               1
+
+where ai , bj ∈ R are real coeﬃcients with bj ̸= 0 for 1 ≤ j ≤ q + 1 and bj = 0 for
+q + 2 ≤ j ≤ p. Here, {L(t)}t∈R is a real-valued Lévy process. The matrix A is a
+p × p companion matrix containing the coeﬃcients of the autoregressive part, which
+relate to the stationarity and mean-reversion properties of the process.
+
+Remark 2.4. The structure of the matrices and vectors in the CARMA model en-
+sures that the process Y (t) satises the following higher-order stochastic dierential
+equation:
+
+    D p Y (t) + a1 D p−1 Y (t) + · · · + ap Y (t) = b0 D q L(t) + b1 D q−1 L(t) + · · · + bq L(t),
+                                                                                                (7)
+
+          d
+where D =    denotes dierentiation. This equation highlights the autoregressive
+          dt
+(AR) and moving average (MA) components of the CARMA process.
+
+Proposition 2.5. A solution of the state equation is a p-dimensional Ornstein-
+Uhlenbeck process given by the variation-of-constants formula:
+                                    t
+                Xt = e(t−s)A Xs +      e(t−u)A ep dLu , 0 ≤ s < t▷         (8)
+                                            s
+
+Remark 2.6.       • By setting p = 1, we have A = −κ = −a1 . This leads us
+     to the Ornstein-Uhlenbeck (OU) process, which has been widely applied in
+     nance, particularly in option pricing. Therefore, CARMA processes are
+     higher-order generalizations of OU processes:
+
+                                  dX(t) = −κX(t) dt + dL(t)▷
+
+        • A CARMA process can also be represented as the solution of the following
+          stochastic dierential equation (SDE):
+
+                                    a(D)Y (t) = b(D)DL(t),
+
+           where D denotes dierentiation with respect to t, and a(·) and b(·) are
+           polynomials given by
+
+                                a(z) = z p + a1 z p−1 + · · · + ap ,
+                                b(z) = b0 + b1 z + · · · + bq z q ▷
+
+        • We will assume that b = e1 , i.e., b1 = 1 and bj = 0 for j > 1. Furthermore,
+          by setting q = 0, the CARMA(p, q) process becomes a CAR(p) process.
+               PRICING AND HEDGING OF QUANTOS IN CARMA MODELS                          7
+
+
+         Therefore, we can write the CAR(p) process as:
+               
+                    (i)     (i+1)
+               
+               
+                dXt = Xt         dt,             i = 1, 2, ▷ ▷ ▷ , p − 1,
+               
+                            p
+                    (p)               (k)
+                 dXt = −         ak Xt dt + dLt ,
+               
+               
+               
+                            k=1
+               Y (t) = X (1) ▷
+                          t
+
+2.2. Modelling the Spot and Weather with Coupled CARMA Processes.
+To accurately capture the combined dynamics of daily day-ahead electricity log spot
+prices {Xt }t≥0 and daily average temperatures {Tt }t≥0 , we propose a coupled sto-
+chastic model based on higher-order continuous-time autoregressive (CAR(p)) pro-
+cesses. This approach extends the standard Ornstein-Uhlenbeck process (CAR(1))
+to CAR(p) processes, allowing for more complex temporal dependencies and im-
+proved modeling of the observed data.
+    Our model builds upon the Electricity Temperature Model (ETM) described in [?
+], replacing the CAR(1) processes with CAR(p) processes to capture long-memory
+eects and intricate dynamics inherent in energy markets. By considering higher-
+order processes, we aim to provide a more exible and accurate representation of
+the underlying stochastic behaviors.
+    Both the electricity prices and temperatures are assumed to be deseasonalized,
+meaning that deterministic seasonal patterns have been removed from the data.
+This preprocessing step allows us to focus on modeling the stochastic uctuations
+around these seasonal trends.
+
+2.2.1. Temperature Process. We model the deseasonalized temperature process us-
+ing the following state-space representation:
+
+                         
+                         dZTt = AT ZTt dt + ep σT dWtT ,
+                                                                                    (9)
+                         
+                             Tt = b ⊤
+                                    T Zt ,
+                                       T
+
+
+where:
+     • ZTt ∈ Rp is the state vector of the temperature process at time t.
+     • AT ∈ Rp×p is the state-transition matrix governing the dynamics of the
+       temperature process. It is typically structured to reect the coecients of
+       an autoregressive polynomial of order p.
+     • σT > 0 is the volatility parameter of the temperature process.
+     • ep ∈ Rp is the p-th standard basis vector, dened as ep = (0, 0, ▷ ▷ ▷ , 0, 1)⊤ .
+     • WtT is a standard Brownian motion representing the stochastic noise driving
+       the temperature process.
+     • bT ∈ Rp is the output vector mapping the state vector ZTt to the observable
+       temperature Tt .
+   The dynamics of ZTt are inuenced by both the deterministic evolution dictated
+by AT and the stochastic uctuations introduced by the Brownian motion W tT .
+The observable temperature Tt is obtained as a linear combination of the state
+variables, allowing for exibility in capturing the temperature dynamics.
+
+2.2.2. Electricity Log Spot Price Process. The deseasonalized electricity log spot
+price process is modeled using a CAR(p) process that incorporates dependence on
+the temperature process and accounts for jumps through a Lévy process:
+8               PRICING AND HEDGING OF QUANTOS IN CARMA MODELS
+
+
+
+                   
+                      t = AX Zt dt + λσT ep dWt + ep dLt ,
+                   dZX       X               T        X
+
+                                                                                   (10)
+                   
+                       Xt = b⊤
+                             X Zt ,
+                                X
+
+
+where:
+       • ZXt ∈ R is the state vector of the electricity price process at time t.
+                  p
+
+       • AX ∈ Rp×p is the state-transition matrix for the electricity price process.
+       • λ ∈ R is a coupling parameter that introduces dependence between the
+         temperature and electricity price processes.
+       • LXt is a real-valued Lévy process with Normal Inverse Gaussian (NIG) dis-
+         tribution parameters (αX , β X , δ X , µX ), capturing the jump behavior com-
+         monly observed in electricity prices.
+       • bX ∈ Rp is the output vector for the electricity price process.
+  The term λσT ep dWtT introduces dependence between the electricity price and
+temperature processes through the shared Brownian motion WtT . The coupling
+parameter λ controls the strength and direction of this dependence, allowing us to
+model positive or negative correlations between temperature and electricity prices.
+The inclusion of the Lévy process LX  t accounts for sudden spikes and heavy-tailed
+behavior in electricity prices due to market shocks or unexpected events.
+
+2.2.3. Integrated Form of the Model. By applying the variation of constants formula
+to the state equations, we derive the integrated forms of the state processes for all
+s < t:
+
+                            t
+           AT (t−s) T
+                                 eAT (t−u) ep dWuT ,
+    Zt = e         Zs + σT
+    
+    
+      T
+                              s
+                                 t                        t                      (11)
+    
+    
+    
+    ZX = e AX (t−s) X
+                    Z   + λσ        e AX (t−u)
+                                               e   dW T
+                                                        +     eAX (t−u) ep dLX
+      t               s      T                   p    u                      u ▷
+                                  s                        s
+
+    In these expressions:
+       • eAT (t−s) and eAX (t−s) represent the deterministic evolution of the state
+         vectors due to the autoregressive components.
+       • The stochastic integrals capture the cumulative eect of the stochastic in-
+         puts over the interval [s, t].
+       • The shared Brownian motion WtT in both integrals introduces correlation
+         between the temperature and electricity price processes.
+       • The integral with respect to the Lévy process LX t accounts for the jump
+         contributions to the electricity price dynamics, reecting sudden market
+         changes.
+
+Remark 2.7. The coupling parameter λ plays a crucial role in modeling the cor-
+relation between temperature and electricity prices. A positive λ indicates that in-
+creases in temperature are associated with increases in electricity prices, which may
+occur during periods of high demand due to heating or cooling needs. Conversely,
+a negative λ suggests an inverse relationship.
+
+2.3. Covariance of Residuals. Understanding the covariance between the residu-
+als of the temperature and electricity price processes is crucial for accurate modeling
+and risk management in energy markets. In this subsection, we derive expressions
+for the covariance of these residuals within our coupled CAR(p) framework.
+             PRICING AND HEDGING OF QUANTOS IN CARMA MODELS                              9
+
+
+Proposition 2.8. Let Tt = b⊤    T Zt and Xt = bX Zt represent the temperature and
+                                    T             ⊤ X
+
+electricity price processes, respectively. Then, the covariance between Tt and Xt is
+given by
+                                                 T X
+                         Cov(Tt , Xt ) = b⊤T Cov Zt , Zt  bX ▷                  (12)
+Proof. Since Tt and Xt are linear functions of their respective state vectors, we
+have
+                                                       
+                     Cov(Tt , Xt ) = Cov b⊤T Zt , bX Zt
+                                              T    ⊤ X
+                                             T X
+                                      T Cov Zt , Zt
+                                   = b⊤               bX ,
+where we used the linearity of the covariance operator.                                 □
+Remark 2.9. This result highlights that the covariance between the observable pro-
+cesses Tt and Xt depends on the covariance between their state vectors ZTt and ZXt
+and the output vectors bT and bX . Understanding this relationship is essential for
+capturing the co-movement between temperature and electricity prices.
+   Next, we derive an explicit expression for the covariance of the residuals of the
+state vectors over a time increment ∆.
+Proposition 2.10 (Covariance of Residuals). The covariance of the residuals of
+the state vectors over the interval [t, t + ∆] is given by
+                                                        
+             Cov RtT , RtX = λσT2 eAT ∆ D̂T−1X eD̂T X ∆ − I ep e⊤
+                                                                pe
+                                                                    X ∆,
+                                                                   A⊤
+                                                                          (13)
+where
+                               RtT = ZTt+∆ − eAT ∆ ZTt ,                              (14)
+                                              AX ∆ X
+                               RtX = ZX
+                                      t+∆ − e     Zt ,                                (15)
+and the operator D̂T X : Rp×p → Rp×p is dened by
+                        D̂T X (M ) = AT M + M A⊤
+                                               X,           M ∈ Rp×p ▷                (16)
+Proof. From the integrated forms of the state equations (11), we have
+                  t+∆
+        RtT = σT       eAT (t+∆−u) ep dWuT ,
+                    t
+                     t+∆                               t+∆
+        RtX = λσT           eAX (t+∆−u) ep dWuT +              eAX (t+∆−u) ep dLX
+                                                                                u ▷
+                        t                               t
+
+   Since WtT and LXt are independent processes, the covariance between R t and
+                                                                         T
+
+the part of Rt involving dLu is zero. Therefore, we have
+             X             X
+                                          t+∆                      
+               T                                 AX (t+∆−u)
+           Cov Rt , Rt = Cov Rt , λσT
+                      X            T
+                                                 e            ep dWu
+                                                                   T
+                                                   t
+                                      t+∆
+                            = λσT2           eAT (t+∆−u) ep e⊤  AX (t+∆−u)
+                                                                           du▷
+                                                                  ⊤
+                                                             pe
+                                      t
+  Letting τ = t + ∆ − u, the limits of integration become τ ∈ [0, ∆], and we have
+                                          ∆
+                               
+                 Cov RtT , RtX = λσT2        eAT τ ep e⊤
+                                                       pe
+                                                           X τ dτ▷
+                                                          A⊤
+                                               0
+
+  This integral can be expressed using the operator D̂T X by noting that
+                     d  AT τ        
+                              M eAX τ = eAT τ D̂T X (M )eAX τ ▷
+                                  ⊤                       ⊤
+                         e
+                    dτ
+10                PRICING AND HEDGING OF QUANTOS IN CARMA MODELS
+
+
+     Integrating both sides from 0 to ∆, we obtain
+                    ∆
+                       eAT τ D̂T X (M )eAX τ dτ = eAT ∆ M eAX ∆ − M▷
+                                         ⊤                  ⊤
+
+
+                        0
+
+     Therefore,
+                    ∆                                                
+                            eAT τ M eAX τ dτ = D̂T−1X eAT ∆ M eAX ∆ − M ▷
+                                      ⊤                         ⊤
+
+
+                    0
+
+     Applying this result with M = ep e⊤ p , we have
+                                                                    
+              Cov RtT , RtX = λσT2 D̂T−1X eAT ∆ ep e⊤  pe
+                                                            X ∆ − e e⊤
+                                                           A⊤
+                                                                   p p
+                                                              
+                               = λσT2 eAT ∆ D̂T−1X eD̂T X ∆ − I ep e⊤
+                                                                    pe
+                                                                       A⊤X ∆,
+
+
+
+
+where we used the fact that eAT ∆ ep e⊤  AX ∆
+                                              = eD̂T X ∆ ep e⊤
+                                                             p.
+                                                   ⊤
+                                      pe                                             □
+
+Remark 2.11. The operator D̂T X encapsulates the combined dynamics of the tem-
+perature and electricity price state processes. The expression for the covariance of
+the residuals involves the inverse of D̂T X , highlighting the complexity introduced by
+the coupling parameter λ and the matrices AT and AX .
+   Next, we provide a lemma that is useful for calculating expectations involving
+the integral of an exponential matrix.
+Lemma 2.12. Let A ∈ Rp×p be an invertible matrix, Yt be a stochastic process
+with E[Yt ] = µY t, and dene the process
+                                     t
+                              Xt =      eA(t−s) ep dYs ▷                (17)
+                                           0
+
+Then the expectation of Xt is
+                                                        
+                                  E[Xt ] = µY A−1 eAt − I ep ▷                    (18)
+Proof. Since E[dYs ] = µY ds, we have
+                                     t
+                           E[Xt ] =     eA(t−s) ep E[dYs ]
+                                     0
+                                         t
+                                  = µY      eA(t−s) ep ds▷
+                                               0
+
+   Making the substitution τ = t − s, so s = t − τ , and ds = − dτ , we obtain
+                                      t
+                         E[Xt ] = µY      eAτ ep dτ
+                                       0
+                                      t          
+                                = µY       eAτ dτ ep
+                                         0
+                                      −1  At       
+                                = µY A       e − I ep ,
+                             t
+where we used the fact that 0 eAτ dτ = A−1 (eAt − I) due to the invertibility of
+A.                                                                             □
+
+Remark 2.13. The invertibility of A is crucial for the expression of E[Xt ]. In
+a CAR(p) process, the matrix A is a companion matrix whose determinant is
+det(A) = (−1)p ap , where ap ̸= 0 is the leading coeﬃcient of the autoregressive
+polynomial. Therefore, det(A) ̸= 0 and A is invertible.
+              PRICING AND HEDGING OF QUANTOS IN CARMA MODELS                       11
+
+
+2.3.1. Implications for Modeling. The derived expressions for the covariance of
+residuals are instrumental in understanding the joint behavior of the temperature
+and electricity price processes. They provide insights into how the coupling param-
+eter λ and the system matrices AT and AX inuence the covariance structure.
+   In practical applications, these results can be used for parameter estimation and
+model calibration. By matching the theoretical covariances with empirical estimates
+obtained from historical data, we can infer the values of λ, σ T , and the entries of
+AT and AX .
+   Moreover, the covariance expressions are essential for risk management and de-
+rivative pricing. For instance, in the valuation of energy quanto options, under-
+standing the covariance between temperature and electricity prices allows for more
+accurate modeling of the payo distributions and hedging strategies.
+2.3.2. Additional Details on Covariance Calculation. It’s important to note that
+the covariance between the residuals arises solely due to the shared Brownian mo-
+tion WtT and the coupling parameter λ. The Lévy process LX    t , being independent
+of WtT , does not contribute to this covariance.
+   The operator D̂T X plays a central role in encapsulating the interaction between
+the two state processes. Its inverse appears in the covariance expression, reecting
+the intertwined eects of the state dynamics governed by AT and AX .
+12            PRICING AND HEDGING OF QUANTOS IN CARMA MODELS
+
+
+3. Pricing of Energy Quanto Options in the Coupled CARMA Model
+   In this section, we develop a pricing framework for energy quanto options within
+the coupled CARMA model introduced earlier. We consider European-style options
+and derive the option pricing formulas by taking into account the joint dynamics
+of electricity prices and temperature.
+3.1. Option Payoﬀ Structure. Consider a European call option with maturity T
+written on the electricity spot price process {St }t≥0 , where the payo also depends
+on the average temperature process {Tt }t≥0 . The payo at maturity T is dened
+as
+                        Payo = max (ST − K, 0) × f (TT ),                      (19)
+where
+      • K is the strike price.
+      • f (TT ) is a function capturing the temperature dependence, for example,
+         f (TT ) = exp(−ηTT ) for some parameter η ∈ R.
+   This payo structure reects a scenario where the option holder benets from
+both favorable movements in the electricity price and certain temperature con-
+ditions, which is relevant for managing risks associated with weather-dependent
+energy production.
+3.2. Risk-Neutral Valuation Framework. To price the option, we compute the
+expected discounted payo under the risk-neutral measure Q. The option price at
+time t = 0 is given by
+                                                         
+                                                         
+                  V0 = e    E max (ST − K, 0) × f (TT )  F0 ,
+                         −rT Q
+                                                                           (20)
+
+where
+      • V0 is the option price at time t = 0.
+      • r is the risk-free interest rate.
+      • F0 represents the information available at time t = 0.
+   However, since temperature is not a tradable asset, we cannot hedge temperature
+risk perfectly, and thus, the standard risk-neutral valuation may not be directly
+applicable for the temperature component. One common approach is to assume
+that temperature risk is not priced, meaning that the market price of temperature
+risk is zero. This implies that we can work under the real-world measure P for
+the temperature process while using the risk-neutral measure Q for the tradable
+electricity price process.
+3.3. Dynamics Under the Risk-Neutral Measure. Under the risk-neutral
+measure Q, the dynamics of the electricity price process change to reect the ab-
+sence of arbitrage and the inclusion of risk premiums. Assuming that temperature
+risk is not priced, the dynamics of the temperature process remain the same under
+both P and Q. The coupled CARMA model under Q is then given by
+             
+             dZTt = AT ZTt dt + ep σT dWtT ,
+                                                                             (21)
+              S
+                dZt = (AS − ep γS ) ZSt dt + λσT ep dWtT + ep dLS,Q
+                                                                t   ,
+where
+     • ZTt ∈ Rp is the state vector of the temperature process.
+     • ZSt ∈ Rp is the state vector of the electricity price process.
+     • AT , AS ∈ Rp×p are the state-transition matrices for temperature and elec-
+       tricity prices, respectively.
+              PRICING AND HEDGING OF QUANTOS IN CARMA MODELS                        13
+
+
+     • σT > 0 is the volatility parameter for the temperature process.
+     • λ ∈ R is the coupling parameter between the two processes.
+     • WtT is a standard Brownian motion under Q, driving the temperature pro-
+        cess.
+     • LS,Q
+          t   is a Lévy process under Q, representing the jump component in the
+        electricity price dynamics.
+     • γS ∈ R is the market price of risk for the electricity price process, adjusting
+        its drift under Q.
+   Note that the temperature process remains unaected by the change of measure,
+as we assume that temperature risk is not priced. The electricity price process,
+being a tradable asset, adjusts its drift through the risk premium parameter γ S
+under the risk-neutral measure.
+3.4. General Payoﬀ Structures. In some cases, energy quanto options may have
+payo functions involving sums over multiple time periods or combining put and
+call features. For example, consider a quanto option with payo at time t dened
+as
+                                    t2
+                          Payo =       fS (St ) × fT (Tt ),                 (22)
+                                      t=t1
+
+where fS and fT are functions such as
+                                  +                          +
+                 fS (St ) = St − S̄ ,         fT (Tt ) = T̄ − Tt ,               (23)
+with S̄ and T̄ being predetermined thresholds, and (x)+ = max(x, 0).
+   In such cases, the option price becomes
+                                     t                                
+                                       2
+                                                   +          + 
+                  Q(t1 , t2 ) = E Q
+                                            St − S̄      T̄ − Tt     Ft ▷
+                                                                     0          (24)
+                                   t=t1
+
+   Since the temperature is not tradable and cannot be perfectly hedged, we may
+need to adjust our pricing approach. One method is to work under the real-world
+measure P for the temperature component and apply a risk adjustment to account
+for the market price of temperature risk, if any.
+3.5. Pricing Under the Real-World Measure. Assuming that the time horizon
+is relatively short and the appropriate discount rate is uncertain, we can simplify
+the pricing by assuming a unit discount factor (i.e., D(t 0 , t2 ) = 1). The option
+price then becomes
+                                      t                                
+                                        2
+                                                    +          + 
+                   Q(t1 , t2 ) = E P
+                                             St − S̄      T̄ − Tt     Ft ▷
+                                                                      0       (25)
+                                   t=t1
+
+  In this framework, we use the real-world measure P for both processes, acknowl-
+edging that the result may need to be adjusted for risk preferences or calibrated to
+market prices if available.
+3.6. Analytical Pricing of Energy Quanto Options. In this subsection, we
+derive an analytical formula for pricing energy quanto options within the coupled
+CAR(p) model framework. These options have payos that depend on both the
+electricity spot price and the temperature, making the joint modeling of these
+variables essential for accurate valuation.
+   Consider an energy quanto option with payo at time t dened as
+                                   t2
+                                                  +              +
+                         Payo =          St − S̄          T̄ − Tt        ,      (26)
+                                   t=t1
+14             PRICING AND HEDGING OF QUANTOS IN CARMA MODELS
+
+
+where (x)+ = max(x, 0), S̄ and T̄ are predetermined thresholds, and St and Tt are
+the electricity spot price and temperature at time t, respectively.
+   Our goal is to compute the price of this option, given by
+                                    t                                
+                                      2
+                                                  +          + 
+                   Q(t1 , t2 ) = E         St − S̄      T̄ − Tt     Ft ,
+                                                                    0       (27)
+                                  t=t1
+
+where Ft0 represents the information available at the initial time t 0 .
+Theorem 3.1 (Quanto pricing formula).
+                  t2
+                                                    
+                  
+    Q(t1 , t2 ) =      Eλ=0 [(St − S̄)+ |Ft0 ] × e1 ′ µΦ(−Σ−1◁2 µ)
+                   t=t1
+                                                     
+                     Σ1◁2 e        1 −1◁2 ⊺ −1◁2
+                   +         exp − (Σ    µ) (Σ    µ)
+                      (2π)p        2
+                                                                
+                                     +
+                                          
+                   + Eλ=0 (St+∆ − S̄) |Ft0 + S̄P(St+∆ ≥ S̄|Ft0 )
+                                                                        
+                   × e′1 KXT (∆)KT−1 (∆)Σ1◁2 e Tr (Σ1◁2 )Φ(−Σ−1◁2 µ)λ       + o(λ)
+                                                                            ⊺
+Where µ = T̄ e1 − e∆AT ZTt and Σ = σT2 e∆AT D̂T−1 exp(D̂T ∆) − I ep e′p e∆AT .
+Φ is the cumulative
+                   distribution function of the multivariate normal distribution
+                                  ⊺
+N (0, Id) and e := 1 1 · · · 1 .
+Proof. [S: I have to revise the proof still. But look at page 27 for a way to get away
+of computing the multiple integral. Check if this holds.]
+   We aim to compute the rst-order Taylor expansion of the expectation
+                                                         
+                                          +            +
+                                                         
+                          E (St+∆ − S̄) (T̄ − Tt+∆ ) Ft                           (28)
+
+with respect to λ at λ = 0.
+   Using the Taylor expansion, we have
+                                                              
+              +
+                             
+                            +                     +
+                                                                 
+                                                                +
+E (St+∆ − S̄) (T̄ − Tt+∆ ) Ft = Eλ=0 (St+∆ − S̄) (T̄ − Tt+∆ ) Ft
+                                                                     
+                                       ∂               +
+                                                                     
+                                                                    +
+                                                                          
+                                   +λ     E (St+∆ − S̄) (T̄ − Tt+∆ ) Ft      + o(λ)▷
+                                       ∂λ                                   λ=0
+                                                                             (29)
+  When λ = 0, the spot price St+∆ and temperature Tt+∆ are independent, so
+                                                                     
+                +
+                              
+                             +
+                                                      
+                                                     +
+                                                                           
+                                                                          +
+Eλ=0 (St+∆ − S̄) (T̄ − Tt+∆ ) Ft = Eλ=0 (St+∆ − S̄) Ft · E (T̄ − Tt+∆ ) Ft ▷
+                                                                                     (30)
+                                         
+                                         
+     Step 1: Compute E (T̄ − Tt+∆ )+ Ft
+     Recall that the temperature process is given by
+                                  Tt+∆ = b⊺T ZTt+∆ ,
+where ZTt+∆ is the state vector of the temperature process.
+   Dene
+                                 X = T̄ e1 − ZTt+∆ ,
+so that
+                                 T̄ − Tt+∆ = b⊺T X▷
+               PRICING AND HEDGING OF QUANTOS IN CARMA MODELS                       15
+
+
+  Under Ft , the conditional distribution of X is multivariate normal:
+                                   
+                                 XFt ∼ N (µ, Σ),
+where
+                  µ = T̄ e1 − e∆AT ZTt ,                                        (31)
+                                                         
+                                   ∆
+                        2 ∆AT                    ⊺ −sA⊺         ⊺
+                  Σ = σT e            e −sAT
+                                             ep ep e  T ds   e∆AT ▷             (32)
+                                  0
+
+  Let Y = b⊺T X. Then Y is normally distributed with mean
+                                      µY = b⊺T µ
+and variance
+                                   σY2 = b⊺T ΣbT ▷
+  Therefore,
+                                                         
+                                               µY            µY
+    E (T̄ − Tt+∆ )+ Ft = E (Y )+ Ft = µY Φ        + σY ϕ        ,           (33)
+                                                 σY            σY
+where Φ and ϕ are the cumulative distribution function and probability density
+function of the standard normal distribution, respectively.
+   Step 2: Compute the Derivative of the Expectation with Respect to
+λ
+   The covariance between St+∆ and Tt+∆ , to rst order in λ, is given by
+                                
+                                
+               Cov St+∆ , Tt+∆ Ft = λ · Covariance Term + o(λ)▷
+
+   Since St+∆ depends on WtT through the term λσT ep dWtT , the covariance can
+be computed using Itô’s isometry.
+   Dene the residuals:
+                                     t+∆
+
+                ∆A             ∆A
+XT = Zt+∆ − e        Zt = σT e            e−(u−t)AT ep dWuT ,
+         T         T   T          T
+
+                                       t
+                                   t+∆
+              ∆AX X           ∆AX
+XS = ZX
+
+       t+∆ − e    Z t = λσ T e           e−(u−t)AX ep dWuT + independent terms▷
+                                           t
+  The covariance between XT and XS is
+                                                        
+                                     ∆
+                             2 ∆AT                 ⊺ −sA⊺         ⊺
+       Cov XT , XS Ft = λσT e
+                                       e −sAT
+                                               ep ep e  X ds   e∆AX ▷
+                                               0
+
+  Therefore, the covariance between Tt+∆ and St+∆ is
+                                                                 
+                                          ∆
+                                                                 ⊺         ⊺
+                              2  ⊺ ∆A
+  Cov Tt+∆ , St+∆ Ft = λσT bT e     T
+                                             e −sA T     ⊺
+                                                     ep ep e −sA X ds   e∆AX bX ▷
+                                                   0
+
+   Step 3: Compute the Covariance of the Payoﬀs
+   Using the properties of jointly normally distributed variables and the fact that
+the payos are functions of (St+∆ − S̄)+ and (T̄ − Tt+∆ )+ , we can compute the
+covariance term.
+   Let XS = St+∆ and XT = Tt+∆ .
+   Dene the standardized variables:
+                               
+                                      X − µS
+                                ZS = S           ,
+                                          σS
+                                      X    − µ
+                                ZT = T         T
+                                                   ,
+                                           σT
+16              PRICING AND HEDGING OF QUANTOS IN CARMA MODELS
+
+
+where µS , µT , σS , and σT are the means and standard deviations of St+∆ and
+Tt+∆ , respectively.
+   The correlation coecient is
+                                 Cov(XS , XT )
+                            ρ=                  = λ · ρ1 ,
+                                     σS σT
+where ρ1 is the derivative of the correlation coecient at λ = 0.
+   The covariance of the payos is then given by
+                                                 
+                                  +
+                                                 
+                                                +
+                Cov (St+∆ − S̄) , (T̄ − Tt+∆ ) Ft = σS σT ρ · Θ,
+
+where Θ is a function involving the bivariate normal cumulative distribution func-
+tion.
+   To rst order in λ, we can write
+                                        
+                         +            +
+                                        
+       Cov (St+∆ − S̄) , (T̄ − Tt+∆ ) Ft = λ · Covariance Term + o(λ)▷
+                                       
+                                       
+   Step 1: Compute E (T̄ − Tt+∆ )+ Ft
+     We have                                           
+                                 +
+                                               ⊺ T   + 
+                    E (T̄ − Tt+∆ ) Ft = E T̄ − bT Zt+∆ Ft ▷
+     Let us dene
+                                   X = T̄ e1 − ZTt+∆ ,
+so that
+                                   T̄ − Tt+∆ = b⊺T X▷
+     Under Ft , the conditional distribution of X is multivariate normal:
+                                      
+                                    XFt ∼ N (µ, Σ),
+where
+                      µ = T̄ e1 − e∆AT ZTt ,                                   (34)
+                                                          ⊺
+                      Σ = σT2 e∆AT D̂T−1 eD̂T ∆ − I ep e⊺p e∆AT ▷              (35)
+     We can write
+                                   X = µ + Σ1◁2 Z,
+where Z ∼ N (0, I)
+                  under Ft .  
+                               
+   To compute E (T̄ − Tt+∆ )+ Ft , we consider the expectation of a function of a
+linear combination of Gaussian variables. Specically,
+                                                
+                              
+                             +             ⊺   + 
+               E (T̄ − Tt+∆ ) Ft = E (bT X) Ft                               (36)
+                                                           
+                                                          +   
+                                    = E b⊺T (µ + Σ1◁2 Z) Ft ▷                (37)
+
+   Let Y = b⊺T (µ + Σ1◁2 Z), which is a scalar normally distributed random variable
+with mean µY = b⊺T µ and variance σY2 = b⊺T ΣbT .
+   Using the standard result for the expected positive part of a normal variable, we
+have
+                                          
+                                               
+                E (T̄ − Tt+∆ ) Ft = E Y + Ft
+                               +
+                                                                                (38)
+                                                               
+                                                 µY            µY
+                                      = µY Φ          + σY ϕ        ,           (39)
+                                                 σY            σY
+               PRICING AND HEDGING OF QUANTOS IN CARMA MODELS                          17
+
+
+where Φ and ϕ are the cumulative distribution function and probability density
+function of the standard normal distribution, respectively.
+   Step 2: Compute the Derivative of the Expectation with Respect to
+λ at λ = 0
+   We are interested in
+                                                      
+                      d                                   
+                        E (St+∆ − S̄)+ (T̄ − Tt+∆ )+ Ft      ▷        (40)
+                     dλ                                      λ=0
+   Using the product rule and the fact that at λ = 0, St+∆ and Tt+∆ are indepen-
+dent, we have
+                                                                                    
+ d                                              d                                     
+   E (St+∆ − S̄)+ (T̄ − Tt+∆ )+ Ft      =E      (St+∆ − S̄)+      · (T̄ − Tt+∆ )+ Ft ▷
+dλ                                      λ=0      dλ                 λ=0
+                                                                                   (41)
+Remark 3.2. Since Tt+∆ does not depend on λ, its distribution remains the same
+when taking the derivative at λ = 0.
+   We proceed to compute the derivative of (St+∆ − S̄)+ with respect to λ at λ = 0.
+   Recall that St+∆ = eXt+∆ , where Xt+∆ = b⊺X ZX  t+∆ .
+   At λ = 0, the process ZX
+                          t+∆ does   not depend on WuT (since λ multiplies the term
+involving Wu ). Therefore, the derivative is
+            T
+                                                     
+                        d                d  ⊺ X 
+                          Xt+∆      =      bX Zt+∆                           (42)
+                       dλ         λ=0    dλ             λ=0
+                                                         
+                                          ⊺    d X 
+                                      = bX      Z            ▷                  (43)
+                                              dλ t+∆ λ=0
+  From the dynamics of ZX t+∆ , we have
+                              t+∆
+         ∆AX X           ∆AX
+ZX
+ t+∆ = e    Z t + λσ T e            e−(u−t)AX ep dWuT + terms independent of λ▷
+                                  t
+                                                                                    (44)
+  Thus,
+                                         t+∆
+                  d X 
+                    Zt+∆      = σT e∆AX       e−(u−t)AX ep dWuT ▷                  (45)
+                 dλ        λ=0            t
+  Therefore,
+                                        t+∆                    
+              d                ⊺     ∆A
+                Xt+∆      = b X σT e X       e −(u−t)A X
+                                                           ep dWu ▷
+                                                                T
+                                                                                    (46)
+             dλ         λ=0               t
+
+  Using the chain rule for the positive part function, we have
+                                                              
+               d                                      d       
+                 (St+∆ − S̄)+     = St+∆ >S̄ eXt+∆     Xt+∆          ▷          (47)
+              dλ                  λ=0                 dλ           λ=0
+   Computing the Derivative of the Expected Payoﬀ
+   Now, the derivative becomes
+                                                                                                
+ d                                                           d                                    
+   E (St+∆ − S̄)+ (T̄ − Tt+∆ )+ Ft  = Eλ=0 St+∆ >S̄ eXt+∆    Xt+∆               (T̄ − Tt+∆ )+ Ft ▷
+dλ                                      λ=0                   dλ                λ=0
+                                                                                    (48)
+  Since at λ = 0, St+∆ and Tt+∆ are independent, we can write
+                                                              
+                                           +
+                                                                   
+                      Ft = Eλ=0 (St+∆ − S̄) Ft + S̄Pλ=0 St+∆ > S̄ Ft ▷
+                 Xt+∆                                              
+ Eλ=0 St+∆ >S̄ e
+                                                                                    (49)
+18                PRICING AND HEDGING OF QUANTOS IN CARMA MODELS
+
+
+   Therefore,
+                                                                           
+ d              +
+                              
+                             +
+                                                            
+                                                            +
+                                                                                   
+   E (St+∆ − S̄) (T̄ − Tt+∆ ) Ft 
+                                       = Eλ=0 (St+∆ − S̄) Ft + S̄Pλ=0 St+∆ > S̄ Ft
+dλ                                  λ=0
+                                                                           
+                                                   d                       
+                                                                           +
+                                         × Eλ=0           
+                                                     Xt+∆     (T̄ − Tt+∆ ) Ft ▷
+                                                  dλ                    λ=0
+                                                                                       (50)
+  Computing the Second Expectation
+  We need to compute
+                                               t+∆                                      
+        d                        
+                                 +         ⊺ ∆AX
+                                                                                             
+                                                                                            +
+Eλ=0           
+          Xt+∆      (T̄ − Tt+∆ ) Ft = σT bX e         e −(u−t)AX
+                                                                   ep du · Eλ=0 (T̄ − Tt+∆ ) Ft ,
+       dλ        λ=0                               t
+                                                                             (51)
+but this is incorrect because the integral involves dW uT , and (T̄ − Tt+∆ )+ is a
+function of WuT .
+   We need to consider the joint distribution of
+                                                    
+                              d       
+                                Xt+∆     , T̄ − Tt+∆ ▷
+                             dλ               λ=0
+  Using the Joint Normality 
+                    d
+  At λ = 0, both dλ   Xt+∆ λ=0 and T̄ − Tt+∆ are linear functions of the same
+Brownian motion WuT . Therefore, their joint distribution is bivariate normal.
+  Let us dene
+                                             t+∆
+                 d                 ⊺ ∆AX
+           U=           
+                   Xt+∆      = σT bX e             e−(u−t)AX ep dWuT ,        (52)
+                dλ        λ=0                  t
+                                             
+           V = T̄ − Tt+∆ = b⊺T T̄ e1 − ZTt+∆ ▷                                 (53)
+     Both U and V are normally distributed with zero means and a certain covariance.
+     We can compute
+                                                               
+                                       t+∆
+                                                                    ⊺             ⊺
+     Cov(U, V ) = σT2 b⊺X e∆AX               e−(u−t)AX ep e⊺p e−(u−t)AT du e∆AT bT ▷   (54)
+                                   t
+
+     Dene the covariance matrix
+                                                                  ⊺
+                    KXT (∆) = σT2 e∆AX D̂XT
+                                         −1
+                                              eD̂XT ∆ − I ep e⊺p e∆AT ▷
+     Therefore,
+                             Cov(U, V ) = b⊺X KXT (∆)bT ▷
+     Similarly, compute the variances
+                    Var(U ) = σT2 b⊺X KX (∆)bX ,       Var(V ) = b⊺T ΣbT ▷
+     Computing the Expectation
+     Since U and V are jointly normal, we can write
+                        
+                        
+                       +                                          1
+             E U · (V ) Ft = Cov(U, V ) · ϕ (0) = Cov(U, V ) · √     ,                (55)
+                                                                  2πσ         V
+assuming that V has zero mean (we may need to adjust if V has non-zero mean).
+   However, since V has mean µV = b⊺T µ, we need to consider the more general
+expression.
+   The expected value is
+                                                          
+                       
+                      +                      µV               
+                                                              +
+            E U · (V ) Ft = Cov(U, V ) · ϕ        + µU E (V ) Ft ,     (56)
+                                              σV
+where µU = 0.
+              PRICING AND HEDGING OF QUANTOS IN CARMA MODELS                      19
+
+
+   Since µU = 0, the second term vanishes.
+   Thus, the derivative of the expectation is
+                                                                                  
+ d                                                                                     
+    E (St+∆ − S̄)+ (T̄ − Tt+∆ )+ Ft      = Eλ=0 (St+∆ − S̄)+ Ft + S̄Pλ=0 St+∆ > S̄ Ft
+dλ                                       λ=0
+                                                                 
+                                                Cov(U, V )     µV
+                                              ×            ϕ        ▷         (57)
+                                                   σV          σV
+  Final Expression
+  Putting everything together, we have
+                      t2
+                                                          
+                                                            
+                                         +                  +
+        Q(t1 , t2 ) =      Eλ=0 (St − S̄) Ft0 · E (T̄ − Tt ) Ft0
+                    t=t1
+                                                          
+                                           +
+                                                              
+                    + λ Eλ=0 (St − S̄) Ft0 + S̄Pλ=0 St > S̄ Ft0
+                                       
+                      Cov(U, V )     µV
+                    ×            ϕ         + o(λ)▷                             (58)
+                         σV          σV
+                                                                                  □
+
+  Now, we aim to compute
+                                                            
+                                                       
+                                                        
+                           E   b⊺X σT X · (T̄ − Tt+∆ )+ Ft       ,            (59)
+                                                       
+
+where Tt+∆ = b⊺T ZTt+∆ .
+  Using the law of total expectation and the properties of conditional expectations,
+we have
+                                         
+                                         
+                    ⊺                    
+               E bX σT X · (T̄ − Tt+∆ )+ Ft
+                                         
+                                                
+                                                    
+                           ⊺                  +     
+               = E E bX σT X · (T̄ − Tt+∆ ) Y Ft
+                                                    
+                                                   
+                                                
+                                                  
+               = E b⊺X σT E XY · (T̄ − Tt+∆ )+ Ft
+                                                   
+                                                              
+                                                              
+                    ⊺                                        +
+               = bX σT KXT (∆)KT (∆)E Y · (T̄ − Tt+∆ ) Ft ▷
+                                    −1
+                                                                                (60)
+                                                              
+  Note that Y is related to Tt+∆ via
+                                                  
+                         Tt+∆ = b⊺T e∆AT ZTt + σT Y ▷                          (61)
+  Dene
+                  µ = T̄ − b⊺T e∆AT ZTt ,                                      (62)
+                                                            ⊺
+                 ΣT = σT2 b⊺T e∆AT D̂T−1 eD̂T ∆ − I ep e⊺p e∆AT bT ▷           (63)
+
+  Then,
+                               T̄ − Tt+∆ = µ − σT b⊺T Y▷                       (64)
+  Let V   = T̄ − Tt+∆ = µ − σT b⊺T Y and U = b⊺Y Y, where
+                           bY = σT KT−1 (∆)⊺ KXT (∆)⊺ bX ▷                     (65)
+20             PRICING AND HEDGING OF QUANTOS IN CARMA MODELS
+
+
+     Our expectation becomes
+                                              
+                                              
+                                    E U · V + Ft ▷                           (66)
+   Since U and V are linear functions of the same Gaussian vector Y, they are
+jointly normally distributed. We can compute their covariance and variances:
+                               Var(U ) = b⊺Y KT (∆)bY ,                       (67)
+                            Var(V ) = σT2 b⊺T KT (∆)bT ,                      (68)
+                          Cov(U, V ) = −σT b⊺Y KT (∆)bT ▷                     (69)
+   The negative sign in the covariance arises from the minus sign in the expression
+for V .
+   We can standardize U and V :
+                          U           
+                     Ũ =    , σU = Var(U ),                                   (70)
+                          σU
+                          V − µV                      
+                     Ṽ =         , µV = µ, σV = Var(V )▷                      (71)
+                            σV
+   The correlation coecient is
+                                       Cov(U, V )
+                                   ρ=             ▷                            (72)
+                                          σU σV
+   Therefore, the expectation can be expressed as
+                                                              
+                                    µV        µV 2             µV
+           E U · V + = σU σV ρϕ             +       ρ +ρ Φ −            ,      (73)
+                                      σV        σV               σV
+where ϕ and Φ are the standard normal PDF and CDF, respectively.
+   Given that µU = E[U ] = 0, the expression simplies, and we obtain
+                                                         
+                                                     µV
+                         E U · V + = − Cov(U, V )ϕ          ▷                  (74)
+                                                       σV
+   Substituting back, we have
+                                                               
+                                                               µV
+                   ⊺                   +
+               E bX σT X · (T̄ − Tt+∆ ) Ft = − Cov(U, V )ϕ          ▷         (75)
+                                                               σV
+     Therefore, the nal expression is
+                                                                  
+                                                                  µ
+                               +
+      E bX σT X · (T̄ − Tt+∆ ) Ft = σT2 b⊺X KXT (∆)KT−1 (∆)bT ϕ
+           ⊺
+                                                                        ▷     (76)
+                                                                  σV
+              PRICING AND HEDGING OF QUANTOS IN CARMA MODELS                        21
+
+
+4. Hedging of Energy Quanto Options in the coupled CARMA Model
+   Eective hedging requires calculating the sensitivities of the option price to var-
+ious risk factors, commonly known as the Greeks.
+
+4.0.1. Delta Hedging. The Delta of the option with respect to the electricity price
+Xt is given by:
+                                               ∂V0
+                                     ∆X =          ▷                             (77)
+                                               ∂X0
+  Similarly, the Delta with respect to the temperature T t is:
+                                                ∂V0
+                                     ∆T =           ▷                            (78)
+                                                ∂T0
+   These can be computed numerically using nite dierence methods or by dier-
+entiating the pricing formula if analytical expressions are available.
+
+4.0.2. Gamma and Vega. Higher-order Greeks such as Gamma and Vega provide
+insights into the curvature of the option price with respect to underlying variables
+and volatility, respectively:
+                                   ∂ 2 V0                   ∂V0
+                            ΓX =          ,    Vega =           ▷                (79)
+                                   ∂X02                     ∂σX
+
+4.0.3. Hedging Portfolio Construction. By combining positions in the underlying
+assets and possibly other derivatives, we can construct a hedging portfolio that
+minimizes the risk associated with movements in Xt and Tt .
+
+
+   Appendix A. Linear State-Space Models and CARMA Processes
+   In this section, we consider linear state-space models where the state and output
+processes take values in R. Let p ∈ N, and let (Ω, F , F, P) be a ltered probability
+space satisfying the usual conditions. We assume that this space is rich enough to
+support a real-valued two-sided Lévy process L = (Lt )t∈R with nite moments as
+needed.
+
+Deﬁnition A.1. Let the tuple (A, B, C, L) consist of:
+     • A state-transition matrix A ∈ Rp×p , dened by
+                                                        
+                           −a1 −a2 · · · −ap−1 −ap
+                          1      0   ···      0      0 
+                                                        
+                          0      1            0      0 
+                    A=               ···                ,
+                          ..     ..  ..       ..     .. 
+                          .       .     .      .      . 
+                              0      0        ···       1           0
+       where ai ∈ R are scalar coeﬃcients.
+     • An input vector B ∈ Rp , dened by
+                                       
+                                        b0
+                                      0
+                                       
+                                  B =  . ,
+                                       .. 
+                                                0
+        where b0 ∈ R is a scalar coeﬃcient.
+22              PRICING AND HEDGING OF QUANTOS IN CARMA MODELS
+
+
+        • An output vector C ∈ Rp , dened by
+                                         
+                                          c1
+                                         c2 
+                                         
+                                    C =  . ,
+                                         .. 
+                                          cp
+        where ci ∈ R are scalar coeﬃcients.
+     • A real-valued two-sided Lévy process L = (Lt )t∈R .
+  A continuous-time linear state-space model associated with the parameter set
+(A, B, C, L) consists of:
+     • A state equation:
+                                dZt = AZt dt + B dLt ,               t ∈ R,       (80)
+          where Zt ∈ R is the state vector.
+                          p
+
+        • An output equation:
+                                        Xt = C ⊤ Zt ,        t ∈ R,               (81)
+        where Xt ∈ R is the output process.
+   We refer to (Zt )t∈R as the state process and (Xt )t∈R as the output process of
+the continuous-time linear state-space model associated with (A, B, C, L).
+Remark A.2. In this setup, the matrices A, B, and C are dened to ensure dimen-
+sional consistency. The coeﬃcients ai , b0 , and ci are real numbers that determine
+the dynamics of the system. The state vector Zt is an element of Rp , representing
+the internal state of the system at time t.
+     The state equation (80) can be written component-wise as
+                                                       
+                  (1)          (1)     (2)          (p)
+               dZt = −a1 Zt − a2 Zt − · · · − ap Zt       dt + b0 dLt ,
+                   (i)        (i−1)
+                dZt      = Zt         dt,    for i = 2, ▷ ▷ ▷ , p▷
+     The solution to the state equation is given by the variation-of-constants formula:
+                                       t
+                   Zt = eA(t−s) Zs +      eA(t−u) B dLu , s < t ∈ R▷               (82)
+                                                 s
+Remark A.3. The matrix exponential eAt is dened via the usual exponential se-
+ries expansion for matrices. Since A is a nite-dimensional matrix, this exponential
+is well-dened and can be computed using standard methods.
+Deﬁnition A.4. We call a continuous-time state-space model associated with (A, B, C, L)
+stable if all eigenvalues of A have negative real parts. This ensures that the homo-
+geneous solution decays to zero over time. If, in addition, L has nite logarithmic
+moments (i.e., E [log |L1 |] < ∞), then there exists a unique stationary solution to
+(80) given by
+                                 t
+                          Zt =      eA(t−s) B dLs , t ∈ R▷                       (83)
+                                            −∞
+In this case, we refer to (Zt )t∈R as the stable state process and (Xt )t∈R as the
+stable output process. If A has eigenvalues with non-negative real parts, we call
+the state-space model unstable, and solutions may not converge to a stationary
+process without additional conditions.
+Remark A.5. The condition on the eigenvalues of A ensures exponential stability
+of the deterministic part of the state equation. The existence of a stationary solution
+in the stable case follows from standard results in stochastic dierential equations
+driven by Lévy processes (see [? ? ]).
+               PRICING AND HEDGING OF QUANTOS IN CARMA MODELS                             23
+
+
+Remark A.6. When p = 1, our denition coincides with the standard continuous-
+time state-space models for scalar Ornstein-Uhlenbeck processes. In this case, the
+state equation simplies to
+                                dZt = −a1 Zt dt + b0 dLt ,
+and the output process is simply Xt = c1 Zt .
+
+A.1. CARMA Processes. Continuous-time autoregressive moving average (CARMA)
+processes extend the concept of ARMA processes to continuous time. They can be
+represented using the state-space framework described above.
+   A CARMA process of order (p, q), with p > q, is dened as the output process
+{Xt }t∈R of a state-space model where the state equation corresponds to a system
+whose characteristic polynomial matches that of the desired CARMA process.
+   The CARMA process satises a higher-order stochastic dierential equation:
+     D p Xt + a1 D p−1 Xt + · · · + ap Xt = b0 D q Lt + b1 D q−1 Lt + · · · + bq Lt ,   (84)
+             d
+where D =       denotes dierentiation, ai and bj are real coecients, and Lt is a
+             dt
+real-valued Lévy process.
+   The correspondence between the state-space representation and the higher-order
+SDE allows us to utilize the powerful machinery of state-space models to analyze
+and simulate CARMA processes.
+
+Remark A.7. The use of higher-order CARMA processes enables modeling of time
+series with complex dependencies and autocorrelation structures, which are common
+in applications such as nance and engineering.
+
+  Given a state process {Zt }t∈R , we now shift our focus to the output process
+{Xt }t∈R dened by:
+
+                                   Xt = C ⊤ Zt ,    t ∈ R▷                              (85)
+   In the next proposition, we summarize some well-known and fundamental prop-
+erties of the output process {Xt }t∈R .
+
+Proposition A.8. Let (A, B, C, L) be as in Denition A.1, and let ψL be the
+characteristic exponent of the Lévy process L. Then, the output process {Xt }t∈R
+dened by equation (85) satises the following properties:
+   (1) Variation of Constants Formula: For any s < t ∈ R,
+                                        t
+                 Xt = C ⊤ eA(t−s) Zs +     C ⊤ eA(t−u) B dLu ▷                          (86)
+                                                s
+
+   (2) Conditional Characteristic Function: For every θ ∈ R and Fs , the
+       conditional characteristic function of Xt given Fs is
+                                         t                  
+              
+         iθXt 
+     E e      Fs = exp iθC e
+                             ⊤ A(t−s)
+                                       Zs +     ψL θC e⊤ A(t−u)
+                                                                B du ▷ (87)
+                                                    s
+
+   (3) Conditional Mean: If L is integrable (i.e., E[|L1 |] < ∞), then the con-
+       ditional mean of Xt is nite and given by
+                                              t
+                    
+               E[Xt Fs ] = C ⊤ eA(t−s) Zs +     C ⊤ eA(t−u) B µL du,      (88)
+                                                    s
+
+        where µL = E[L1 ] is the mean of the Lévy process L.
+24               PRICING AND HEDGING OF QUANTOS IN CARMA MODELS
+
+
+     (4) Stationary Case: If L has nite logarithmic moments (i.e., E[log |L 1 |] <
+         ∞), and the output process {Xt }t∈R is stable (i.e., all eigenvalues of A have
+         negative real parts), then {Xt }t∈R is stationary and given by
+                                t
+                        Xt =        C ⊤ eA(t−u) B dLu , t ∈ R▷                     (89)
+                                 −∞
+
+            Moreover, if L is integrable, then the mean of Xt is constant (independent
+         of t) and given by
+                             E[Xt ] = −C ⊤ A−1 B µL ,             t ∈ R▷              (90)
+Proof. We provide brief explanations for each part.
+   (1) Variation of Constants: The expression for Xt follows directly from
+       substituting the solution of the state equation for Z t into Xt = C ⊤ Zt , and
+       applying the variation-of-constants formula for Zt :
+                                           t
+                       Zt = eA(t−s) Zs +      eA(t−u) B dLu ▷
+                                                  s
+         Thus,
+                                                           t
+                  Xt = C Zt = C e
+                         ⊤         ⊤ A(t−s)
+                                              Zs +              C ⊤ eA(t−u) B dLu ▷
+                                                           s
+     (2) Conditional Characteristic Function: Using the independence of Lévy
+         increments and linearity, we have
+                                               t                      
+                   
+              iθXt         iθC ⊤ eA(t−s) Zs       iθ  C ⊤ eA(t−u) B dLu 
+          E e      F s = e                  ·E e s                       F s
+                                                    t                        
+                                          Zs
+                        = eiθC e             · exp      ψL θC ⊤ eA(t−u) B du ,
+                                ⊤ A(t−s)
+
+
+                                                          s
+         where we have utilized the fact that the characteristic function of a sto-
+         chastic integral with respect to L involves the Lévy exponent ψ L applied
+         to the integrand.
+     (3) Conditional Mean: If L is integrable, we compute the conditional mean
+         by taking expectations inside the integral:
+                                                t
+                      
+                 E[Xt Fs ] = C ⊤ eA(t−s) Zs +     C ⊤ eA(t−u) B E[dLu ]
+                                                s
+                                                t
+                            = C ⊤ eA(t−s) Zs +     C ⊤ eA(t−u) B µL du▷
+                                                      s
+     (4) Stationary Case: For a stable system, the solution converges to the sta-
+         tionary solution:
+                                 t
+                           Xt =     C ⊤ eA(t−u) B dLu ▷
+                                        −∞
+         The mean of Xt is then
+                                         t
+                             E[Xt ] =    C ⊤ eA(t−u) B µL du
+                                      −∞
+                                         ∞          
+                                   = C⊤       eAv dv B µL
+                                              0
+                                   = −C ⊤ A−1 B µL ,
+         since the integral of eAv from 0 to ∞ equals −A−1 when A is stable.
+                                                                                        □
+              PRICING AND HEDGING OF QUANTOS IN CARMA MODELS                                     25
+
+
+                          Appendix B. Proof of Theorem 3.1
+Lemma B.1. Let X be a normally distributed random variable with mean µ and
+standard deviation σ. Then, the expected positive part of X is given by
+                                       µ        µ
+                          E[X + ] = µΦ       + σϕ      ,                    (91)
+                                         σ          σ
+where Φ is the cumulative distribution function and ϕ is the probability density
+function of the standard normal distribution.
+Proof. The expected positive part is
+                            ∞                          
+                     +                1         (x − µ)2
+                 E[X ] =        x · √ exp −                dx                                  (92)
+                            0       σ 2π          2σ 2
+                              µ         µ
+                        = µΦ         + σϕ     ▷                                                (93)
+                                σ          σ
+                                                                                                 □
+Lemma B.2. Let X and Y be jointly normally distributed with means µX , µY ,
+standard deviations σX , σY , and correlation coeﬃcient ρ. Then, the covariance of
+the positive parts is given by
+                                         
+                             Cov X + , Y + = σX σY ρ · Θ,                     (94)
+where Θ is a function depending on µX , µY , σX , σY , and ρ.
+Proof. The covariance can be computed using the properties of the bivariate normal
+distribution and involves evaluating integrals of the form
+                    ∞ ∞
+                            (x − µX )(y − µY )fX,Y (x, y) dx dy,
+                          0     0
+where fX,Y (x, y) is the joint probability density function of X and Y .                         □
+Remark B.3. The function Θ can be expressed in terms of the cumulative distri-
+bution function of the bivariate normal distribution, which can be evaluated numer-
+ically.
+Proposition B.4. The joint distribution of the random vectors
+                                                                                       
+                    t+∆                                   t+∆
+                              (t+∆−u)AX                             (t+∆−u)AT
+                          e               ep dWuT ,             e               ep dWuT
+                t                                     t
+
+is a zero-mean multivariate normal distribution with covariance matrix
+                                                      
+                                   KX (∆) KXT (∆)
+                         K(∆) =     ⊺                    ,
+                                   KXT  (∆) KT (∆)
+where
+                                                                   ⊺
+                     KX (∆) = σT2 e∆AX D̂X−1
+                                               eD̂X ∆ − I ep e⊺p e∆AX ,                        (95)
+                                                                   ⊺
+                     KT (∆) = σT2 e∆AT D̂T−1 eD̂T ∆ − I ep e⊺p e∆AT ,                          (96)
+                                                                     ⊺
+                    KXT (∆) = σT2 e∆AX D̂XT
+                                          −1
+                                                eD̂XT ∆ − I ep e⊺p e∆AT ▷                      (97)
+
+   The linear operators D̂X , D̂T , and D̂XT are dened on Mp , the space of p × p
+real matrices, by
+                                     D̂X (M ) = AX M + M A⊺X ,                                 (98)
+                                     D̂T (M ) = AT M + M A⊺T ,                                 (99)
+                                    D̂XT (M ) = AX M + M A⊺T ▷                                (100)
+26             PRICING AND HEDGING OF QUANTOS IN CARMA MODELS
+
+
+Proof. The covariance matrices are derived using Itô’s isometry and properties of
+matrix exponentials. The integrals involve the same Brownian motion W uT , leading
+to non-zero covariance between the two integrals.                                □
+                                            t+∆
+Corollary B.5. Conditionally on Y =              e(t+∆−u)AT ep dWuT , the random
+                                            t
+             t+∆
+vector X =        e(t+∆−u)AX ep dWuT follows a Gaussian distribution with mean
+              t
+                              
+                              
+                           E XY = KXT (∆)KT−1 (∆)Y,                          (101)
+
+and covariance matrix
+                    
+                      
+               Var XY = KX (∆) − KXT (∆)KT−1 (∆)KT X (∆),                    (102)
+
+where
+                                                                 ⊺
+                   KX (∆) = σT2 e∆AX D̂X−1
+                                             eD̂X ∆ − I ep e⊺p e∆AX ,
+                                                                 ⊺
+                   KT (∆) = σT2 e∆AT D̂T−1 eD̂T ∆ − I ep e⊺p e∆AT ,
+                                                                   ⊺
+                  KXT (∆) = σT2 e∆AX D̂XT
+                                        −1
+                                              eD̂XT ∆ − I ep e⊺p e∆AT ▷
+
+Proof. Since X and Y are jointly Gaussian with zero mean, their conditional distri-
+bution is Gaussian with the given mean and covariance, derived from the standard
+formulas for conditioning in multivariate normal distributions.                  □
+
+Lemma B.6. Let X and Y be jointly normally distributed random variables with
+                                  2
+E[X] = 0, E[Y ] = µY , variances σX  , σY2 , and correlation coeﬃcient ρ. Then,
+                                                         
+                                                      µY
+                         E[X · Y + ] = −σX σY ρϕ            ▷                  (103)
+                                                      σY
+Proof. Since X and Y are jointly normal, the expectation E[X · Y + ] can be com-
+puted using the properties of the bivariate normal distribution. The derivation
+involves integrating over the joint density and leveraging the symmetry and prop-
+erties of the normal distribution.                                             □
+
+Lemma B.7. Let X and Y be jointly normally distributed random variables with
+                                  2
+E[X] = 0, E[Y ] = µY , variances σX , σY2 , and correlation coeﬃcient ρ. Then,
+                                                                
+                   +                µY                    Xρ − µY
+            E[XY ] = σX σY ρϕ              + µY E[XΦ                ],
+                                    σY                   σY 1 − ρ2
+where ϕ is the standard normal probability density function and Φ is the cumulative
+distribution function.
+     We aim to compute the integral
+                                                          
+                                             1         1
+                 I1 =            Axe′1 Ax        exp − x⊺ x dx▷
+                        x≥−A−1 b            (2π)p      2
+   However, directly computing this integral is complex due to the multidimensional
+integration over a truncated domain. Instead, we can simplify the problem by
+leveraging properties of multivariate normal distributions and known results.
+   Let us consider the random vector
+                                     Y = AX + b,
+where X ∼ N (0, I). Then, Y ∼ N (b, AA⊺ ).
+                  PRICING AND HEDGING OF QUANTOS IN CARMA MODELS                               27
+
+
+     Our goal is to compute
+                                                   
+                        E (AX)e′1 Y+ = E (Y − b)e′1 Y+ ,
+where Y+ denotes the vector obtained by taking the positive part of each compo-
+nent of Y.
+   We focus on computing each component of the vector E [(Y − b)e′1 Y+ ]. Specif-
+ically, for each i = 1, ▷ ▷ ▷ , p, we need to compute
+                                                      
+                                        E (Yi − bi )Y1+ ▷
+  Since Yi − bi and Y1 are jointly normally distributed with mean zero and covari-
+ance (AA⊺ )i1 , we can use properties of the bivariate normal distribution.
+  However, since E[X] = 0 and X and Y are jointly normal, the term involving
+E[XΦ(·)] simplies to zero due to symmetry. Therefore, we have
+                                                    
+                                                  µY
+                             E[XY + ] = σXY ϕ          ,
+                                                  σY
+where σXY = σX σY ρ.
+  Applying this to our case:
+      • X = Yi − bi , which has mean zero and variance (AA⊺ )ii .
+      • Y = Y1 , with mean µY1 = b1 and variance (AA⊺ )11 .
+      • The covariance between X and Y is σXY = Cov(Yi − bi , Y1 ) = (AA⊺ )i1 .
+  Therefore,
+                                                              
+                                 +
+                                                       b 1
+                    E (Yi − bi )Y1 = (AA⊺ )i1 ϕ                 ▷
+                                                      (AA⊺ )11
+     Collecting the components, we obtain
+                                                                                      
+                                                                            b1
+                     E       (AX)e′1 Y+                    ⊺
+                                              = Ae · (AA )1 ϕ                             ,
+                                                                            (AA⊺ )11
+where (AA⊺ )1 denotes the rst column of AA⊺ .
+  Final Expression.
+  Since (AA⊺ )1 is A times the rst column of A⊺ , and A⊺ has columns (a1 , ▷ ▷ ▷ , ap ),
+where ai are the rows of A, we have
+                                       (AA⊺ )1 = AA⊺ e1 = Aa1 ▷
+     Therefore,
+                                                                                  
+                                                                       b1
+                         E        AXe′1 Y+       = Ae · Aa1 ϕ                         ▷
+                                                                        (AA⊺ )11
+   Simplifying further, since Aa1 is a vector, and we are taking the dot product
+with Ae, the expression becomes
+                                                            
+                             +
+                                            ⊺        b1
+                  E AXe1 Y = (Ae) (Aa1 ) ϕ 
+                           ′
+                                                               ▷
+                                                    (AA⊺ )11
+     This expression can be further simplied depending on the specic structure of
+A.
+28   PRICING AND HEDGING OF QUANTOS IN CARMA MODELS
+
+
+                      References

@@ -1,0 +1,2 @@
+start,end,n_hours,spot_min,spot_max,wind_min,wind_max,beta,spot_seasonality_mode,temperature_path
+2023-05-31 22:00:00,2025-08-20 20:00:00,19485,-500.0,936.28,0.0,0.8956000000000001,11423.107175850184,carma_paraschiv_log_price,/Users/konhatz/Desktop/PhD UvA Docs/Coding Semi-Static Hedging PPAs and Volumetric Risk/Intensity_Model/Gabriel/openmeteo_temperature_history_extended_model.csv

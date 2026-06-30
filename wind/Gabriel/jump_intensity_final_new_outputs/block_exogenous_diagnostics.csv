@@ -1,0 +1,5 @@
+quantity,value,interpretation
+spectral_radius,0.9854487256334823,Companion spectral radius; stationarity requires value below one.
+max_abs_forbidden_driver_from_spot,0.0,Maximum absolute coefficient from lagged spot state into any physical driver equation.
+l2_spot_from_wind_state,3.092147296202205,L2 norm of the allowed driver-to-price lag block.
+l2_wind_state_from_spot,0.0,L2 norm of the forbidden price-to-driver lag block; should be zero.

@@ -1,0 +1,3 @@
+event_type,count,intensity_low_year_inv,intensity_high_year_inv,threshold,n_low_state_obs,n_high_state_obs,n_low_state_events,n_high_state_events,constant_intensity_year_inv
+negative_low_price,10,4.025486787728834,17.81510269368375,0.566455544444444,18196,1289,7,3,
+positive_high_price,162,,,,18196,1289,162,0,72.83140877598153

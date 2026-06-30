@@ -1,0 +1,8 @@
+{
+  "source": "temperature/01order_temperature.ipynb",
+  "input_panel_path": "C:\\Users\\gabri\\Documents\\quant-projects\\FR_carma_quanto\\germany\\germany23+24+25\\data\\seasonality\\german_panel.csv",
+  "series": "temperature_XtQ = temperature_c - temperature_seasonality",
+  "time_zone": "UTC",
+  "unit": "degrees Celsius",
+  "notes": "The temperature stochastic factor is the Fourier-deseasonalised German Berlin temperature residual from germany/germany23+24+25/01seas.ipynb."
+}

@@ -1,0 +1,10 @@
+wind_alignment,event_definition,n_events,low_wind_rate_year_inv,high_wind_rate_year_inv,high_to_low_rate_ratio
+lag1,corrected_negative_low_price_spike,15,2.1515412010315607,9.702190499630815,4.509414225941423
+lag1,all_negative_return_jump,61,6.454623603094682,14.0142751661334,2.1711994421199443
+lag1,corrected_positive_high_price_spike,198,126.9409308608621,4.312084666502584,0.033969222040989996
+same_hour,corrected_negative_low_price_spike,15,2.1515412010315607,9.702190499630815,4.509414225941423
+same_hour,all_negative_return_jump,61,6.454623603094682,14.0142751661334,2.1711994421199443
+same_hour,corrected_positive_high_price_spike,198,118.33476605673584,4.312084666502584,0.03643971091669836
+average_lag_same,corrected_negative_low_price_spike,15,2.156042333251292,9.702190499630815,4.5
+average_lag_same,all_negative_return_jump,61,6.468126999753877,14.0142751661334,2.1666666666666665
+average_lag_same,corrected_positive_high_price_spike,198,122.89441299532366,4.312084666502584,0.03508771929824561

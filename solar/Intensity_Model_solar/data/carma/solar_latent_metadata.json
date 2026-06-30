@@ -1,0 +1,14 @@
+{
+  "source": "solar/Intensity_Model_solar/04order_solar.ipynb",
+  "spot_path": "C:\\Users\\gabri\\Documents\\quant-projects\\FR_carma_quanto\\wind\\Gabriel\\DayAheadPrices_2021_2025.csv",
+  "solar_path": "C:\\Users\\gabri\\Documents\\quant-projects\\FR_carma_quanto\\wind\\Gabriel\\enwex_GER_solar_v25_combined.csv",
+  "series": "solar_XtQ = solar_latent_Y - solar_latent_seasonality",
+  "transform": {
+    "alpha": 0.0001,
+    "beta": 0.9998,
+    "epsilon": 0.0001,
+    "clear_sky_floor": 0.0001,
+    "clear_sky_quantile": 0.98,
+    "clear_sky_smoothing_days": 21
+  }
+}

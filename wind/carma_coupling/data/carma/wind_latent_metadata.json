@@ -1,0 +1,10 @@
+{
+  "source": "wind/carma_coupling/01order_wind.ipynb",
+  "input_wind_path": "C:\\Users\\gabri\\Documents\\quant-projects\\FR_carma_quanto\\wind\\Gabriel\\enwex_GER_wind_v25_combined.csv",
+  "price_calendar_path": "C:\\Users\\gabri\\Documents\\quant-projects\\FR_carma_quanto\\germany\\germany23+24+25\\data\\seasonality\\german_panel.csv",
+  "series": "wind_XtQ = logit(wind_cf) - wind_logit_seasonality",
+  "time_zone": "UTC",
+  "unit": "logit capacity-factor units",
+  "seasonality": "Same wind technique as wind/Gabriel: logit capacity factor and fit_mle_notebook_seasonality(fourier_order=2).",
+  "notes": "The wind stochastic factor is fitted on the German price-panel UTC calendar so the later wind-price coupling uses common hourly intervals without timezone ambiguity."
+}

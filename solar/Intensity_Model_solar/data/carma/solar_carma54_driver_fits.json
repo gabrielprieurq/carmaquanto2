@@ -1,0 +1,31 @@
+{
+  "gaussian": {
+    "mean": -0.0014086166145356623,
+    "variance": 8.062456463565464,
+    "std": 2.8394465065511385,
+    "m_rate": -0.0014086166145356623,
+    "nu2_rate": 8.062456463565464,
+    "N": 40626
+  },
+  "nig": {
+    "mu": 0.13105287733687576,
+    "delta": 1.1856952929496107,
+    "alpha": 0.13507689318090413,
+    "beta": -0.01499700217799338,
+    "gamma": 0.13424178558511,
+    "scipy_a": 0.16016003643085538,
+    "scipy_b": -0.01778187489080181,
+    "scipy_loc": 0.13105287733687576,
+    "scipy_scale": 1.1856952929496107,
+    "loglik": -90824.06096544648,
+    "mean": -0.0014086718990587443,
+    "variance": 8.942770005551486,
+    "std": 2.990446455891074,
+    "skew": -0.8348611237992211,
+    "excess_kurtosis": 19.77711432246091,
+    "success": true,
+    "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "N": 40626
+  },
+  "source": "recovered hourly Levy increments from solar/Intensity_Model_solar/03mle_solar.ipynb"
+}

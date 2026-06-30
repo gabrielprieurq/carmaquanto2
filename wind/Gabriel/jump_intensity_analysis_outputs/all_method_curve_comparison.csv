@@ -1,0 +1,1087 @@
+method,side,wind_state,intensity_year_inv,bandwidth
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.05,0.4889808988427652,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.055,0.4827305148887787,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.06,0.4765887725174448,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.065,0.47055170779217675,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.07,0.4646030945668755,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.075,0.45874996218620057,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.08,0.4529603962902766,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.08499999999999999,0.4472241964720187,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.09,0.44153690261069506,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.095,0.4358995991586003,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.09999999999999999,0.430300009550363,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.105,0.4247234501438554,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.10999999999999999,0.4191843246917895,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.11499999999999999,0.4136717582294121,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.12,0.40817249788144344,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.12499999999999999,0.4027010167778653,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.13,0.397251437815915,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.135,0.39181697719113645,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.13999999999999999,0.3863953589009963,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.145,0.38097394612664387,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.14999999999999997,0.3755499595062532,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.15499999999999997,0.370117783069819,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.15999999999999998,0.3646691864018447,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.16499999999999998,0.3591953053768956,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.16999999999999998,0.35369742760700157,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.175,0.3481741360968005,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.18,0.3425961326763637,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.185,0.3369706238375875,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.19,0.3312828226545561,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.195,0.32551170975938254,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.19999999999999996,0.31965191173801116,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.20499999999999996,0.3136951845966235,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.20999999999999996,0.30763662998304575,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.21499999999999997,0.3014564520757847,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.21999999999999997,0.2951436254553379,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.22499999999999998,0.28869351012192757,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.22999999999999998,0.2820901282868348,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.235,0.2753181835267265,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.24,0.26835126939450565,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.245,0.2611700784623554,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.24999999999999994,0.2537561798196567,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.25499999999999995,0.24608198539344311,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.25999999999999995,0.2381220073780334,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.26499999999999996,0.2298448043508644,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.26999999999999996,0.2212131030240114,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.27499999999999997,0.21219703562805747,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.27999999999999997,0.20275554721382474,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.285,0.19283623740150452,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.29,0.18238208746411738,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.295,0.17132748732143718,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.3,0.15960123774774548,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.30499999999999994,0.1469924564383097,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.30999999999999994,0.1333182725935243,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.31499999999999995,0.1185101234529314,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.31999999999999995,0.102507876614864,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.32499999999999996,0.08527382301812877,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.32999999999999996,0.06674640607386356,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.33499999999999996,0.04687400634081891,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.33999999999999997,0.025588845806301757,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.3449999999999999,0.0028321923992629507,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.3499999999999999,0.0,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.3549999999999999,0.0,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.35999999999999993,0.0,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.36499999999999994,0.0,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.36999999999999994,0.0,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.37499999999999994,0.0,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.37999999999999995,0.0,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.38499999999999995,0.0,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.38999999999999996,0.0,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.39499999999999996,0.0,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.3999999999999999,0.0,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.4049999999999999,0.0,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.4099999999999999,0.0,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.4149999999999999,0.0,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.41999999999999993,0.0,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.42499999999999993,0.015741771018104478,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.42999999999999994,0.04898603372938522,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.43499999999999994,0.0828215003492613,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.43999999999999995,0.1172390850810435,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.44499999999999995,0.15222567497330716,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.4499999999999999,0.18778207081162418,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.4549999999999999,0.22388719983728972,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.4599999999999999,0.2605468988843288,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.4649999999999999,0.2977361648623794,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.4699999999999999,0.33541242767589197,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.4749999999999999,0.3736314362440946,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.4799999999999999,0.41232226500512237,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.48499999999999993,0.45151840540647387,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.48999999999999994,0.49112802868968825,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.49499999999999994,0.5311436886944866,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.49999999999999994,0.5716108540353965,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.5049999999999999,0.6125351755320244,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.5099999999999999,0.6538706096570213,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.5149999999999999,0.6956691218116262,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.5199999999999999,0.7378876054827759,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.5249999999999999,0.7804249764479233,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.5299999999999999,0.8234165491871959,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.5349999999999999,0.8667020678366538,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.5399999999999999,0.9103443695218455,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.5449999999999999,0.9543365740185513,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.5499999999999999,0.9987967504300901,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.5549999999999999,1.0436814450238565,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.5599999999999999,1.0890173746764793,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.565,1.1348731302083634,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.57,1.1811976525557852,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.575,1.2280590961727216,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.58,1.2752808692133193,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.585,1.3227580683623574,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.59,1.3704730241176082,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.595,1.418521381739048,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.6,1.466816167862263,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.605,1.5151679050025997,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.61,1.5637961051839884,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.615,1.612610218516885,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.62,1.6614141685904515,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.625,1.7104641412989876,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.63,1.7596989521542037,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.635,1.8090714100903593,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.6399999999999999,1.8586961785719358,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.6449999999999999,1.908342047361809,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.6499999999999999,1.9579563836225167,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.6549999999999999,2.00761410752286,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.6599999999999999,2.057383440643394,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.6649999999999999,2.107179704621809,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.6699999999999999,2.1572403357930914,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.6749999999999999,2.2078012844136614,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.6799999999999999,2.25808070088137,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.6849999999999999,2.3086017952256794,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.69,2.3591031989787448,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.695,2.408981219991521,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.7,2.458270872558187,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.705,2.506936189112918,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.71,2.555192105424785,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.715,2.602492239285739,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.72,2.64876472080421,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.725,2.69447139844815,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.73,2.739500063935475,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.735,2.783884699324809,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.74,2.826913343729587,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.7449999999999999,2.8684441882094185,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.7499999999999999,2.90861470180118,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.7549999999999999,2.9469739671100443,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.7599999999999999,2.9834684201245567,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.7649999999999999,3.017770168389391,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.7699999999999999,3.049235634393064,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.7749999999999999,3.0785256679476873,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.7799999999999999,3.105765414452197,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.7849999999999999,3.1303612288893583,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.7899999999999999,3.1519196412892114,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.7949999999999999,3.169899841356613,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.7999999999999999,3.1843894401928994,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.8049999999999999,3.195226265561188,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.8099999999999999,3.202909065802894,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.815,3.2059637174199405,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.82,3.20389589804929,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.825,3.1960990606073723,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.83,3.1811589341514357,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.835,3.158285148668343,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.84,3.1272036812066233,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.845,3.087747723159873,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.8499999999999999,3.0380545298807093,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.8549999999999999,2.9771810141510624,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.8599999999999999,2.9045726339735753,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.8649999999999999,2.8185197275206297,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.8699999999999999,2.717221203319037,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.8749999999999999,2.598777013015135,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.8799999999999999,2.4616196707690663,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.8849999999999999,2.3026178250634093,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.8899999999999999,2.117973336832431,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.8949999999999999,1.9047015286726352,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.8999999999999999,1.6590424729682085,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.9049999999999999,1.3765177554158239,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.9099999999999999,1.0516487869123698,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.9149999999999999,0.677682916792229,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.9199999999999999,0.2480271816757909,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.9249999999999999,0.0,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.9299999999999999,0.0,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.9349999999999999,0.0,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.94,0.0,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.945,0.0,0.25
+"Intensity_model calibration: lagged wind, all return-reversal jumps",negative,0.95,0.0,0.25
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.0027,0.37273945089477495,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.007239791666666666,0.3711637229773404,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.011779583333333333,0.3695233808609472,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.016319374999999997,0.36782623829126115,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.020859166666666665,0.3660857261210461,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.025398958333333332,0.36429961117570686,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.029938749999999997,0.3624629299388106,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.03447854166666666,0.3605993660047473,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.03901833333333333,0.3586974693182363,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.043558124999999996,0.35676892268896354,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.048097916666666664,0.354816893292004,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.052637708333333325,0.3528516999730446,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.05717749999999999,0.3508750474707682,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.06171729166666666,0.3488847525499954,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.06625708333333331,0.346881142914034,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.07079687499999998,0.3448668196251624,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.07533666666666665,0.3428382068394721,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.07987645833333332,0.3408017731753885,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.08441624999999998,0.33874574833519433,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.08895604166666665,0.3366689067531071,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.09349583333333332,0.33456815968093934,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.09803562499999997,0.33245005600442484,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.10257541666666664,0.33031213956918865,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.10711520833333331,0.3281465605919855,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.11165499999999998,0.32595532693074786,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.11619479166666664,0.3237467381083745,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.12073458333333331,0.32151240156705724,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.125274375,0.3192501372631982,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.12981416666666665,0.3169689650568381,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.13435395833333333,0.3146660812240967,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.13889374999999998,0.312340037314845,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.14343354166666666,0.30998891445992405,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.14797333333333332,0.30761197038641436,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.15251312499999997,0.3052018369754315,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.15705291666666665,0.30276120104278037,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.1615927083333333,0.30028618278238006,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.1661325,0.29777126355027606,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.17067229166666664,0.2952156462537977,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.17521208333333332,0.2926193675000443,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.17975187499999998,0.2899811724991468,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.18429166666666666,0.28728355593997534,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.1888314583333333,0.284532358517021,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.19337124999999997,0.28171767426019545,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.19791104166666665,0.27883174824915385,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.2024508333333333,0.275862363270885,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.20699062499999998,0.27280699817975146,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.21153041666666664,0.2696607754568338,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.21607020833333332,0.2664168078727485,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.22060999999999997,0.26305967403220665,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.22514979166666663,0.2595825651382642,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.2296895833333333,0.25597859474414725,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.23422937499999996,0.25223453759790604,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.23876916666666664,0.24833700495333078,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.2433089583333333,0.24426478440514887,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.24784874999999998,0.23999550233596506,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.25238854166666663,0.2354121371531445,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.25692833333333326,0.2303616096804936,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.26146812499999994,0.22478784780924782,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.2660079166666666,0.2186556992820105,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.27054770833333325,0.21191015647469913,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.27508749999999993,0.20450236781420733,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.2796272916666666,0.19640317469927704,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.2841670833333333,0.18758025806344966,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.2887068749999999,0.178000369280989,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.2932466666666666,0.16760877215795386,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.2977864583333333,0.1563636718611965,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.3023262499999999,0.1442328472299341,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.3068660416666666,0.13117179624007508,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.31140583333333327,0.11713433143495164,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.31594562499999995,0.10207669709466892,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.3204854166666666,0.08596686306464674,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.32502520833333326,0.06875622052428457,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.32956499999999994,0.05040538977311182,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.33410479166666657,0.03085864210954256,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.33864458333333325,0.010068327973555823,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.34318437499999993,0.0,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.3477241666666666,0.0,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.35226395833333324,0.0,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.3568037499999999,0.0,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.3613435416666666,0.0,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.3658833333333333,0.0,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.3704231249999999,0.0,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.3749629166666666,0.0,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.37950270833333327,0.0,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.3840424999999999,0.0,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.3885822916666666,0.0,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.39312208333333326,0.0,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.39766187499999994,0.0,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.40220166666666657,0.0,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.40674145833333325,0.0,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.41128124999999993,0.0,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.41582104166666656,0.0,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.42036083333333324,0.0,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.4249006249999999,0.0,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.4294404166666666,0.013860342950825633,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.43398020833333323,0.04585943517206002,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.4385199999999999,0.07836284184237403,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.4430597916666666,0.1113616527146774,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.4475995833333332,0.14485275948280485,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.4521393749999999,0.17882530588190113,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.4566791666666666,0.2132864965673448,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.46121895833333326,0.24819581083752965,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.4657587499999999,0.28355939706967115,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.47029854166666657,0.3193954456408286,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.47483833333333325,0.3556237494127711,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.4793781249999999,0.39227585758709493,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.48391791666666656,0.42934247762308986,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.48845770833333324,0.4667662724815902,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.4929974999999999,0.5045720573341116,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.49753729166666655,0.5427347459492178,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.5020770833333332,0.5812659611863772,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.506616875,0.6201726371228965,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.5111566666666666,0.659474222809865,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.5156964583333333,0.6991260222262329,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.52023625,0.7390508887576156,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.5247760416666666,0.7793569283468661,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.5293158333333333,0.8199384091194939,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.533855625,0.8608464088442791,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.5383954166666666,0.9020616041862195,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.5429352083333333,0.9436487457049775,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.5474749999999999,0.9855803580415143,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.5520147916666666,1.0278883836569541,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.5565545833333333,1.0705470760737203,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.5610943749999999,1.11357893202897,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.5656341666666667,1.1569950603278711,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.5701739583333333,1.2009003190045906,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.5747137499999999,1.2451280265106623,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.5792535416666666,1.2896911242981381,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.5837933333333333,1.33459607904152,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.5883331249999999,1.379952872072759,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.5928729166666666,1.4257187732891565,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.5974127083333333,1.4717190464495438,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.6019524999999999,1.5179674831817624,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.6064922916666666,1.5646552778391287,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.6110320833333333,1.6115852261761199,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.615571875,1.6586866393700572,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.6201116666666666,1.706219415298494,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.6246514583333332,1.7541489682661298,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.62919125,1.8024800401142553,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.6337310416666666,1.8512082826436507,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.6382708333333332,1.900382072841717,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.642810625,1.949801423421465,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.6473504166666666,1.9996503139312984,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.6518902083333332,2.049880973462229,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.65643,2.1003690932067087,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.6609697916666666,2.1512032293659997,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.6655095833333332,2.2025570891165542,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.670049375,2.2546015577226535,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.6745891666666666,2.3066309431222667,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.6791289583333333,2.3591909881221484,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.6836687499999999,2.4120055995340275,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.6882085416666666,2.4649090500661033,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.6927483333333333,2.517422005134353,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.6972881249999999,2.5697222002470967,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.7018279166666666,2.6219158285820705,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.7063677083333333,2.674056546272087,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.7109074999999999,2.7255838415268063,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.7154472916666665,2.7766577906065946,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.7199870833333333,2.8276086331168107,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.7245268749999999,2.8783768233135167,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.7290666666666666,2.9290449335121775,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.7336064583333333,2.9791142825152344,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.7381462499999999,3.0280938347629363,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.7426860416666666,3.0764800474606493,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.7472258333333333,3.1238544542704094,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.7517656249999999,3.1700154922235155,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.7563054166666666,3.2150105564199003,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.7608452083333332,3.25833645940126,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.7653849999999999,3.299501678147303,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.7699247916666666,3.3393139733224304,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.7744645833333332,3.3779450178142763,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.7790043749999999,3.4147342248710904,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.7835441666666666,3.4493920522824855,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.7880839583333332,3.4815049878622775,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.79262375,3.51103971806531,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.7971635416666666,3.537637421816184,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.8017033333333332,3.562012204143629,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.806243125,3.5839282042908627,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.8107829166666666,3.6019760513559196,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.8153227083333332,3.6158628018085164,0.24514874999999997
+"Intensity_final wind-reference: raw support, all return-reversal jumps",negative,0.8198624999999999,3.625112532019764,0.24514874999999997
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.05,6.211551505738471,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.055,6.177637807559145,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.06,6.14311130186056,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.065,6.107953956241344,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.07,6.072109387413769,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.075,6.035873678366043,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.08,5.999277864604734,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.08499999999999999,5.962337083341024,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.09,5.925122039693836,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.095,5.887565895294514,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.09999999999999999,5.849728147360975,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.105,5.811630624184314,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.10999999999999999,5.773260175672287,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.11499999999999999,5.734595035233528,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.12,5.695749094842984,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.12499999999999999,5.656803521155626,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.13,5.6174694604844415,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.135,5.577947230294313,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.13999999999999999,5.538147854498159,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.145,5.497901688230963,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.14999999999999997,5.457254179303669,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.15499999999999997,5.416219574680228,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.15999999999999998,5.374866489268026,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.16499999999999998,5.333069810167747,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.16999999999999998,5.290834033376328,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.175,5.248265832669743,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.18,5.205331351659793,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.185,5.162023485405326,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.19,5.118198314854941,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.195,5.073832668411552,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.19999999999999996,5.028943416487607,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.20499999999999996,4.983447438944977,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.20999999999999996,4.937327489383534,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.21499999999999997,4.890522045516439,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.21999999999999997,4.84293131320945,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.22499999999999998,4.794627751504571,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.22999999999999998,4.745590845604045,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.235,4.695709745989525,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.24,4.644901594811729,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.245,4.59306846514543,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.24999999999999994,4.540176703685357,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.25499999999999995,4.48615707006479,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.25999999999999995,4.438367758867054,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.26499999999999996,4.3941066706479734,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.26999999999999996,4.3483551546510855,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.27499999999999997,4.301008764525552,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.27999999999999997,4.251894747356648,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.285,4.200893331481883,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.29,4.147916206317778,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.295,4.093394092262306,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.3,4.049220931870328,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.30499999999999994,4.002688491424267,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.30999999999999994,3.953675475909616,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.31499999999999995,3.9019690908964457,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.31999999999999995,3.847342109931655,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.32499999999999996,3.7895508463816947,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.32999999999999996,3.7283626730594897,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.33499999999999996,3.663424467088667,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.33999999999999997,3.594322207707894,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.3449999999999999,3.5206816232320213,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.3499999999999999,3.442054578019063,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.3549999999999999,3.3698414077426633,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.35999999999999993,3.3103987563981927,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.36499999999999994,3.265203223334112,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.36999999999999994,3.237639737970541,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.37499999999999994,3.218930158258841,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.37999999999999995,3.19392574805232,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.38499999999999995,3.182179627216499,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.38999999999999996,3.1823830377977167,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.39499999999999996,3.1771468038105706,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.3999999999999999,3.1664392812628788,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.4049999999999999,3.149646484484671,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.4099999999999999,3.1265925596209314,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.4149999999999999,3.09678685989248,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.41999999999999993,3.061051883473049,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.42499999999999993,3.03899133091639,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.42999999999999994,3.010819992210682,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.43499999999999994,2.976337645116049,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.43999999999999995,2.934928177806779,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.44499999999999995,2.8866924763810062,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.4499999999999999,2.8548983648827266,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.4549999999999999,2.8180367243864026,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.4599999999999999,2.774720807795847,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.4649999999999999,2.7249283187764353,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.4699999999999999,2.66847569442959,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.4749999999999999,2.6050114376228715,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.4799999999999999,2.5341657465854643,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.48499999999999993,2.4706257353972183,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.48999999999999994,2.4313531196287483,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.49499999999999994,2.426970754385103,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.49999999999999994,2.447556624087962,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.5049999999999999,2.466011046303354,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.5099999999999999,2.4824092364568533,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.5149999999999999,2.4965533717714923,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.5199999999999999,2.5082234419044367,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.5249999999999999,2.517597024404837,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.5299999999999999,2.524119937783565,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.5349999999999999,2.543951640298748,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.5399999999999999,2.579447333858403,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.5449999999999999,2.6136881600382633,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.5499999999999999,2.6467308300737837,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.5549999999999999,2.6785539605387307,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.5599999999999999,2.7089681430911337,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.565,2.738128899389437,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.57,2.7658176357501687,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.575,2.7916321812600287,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.58,2.8158380607073523,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.585,2.8379838345154704,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.59,2.858242631150848,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.595,2.8764548689414617,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.6,2.8926544641990497,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.605,2.906709335285521,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.61,2.918566367586423,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.615,2.9281488426156796,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.62,2.935170908932945,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.625,2.939687598785029,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.63,2.9411050793819777,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.635,2.9391117419185973,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.6399999999999999,2.933469719665952,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.6449999999999999,2.952350717439248,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.6499999999999999,2.993663944237567,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.6549999999999999,3.0336620122375946,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.6599999999999999,3.0726290786933834,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.6649999999999999,3.1103064361786696,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.6699999999999999,3.14631876318513,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.6749999999999999,3.181035409041769,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.6799999999999999,3.214335908182474,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.6849999999999999,3.2460607143307425,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.69,3.2761920443877997,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.695,3.3043649881970887,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.7,3.330522460669913,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.705,3.3545252058398334,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.71,3.376125129125876,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.715,3.395024257812803,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.72,3.411380216306385,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.725,3.4253117034536054,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.73,3.4355625281303035,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.735,3.442618400723354,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.74,3.4459014852739425,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.7449999999999999,3.4444125349685275,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.7499999999999999,3.4379708578348986,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.7549999999999999,3.4262838230583967,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.7599999999999999,3.409330344431215,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.7649999999999999,3.386168175266104,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.7699999999999999,3.356414627433887,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.7749999999999999,3.3202417355694345,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.7799999999999999,3.277123232235064,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.7849999999999999,3.2266532483298422,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.7899999999999999,3.1676307234262264,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.7949999999999999,3.099446053494757,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.7999999999999999,3.0217118200117734,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.8049999999999999,2.9334344584833283,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.8099999999999999,2.8339572710051115,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.815,2.7223318249624273,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.82,2.597336505813181,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.825,2.4587116778369196,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.83,2.305601573152213,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.835,2.1365456123558326,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.84,1.950168754844104,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.845,1.744940586513363,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.8499999999999999,1.5195446463299165,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.8549999999999999,1.2723218694692409,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.8599999999999999,1.1030206188382752,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.8649999999999999,0.9873212280092108,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.8699999999999999,0.8594110022070871,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.8749999999999999,0.718124589607382,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.8799999999999999,0.5620525747736018,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.8849999999999999,0.3898710446263162,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.8899999999999999,0.20016833429539946,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.8949999999999999,0.0,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.8999999999999999,0.0,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.9049999999999999,0.0,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.9099999999999999,0.0,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.9149999999999999,0.0,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.9199999999999999,0.0,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.9249999999999999,0.0,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.9299999999999999,0.0,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.9349999999999999,0.0,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.94,0.0,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.945,0.0,0.3
+"Intensity_model calibration: lagged wind, all return-reversal jumps",positive,0.95,0.0,0.3
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.0027,17.628134499016333,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.007239791666666666,17.444280671235912,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.011779583333333333,17.26332791613766,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.016319374999999997,17.085122568761744,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.020859166666666665,16.90935921506782,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.025398958333333332,16.735860963229893,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.029938749999999997,16.56456358012144,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.03447854166666666,16.395151328877983,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.03901833333333333,16.227748752317538,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.043558124999999996,16.061721664176044,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.048097916666666664,15.896897444011907,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.052637708333333325,15.733037501543922,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.05717749999999999,15.572394140954243,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.06171729166666666,15.421078456201233,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.06625708333333331,15.269932463531397,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.07079687499999998,15.118981033244143,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.07533666666666665,14.968501131547766,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.07987645833333332,14.818108064935657,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.08441624999999998,14.667672802395764,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.08895604166666665,14.517506106017423,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.09349583333333332,14.367457789743515,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.09803562499999997,14.217435345759354,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.10257541666666664,14.067332957460799,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.10711520833333331,13.917093916127184,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.11165499999999998,13.766418325810614,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.11619479166666664,13.615388057346667,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.12073458333333331,13.463844196993403,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.125274375,13.31157552560035,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.12981416666666665,13.158548955677508,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.13435395833333333,13.00476427790964,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.13889374999999998,12.85017830955726,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.14343354166666666,12.694185802674287,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.14797333333333332,12.537011354076753,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.15251312499999997,12.378337822809074,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.15705291666666665,12.217937117660027,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.1615927083333333,12.055446160957073,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.1661325,11.890843055742069,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.17067229166666664,11.724037191362987,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.17521208333333332,11.554885742381218,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.17975187499999998,11.382990535306858,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.18429166666666666,11.208254120107629,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.1888314583333333,11.030596019084088,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.19337124999999997,10.849762502612835,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.19791104166666665,10.66552797283404,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.2024508333333333,10.47747025164267,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.20699062499999998,10.28518534770582,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.21153041666666664,10.08852900226429,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.21607020833333332,9.887068206843344,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.22060999999999997,9.680414606453269,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.22514979166666663,9.46820923885913,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.2296895833333333,9.249935530915073,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.23422937499999996,9.02506208558105,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.23876916666666664,8.793271793432218,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.2433089583333333,8.554038986160753,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.24784874999999998,8.306637713331755,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.25238854166666663,8.050362112713177,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.25692833333333326,7.784425758758084,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.26146812499999994,7.508026737927909,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.2660079166666666,7.2202254231049,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.27054770833333325,6.920116150246687,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.27508749999999993,6.616880452334669,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.2796272916666666,6.300075498917793,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.2841670833333333,5.967200104084164,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.2887068749999999,5.61667939718875,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.2932466666666666,5.257109478020685,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.2977864583333333,4.9027756306187165,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.3023262499999999,4.57592842424712,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.3068660416666666,4.304719004226534,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.31140583333333327,4.074846049061039,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.31594562499999995,3.8895651705824195,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.3204854166666666,3.724844410852305,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.32502520833333326,3.6074821221332396,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.32956499999999994,3.5150856437766027,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.33410479166666657,3.4455160255022714,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.33864458333333325,3.3758281001197368,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.34318437499999993,3.3129648209574767,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.3477241666666666,3.2618427745965053,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.35226395833333324,3.2237422870529655,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.3568037499999999,3.2056252229937936,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.3613435416666666,3.1891579696002412,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.3658833333333333,3.167220469094298,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.3704231249999999,3.1558995464609265,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.3749629166666666,3.1591427136635937,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.37950270833333327,3.1576536622894804,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.3840424999999999,3.151549476035856,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.3885822916666666,3.140269733513361,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.39312208333333326,3.123699077365694,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.39766187499999994,3.101611606338497,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.40220166666666657,3.0734106713578506,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.40674145833333325,3.0436854872679837,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.41128124999999993,3.0243602461864754,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.41582104166666656,2.99960731969329,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.42036083333333324,2.9693169168320863,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.4249006249999999,2.9330204319580218,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.4294404166666666,2.890727134825368,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.43398020833333323,2.856402941681595,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.4385199999999999,2.8256534979948165,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.4430597916666666,2.789426149882086,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.4475995833333332,2.747457831701998,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.4521393749999999,2.699721096884103,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.4566791666666666,2.646031802880747,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.46121895833333326,2.5860691560103626,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.4657587499999999,2.5196451562423077,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.47029854166666657,2.4581518758115664,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.47483833333333325,2.4177810184388977,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.4793781249999999,2.402571045431996,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.48391791666666656,2.4212428136913666,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.48845770833333324,2.441354668776022,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.4929974999999999,2.459638389734621,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.49753729166666655,2.476099388131039,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.5020770833333332,2.490337139278239,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.506616875,2.5023477510628056,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.5111566666666666,2.5123287619660344,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.5156964583333333,2.5197353733100236,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.52023625,2.536146596226656,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.5247760416666666,2.571537659762408,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.5293158333333333,2.6057025139999452,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.533855625,2.638834957388477,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.5383954166666666,2.6709607274192715,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.5429352083333333,2.702067474671708,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.5474749999999999,2.7320950940578768,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.5520147916666666,2.7611051511624343,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.5565545833333333,2.788896612976958,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.5610943749999999,2.8151872934874835,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.5656341666666667,2.840271762422602,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.5701739583333333,2.863756361739906,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.5747137499999999,2.8857216642071335,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.5792535416666666,2.906088113993213,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.5837933333333333,2.9249645147655525,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.5883331249999999,2.9422785149827497,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.5928729166666666,2.9578521371720434,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.5974127083333333,2.9715632413634987,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.6019524999999999,2.9833555038792303,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.6064922916666666,2.9929881108551535,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.6110320833333333,3.0005215533521072,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.615571875,3.0054372103077873,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.6201116666666666,3.0075079090109096,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.6246514583333332,3.006425918034485,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.62919125,3.0119276457504562,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.6337310416666666,3.055885962476898,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.6382708333333332,3.098931900812601,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.642810625,3.1410370424317926,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.6473504166666666,3.1824787090247817,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.6518902083333332,3.22283570701262,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.65643,3.2619195844070097,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.6609697916666666,3.300100716834387,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.6655095833333332,3.337228600033354,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.670049375,3.3732154238789946,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.6745891666666666,3.407952409633443,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.6791289583333333,3.441408464807766,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.6836687499999999,3.473152173410428,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.6882085416666666,3.5033563795610467,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.6927483333333333,3.531815755148115,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.6972881249999999,3.5582057778357004,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.7018279166666666,3.5825186951800823,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.7063677083333333,3.6048517647059826,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.7109074999999999,3.625269782782103,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.7154472916666665,3.642574387606249,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.7199870833333333,3.6573550154405643,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.7245268749999999,3.6690139378094524,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.7290666666666666,3.6771114818054937,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.7336064583333333,3.68079556381409,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.7381462499999999,3.6800903476133975,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.7426860416666666,3.6748919739452246,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.7472258333333333,3.664997812106234,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.7517656249999999,3.6494307306775133,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.7563054166666666,3.628103184067173,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.7608452083333332,3.6010774561824066,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.7653849999999999,3.5679061383385493,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.7699247916666666,3.528268114429589,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.7744645833333332,3.481170252259019,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.7790043749999999,3.425647066484228,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.7835441666666666,3.361740447107872,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.7880839583333332,3.288486636228003,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.79262375,3.205124433874239,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.7971635416666666,3.111080356563539,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.8017033333333332,3.0052317281953957,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.806243125,2.886468439863408,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.8107829166666666,2.7546733679616056,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.8153227083333332,2.6090227348051878,0.28600687499999994
+"Intensity_final wind-reference: raw support, all return-reversal jumps",positive,0.8198624999999999,2.4479805331319113,0.28600687499999994
+Corrected paper-style low-price negative spike filter,negative,0.01,1.8829279077682228,0.25
+Corrected paper-style low-price negative spike filter,negative,0.014499227777777783,1.8830576317542815,0.25
+Corrected paper-style low-price negative spike filter,negative,0.018998455555555564,1.8824703823887818,0.25
+Corrected paper-style low-price negative spike filter,negative,0.023497683333333345,1.8811585189485178,0.25
+Corrected paper-style low-price negative spike filter,negative,0.027996911111111127,1.8792617941852563,0.25
+Corrected paper-style low-price negative spike filter,negative,0.03249613888888891,1.876795576558025,0.25
+Corrected paper-style low-price negative spike filter,negative,0.036995366666666696,1.8738013828844509,0.25
+Corrected paper-style low-price negative spike filter,negative,0.04149459444444448,1.870341693930929,0.25
+Corrected paper-style low-price negative spike filter,negative,0.04599382222222226,1.8664685780954013,0.25
+Corrected paper-style low-price negative spike filter,negative,0.05049305000000004,1.8622456433257255,0.25
+Corrected paper-style low-price negative spike filter,negative,0.05499227777777782,1.8576736335874247,0.25
+Corrected paper-style low-price negative spike filter,negative,0.0594915055555556,1.8527716093991393,0.25
+Corrected paper-style low-price negative spike filter,negative,0.06399073333333338,1.847570590864353,0.25
+Corrected paper-style low-price negative spike filter,negative,0.06848996111111116,1.8420703182489104,0.25
+Corrected paper-style low-price negative spike filter,negative,0.07298918888888895,1.8363069984785074,0.25
+Corrected paper-style low-price negative spike filter,negative,0.07748841666666673,1.8302751437622005,0.25
+Corrected paper-style low-price negative spike filter,negative,0.08198764444444451,1.8239473386752747,0.25
+Corrected paper-style low-price negative spike filter,negative,0.08648687222222229,1.8173186186760348,0.25
+Corrected paper-style low-price negative spike filter,negative,0.09098610000000007,1.8104321302338082,0.25
+Corrected paper-style low-price negative spike filter,negative,0.09548532777777785,1.8032914133397744,0.25
+Corrected paper-style low-price negative spike filter,negative,0.09998455555555563,1.795886243120687,0.25
+Corrected paper-style low-price negative spike filter,negative,0.10448378333333341,1.7881985695109879,0.25
+Corrected paper-style low-price negative spike filter,negative,0.1089830111111112,1.7802823398779541,0.25
+Corrected paper-style low-price negative spike filter,negative,0.11348223888888898,1.7721330153314656,0.25
+Corrected paper-style low-price negative spike filter,negative,0.11798146666666677,1.7637371849854684,0.25
+Corrected paper-style low-price negative spike filter,negative,0.12248069444444455,1.7551087537651058,0.25
+Corrected paper-style low-price negative spike filter,negative,0.12697992222222235,1.7462884932205478,0.25
+Corrected paper-style low-price negative spike filter,negative,0.13147915000000013,1.737260350818541,0.25
+Corrected paper-style low-price negative spike filter,negative,0.1359783777777779,1.728022218958242,0.25
+Corrected paper-style low-price negative spike filter,negative,0.1404776055555557,1.7185912481397394,0.25
+Corrected paper-style low-price negative spike filter,negative,0.14497683333333347,1.708927389958508,0.25
+Corrected paper-style low-price negative spike filter,negative,0.14947606111111125,1.6990462061157119,0.25
+Corrected paper-style low-price negative spike filter,negative,0.15397528888888903,1.6889386477786152,0.25
+Corrected paper-style low-price negative spike filter,negative,0.15847451666666681,1.6785979134239126,0.25
+Corrected paper-style low-price negative spike filter,negative,0.1629737444444446,1.6679994121395834,0.25
+Corrected paper-style low-price negative spike filter,negative,0.16747297222222238,1.6571508120188319,0.25
+Corrected paper-style low-price negative spike filter,negative,0.17197220000000016,1.6460744128421667,0.25
+Corrected paper-style low-price negative spike filter,negative,0.17647142777777794,1.6347193354796947,0.25
+Corrected paper-style low-price negative spike filter,negative,0.18097065555555572,1.6230474322651238,0.25
+Corrected paper-style low-price negative spike filter,negative,0.1854698833333335,1.611075750623387,0.25
+Corrected paper-style low-price negative spike filter,negative,0.18996911111111128,1.5987694803501173,0.25
+Corrected paper-style low-price negative spike filter,negative,0.19446833888888906,1.5860637160067759,0.25
+Corrected paper-style low-price negative spike filter,negative,0.19896756666666685,1.5729462833229206,0.25
+Corrected paper-style low-price negative spike filter,negative,0.20346679444444463,1.5593933151144528,0.25
+Corrected paper-style low-price negative spike filter,negative,0.2079660222222224,1.5454018546256332,0.25
+Corrected paper-style low-price negative spike filter,negative,0.2124652500000002,1.5309227524762514,0.25
+Corrected paper-style low-price negative spike filter,negative,0.21696447777777797,1.515893582725615,0.25
+Corrected paper-style low-price negative spike filter,negative,0.22146370555555575,1.500314455548194,0.25
+Corrected paper-style low-price negative spike filter,negative,0.22596293333333356,1.4841438771035587,0.25
+Corrected paper-style low-price negative spike filter,negative,0.23046216111111134,1.4673324588828807,0.25
+Corrected paper-style low-price negative spike filter,negative,0.23496138888888912,1.449825517241505,0.25
+Corrected paper-style low-price negative spike filter,negative,0.2394606166666669,1.4315240311406638,0.25
+Corrected paper-style low-price negative spike filter,negative,0.24395984444444468,1.4123515417116248,0.25
+Corrected paper-style low-price negative spike filter,negative,0.24845907222222247,1.392244185153884,0.25
+Corrected paper-style low-price negative spike filter,negative,0.25295830000000025,1.3724391723338842,0.25
+Corrected paper-style low-price negative spike filter,negative,0.25745752777777803,1.3631005340054694,0.25
+Corrected paper-style low-price negative spike filter,negative,0.2619567555555558,1.352035587605591,0.25
+Corrected paper-style low-price negative spike filter,negative,0.2664559833333336,1.3477208187352312,0.25
+Corrected paper-style low-price negative spike filter,negative,0.27095521111111137,1.3475726036095843,0.25
+Corrected paper-style low-price negative spike filter,negative,0.27545443888888915,1.3454118567005138,0.25
+Corrected paper-style low-price negative spike filter,negative,0.27995366666666693,1.3412060934588215,0.25
+Corrected paper-style low-price negative spike filter,negative,0.2844528944444447,1.3507097898853127,0.25
+Corrected paper-style low-price negative spike filter,negative,0.2889521222222225,1.3586470104647508,0.25
+Corrected paper-style low-price negative spike filter,negative,0.2934513500000003,1.3649510531790519,0.25
+Corrected paper-style low-price negative spike filter,negative,0.29795057777777806,1.3694147447999523,0.25
+Corrected paper-style low-price negative spike filter,negative,0.30244980555555584,1.371882240512441,0.25
+Corrected paper-style low-price negative spike filter,negative,0.3069490333333336,1.372322287725218,0.25
+Corrected paper-style low-price negative spike filter,negative,0.3114482611111114,1.3780462824370219,0.25
+Corrected paper-style low-price negative spike filter,negative,0.3159474888888892,1.3923382075359538,0.25
+Corrected paper-style low-price negative spike filter,negative,0.32044671666666696,1.4044119287055843,0.25
+Corrected paper-style low-price negative spike filter,negative,0.32494594444444475,1.4142991865328562,0.25
+Corrected paper-style low-price negative spike filter,negative,0.3294451722222225,1.4217728130629927,0.25
+Corrected paper-style low-price negative spike filter,negative,0.3339444000000003,1.4268005862133537,0.25
+Corrected paper-style low-price negative spike filter,negative,0.3384436277777781,1.429152639729889,0.25
+Corrected paper-style low-price negative spike filter,negative,0.34294285555555587,1.428469508195035,0.25
+Corrected paper-style low-price negative spike filter,negative,0.34744208333333365,1.429216279362522,0.25
+Corrected paper-style low-price negative spike filter,negative,0.35194131111111143,1.4522920845812934,0.25
+Corrected paper-style low-price negative spike filter,negative,0.3564405388888892,1.4860686474351232,0.25
+Corrected paper-style low-price negative spike filter,negative,0.360939766666667,1.5171106439287265,0.25
+Corrected paper-style low-price negative spike filter,negative,0.3654389944444448,1.5450791942626458,0.25
+Corrected paper-style low-price negative spike filter,negative,0.36993822222222256,1.5788959619409761,0.25
+Corrected paper-style low-price negative spike filter,negative,0.37443745000000034,1.6417276305428778,0.25
+Corrected paper-style low-price negative spike filter,negative,0.3789366777777781,1.7095119597431794,0.25
+Corrected paper-style low-price negative spike filter,negative,0.3834359055555559,1.8111803803513937,0.25
+Corrected paper-style low-price negative spike filter,negative,0.3879351333333337,1.9269904017406314,0.25
+Corrected paper-style low-price negative spike filter,negative,0.39243436111111146,2.0423921267286334,0.25
+Corrected paper-style low-price negative spike filter,negative,0.39693358888888924,2.1574690787862227,0.25
+Corrected paper-style low-price negative spike filter,negative,0.401432816666667,2.2720389150801643,0.25
+Corrected paper-style low-price negative spike filter,negative,0.4059320444444448,2.385805848663357,0.25
+Corrected paper-style low-price negative spike filter,negative,0.4104312722222226,2.498442967355984,0.25
+Corrected paper-style low-price negative spike filter,negative,0.41493050000000037,2.6099416431678057,0.25
+Corrected paper-style low-price negative spike filter,negative,0.41942972777777815,2.7202014209899996,0.25
+Corrected paper-style low-price negative spike filter,negative,0.42392895555555593,2.839730611980206,0.25
+Corrected paper-style low-price negative spike filter,negative,0.4284281833333337,2.988870589165189,0.25
+Corrected paper-style low-price negative spike filter,negative,0.4329274111111115,3.158731481578245,0.25
+Corrected paper-style low-price negative spike filter,negative,0.4374266388888893,3.3572682087649843,0.25
+Corrected paper-style low-price negative spike filter,negative,0.4419258666666671,3.556476417976424,0.25
+Corrected paper-style low-price negative spike filter,negative,0.4464250944444449,3.7756703694201303,0.25
+Corrected paper-style low-price negative spike filter,negative,0.4509243222222227,4.009471337677832,0.25
+Corrected paper-style low-price negative spike filter,negative,0.45542355000000045,4.245132086815265,0.25
+Corrected paper-style low-price negative spike filter,negative,0.45992277777777824,4.482828525351139,0.25
+Corrected paper-style low-price negative spike filter,negative,0.464422005555556,4.722242412575315,0.25
+Corrected paper-style low-price negative spike filter,negative,0.4689212333333338,4.96280620017177,0.25
+Corrected paper-style low-price negative spike filter,negative,0.4734204611111116,5.2052561155074875,0.25
+Corrected paper-style low-price negative spike filter,negative,0.47791968888888936,5.449030625224282,0.25
+Corrected paper-style low-price negative spike filter,negative,0.48241891666666714,5.694125449091235,0.25
+Corrected paper-style low-price negative spike filter,negative,0.4869181444444449,5.940464277543387,0.25
+Corrected paper-style low-price negative spike filter,negative,0.4914173722222227,6.186920832444228,0.25
+Corrected paper-style low-price negative spike filter,negative,0.4959166000000005,6.4342261176221855,0.25
+Corrected paper-style low-price negative spike filter,negative,0.5004158277777783,6.682508392882324,0.25
+Corrected paper-style low-price negative spike filter,negative,0.504915055555556,6.931734987848459,0.25
+Corrected paper-style low-price negative spike filter,negative,0.5094142833333338,7.181450579943035,0.25
+Corrected paper-style low-price negative spike filter,negative,0.5139135111111116,7.432241892323755,0.25
+Corrected paper-style low-price negative spike filter,negative,0.5184127388888894,7.683559443264568,0.25
+Corrected paper-style low-price negative spike filter,negative,0.5229119666666672,7.9347325412001055,0.25
+Corrected paper-style low-price negative spike filter,negative,0.527411194444445,8.186263318773364,0.25
+Corrected paper-style low-price negative spike filter,negative,0.5319104222222227,8.437917093346455,0.25
+Corrected paper-style low-price negative spike filter,negative,0.5364096500000005,8.689074869748513,0.25
+Corrected paper-style low-price negative spike filter,negative,0.5409088777777783,8.93987922481058,0.25
+Corrected paper-style low-price negative spike filter,negative,0.5454081055555561,9.190585339729276,0.25
+Corrected paper-style low-price negative spike filter,negative,0.5499073333333339,9.441982241143075,0.25
+Corrected paper-style low-price negative spike filter,negative,0.5544065611111116,9.741062750748648,0.25
+Corrected paper-style low-price negative spike filter,negative,0.5589057888888894,10.04108052908715,0.25
+Corrected paper-style low-price negative spike filter,negative,0.5634050166666672,10.342451591016003,0.25
+Corrected paper-style low-price negative spike filter,negative,0.567904244444445,10.644975830813564,0.25
+Corrected paper-style low-price negative spike filter,negative,0.5724034722222228,10.948604167979662,0.25
+Corrected paper-style low-price negative spike filter,negative,0.5769027000000005,11.252932076640587,0.25
+Corrected paper-style low-price negative spike filter,negative,0.5814019277777783,11.55673166022468,0.25
+Corrected paper-style low-price negative spike filter,negative,0.5859011555555561,11.859186262683552,0.25
+Corrected paper-style low-price negative spike filter,negative,0.5904003833333339,12.160735137141309,0.25
+Corrected paper-style low-price negative spike filter,negative,0.5948996111111117,12.46153086479409,0.25
+Corrected paper-style low-price negative spike filter,negative,0.5993988388888895,12.761026292787978,0.25
+Corrected paper-style low-price negative spike filter,negative,0.6038980666666672,13.057632047359629,0.25
+Corrected paper-style low-price negative spike filter,negative,0.608397294444445,13.352368284811925,0.25
+Corrected paper-style low-price negative spike filter,negative,0.6128965222222228,13.645348383203466,0.25
+Corrected paper-style low-price negative spike filter,negative,0.6173957500000006,13.935366527483344,0.25
+Corrected paper-style low-price negative spike filter,negative,0.6218949777777784,14.222083767839345,0.25
+Corrected paper-style low-price negative spike filter,negative,0.6263942055555561,14.506758564267109,0.25
+Corrected paper-style low-price negative spike filter,negative,0.6308934333333339,14.788514796024801,0.25
+Corrected paper-style low-price negative spike filter,negative,0.6353926611111117,15.066836343600368,0.25
+Corrected paper-style low-price negative spike filter,negative,0.6398918888888895,15.34271631563819,0.25
+Corrected paper-style low-price negative spike filter,negative,0.6443911166666673,15.614305587219171,0.25
+Corrected paper-style low-price negative spike filter,negative,0.648890344444445,15.880512261316447,0.25
+Corrected paper-style low-price negative spike filter,negative,0.6533895722222228,16.14197421971501,0.25
+Corrected paper-style low-price negative spike filter,negative,0.6578888000000006,16.399054671995117,0.25
+Corrected paper-style low-price negative spike filter,negative,0.6623880277777784,16.65067995157128,0.25
+Corrected paper-style low-price negative spike filter,negative,0.6668872555555562,16.897623320450307,0.25
+Corrected paper-style low-price negative spike filter,negative,0.671386483333334,17.141254388358192,0.25
+Corrected paper-style low-price negative spike filter,negative,0.6758857111111117,17.380347002540873,0.25
+Corrected paper-style low-price negative spike filter,negative,0.6803849388888895,17.611017857324907,0.25
+Corrected paper-style low-price negative spike filter,negative,0.6848841666666673,17.83627753781745,0.25
+Corrected paper-style low-price negative spike filter,negative,0.6893833944444451,18.053887987184122,0.25
+Corrected paper-style low-price negative spike filter,negative,0.6938826222222229,18.26055547254544,0.25
+Corrected paper-style low-price negative spike filter,negative,0.6983818500000006,18.454664257637422,0.25
+Corrected paper-style low-price negative spike filter,negative,0.7028810777777784,18.636004150381837,0.25
+Corrected paper-style low-price negative spike filter,negative,0.7073803055555562,18.80564031193731,0.25
+Corrected paper-style low-price negative spike filter,negative,0.711879533333334,18.962020086523594,0.25
+Corrected paper-style low-price negative spike filter,negative,0.7163787611111118,19.101185311617964,0.25
+Corrected paper-style low-price negative spike filter,negative,0.7208779888888895,19.22481100379979,0.25
+Corrected paper-style low-price negative spike filter,negative,0.7253772166666673,19.333369235330476,0.25
+Corrected paper-style low-price negative spike filter,negative,0.7298764444444451,19.42588165090054,0.25
+Corrected paper-style low-price negative spike filter,negative,0.7343756722222229,19.50178664902248,0.25
+Corrected paper-style low-price negative spike filter,negative,0.7388749000000007,19.556846145935683,0.25
+Corrected paper-style low-price negative spike filter,negative,0.7433741277777784,19.587840999344532,0.25
+Corrected paper-style low-price negative spike filter,negative,0.7478733555555562,19.596568435071415,0.25
+Corrected paper-style low-price negative spike filter,negative,0.752372583333334,19.57946648277386,0.25
+Corrected paper-style low-price negative spike filter,negative,0.7568718111111118,19.534232630352523,0.25
+Corrected paper-style low-price negative spike filter,negative,0.7613710388888896,19.46017216073226,0.25
+Corrected paper-style low-price negative spike filter,negative,0.7658702666666674,19.411578193888783,0.25
+Corrected paper-style low-price negative spike filter,negative,0.7703694944444451,19.40101851815717,0.25
+Corrected paper-style low-price negative spike filter,negative,0.7748687222222229,19.366232184204655,0.25
+Corrected paper-style low-price negative spike filter,negative,0.7793679500000007,19.30646885501205,0.25
+Corrected paper-style low-price negative spike filter,negative,0.7838671777777785,19.217308103481624,0.25
+Corrected paper-style low-price negative spike filter,negative,0.7883664055555563,19.095977410524473,0.25
+Corrected paper-style low-price negative spike filter,negative,0.792865633333334,18.93915353591382,0.25
+Corrected paper-style low-price negative spike filter,negative,0.7973648611111118,18.745153721951038,0.25
+Corrected paper-style low-price negative spike filter,negative,0.8018640888888896,18.510793648002903,0.25
+Corrected paper-style low-price negative spike filter,negative,0.8063633166666674,18.237054781335686,0.25
+Corrected paper-style low-price negative spike filter,negative,0.8108625444444452,17.968094015343503,0.25
+Corrected paper-style low-price negative spike filter,negative,0.815361772222223,17.776144956350823,0.25
+Corrected paper-style low-price negative spike filter,negative,0.8198610000000007,17.54363328577653,0.25
+Corrected paper-style high-price positive spike filter,positive,0.01,65.09581548833408,0.3
+Corrected paper-style high-price positive spike filter,positive,0.014499227777777783,64.61207302237688,0.3
+Corrected paper-style high-price positive spike filter,positive,0.018998455555555564,64.13119531748072,0.3
+Corrected paper-style high-price positive spike filter,positive,0.023497683333333345,63.65394879909548,0.3
+Corrected paper-style high-price positive spike filter,positive,0.027996911111111127,63.179101075455996,0.3
+Corrected paper-style high-price positive spike filter,positive,0.03249613888888891,62.70568798833823,0.3
+Corrected paper-style high-price positive spike filter,positive,0.036995366666666696,62.23283312123843,0.3
+Corrected paper-style high-price positive spike filter,positive,0.04149459444444448,61.761636679047676,0.3
+Corrected paper-style high-price positive spike filter,positive,0.04599382222222226,61.291737900668295,0.3
+Corrected paper-style high-price positive spike filter,positive,0.05049305000000004,60.82224174359268,0.3
+Corrected paper-style high-price positive spike filter,positive,0.05499227777777782,60.362399747780856,0.3
+Corrected paper-style high-price positive spike filter,positive,0.0594915055555556,59.90339021446688,0.3
+Corrected paper-style high-price positive spike filter,positive,0.06399073333333338,59.44465267499691,0.3
+Corrected paper-style high-price positive spike filter,positive,0.06848996111111116,58.98552099722031,0.3
+Corrected paper-style high-price positive spike filter,positive,0.07298918888888895,58.52654035249046,0.3
+Corrected paper-style high-price positive spike filter,positive,0.07748841666666673,58.06840061225836,0.3
+Corrected paper-style high-price positive spike filter,positive,0.08198764444444451,57.61050362400892,0.3
+Corrected paper-style high-price positive spike filter,positive,0.08648687222222229,57.152716089632385,0.3
+Corrected paper-style high-price positive spike filter,positive,0.09098610000000007,56.69533718506065,0.3
+Corrected paper-style high-price positive spike filter,positive,0.09548532777777785,56.23704884645177,0.3
+Corrected paper-style high-price positive spike filter,positive,0.09998455555555563,55.77845701936412,0.3
+Corrected paper-style high-price positive spike filter,positive,0.10448378333333341,55.3191213905776,0.3
+Corrected paper-style high-price positive spike filter,positive,0.1089830111111112,54.85879704251887,0.3
+Corrected paper-style high-price positive spike filter,positive,0.11348223888888898,54.396916338618176,0.3
+Corrected paper-style high-price positive spike filter,positive,0.11798146666666677,53.93364560558759,0.3
+Corrected paper-style high-price positive spike filter,positive,0.12248069444444455,53.46977227498844,0.3
+Corrected paper-style high-price positive spike filter,positive,0.12697992222222235,53.00357844337063,0.3
+Corrected paper-style high-price positive spike filter,positive,0.13147915000000013,52.53684248483391,0.3
+Corrected paper-style high-price positive spike filter,positive,0.1359783777777779,52.07433215022642,0.3
+Corrected paper-style high-price positive spike filter,positive,0.1404776055555557,51.60862223656856,0.3
+Corrected paper-style high-price positive spike filter,positive,0.14497683333333347,51.139122318693076,0.3
+Corrected paper-style high-price positive spike filter,positive,0.14947606111111125,50.67297479283242,0.3
+Corrected paper-style high-price positive spike filter,positive,0.15397528888888903,50.201845984210664,0.3
+Corrected paper-style high-price positive spike filter,positive,0.15847451666666681,49.726015484643035,0.3
+Corrected paper-style high-price positive spike filter,positive,0.1629737444444446,49.24460005176116,0.3
+Corrected paper-style high-price positive spike filter,positive,0.16747297222222238,48.75670400626228,0.3
+Corrected paper-style high-price positive spike filter,positive,0.17197220000000016,48.26307082184429,0.3
+Corrected paper-style high-price positive spike filter,positive,0.17647142777777794,47.76312347410919,0.3
+Corrected paper-style high-price positive spike filter,positive,0.18097065555555572,47.256472254368845,0.3
+Corrected paper-style high-price positive spike filter,positive,0.1854698833333335,46.74267147935897,0.3
+Corrected paper-style high-price positive spike filter,positive,0.18996911111111128,46.22036085907999,0.3
+Corrected paper-style high-price positive spike filter,positive,0.19446833888888906,45.68910185525242,0.3
+Corrected paper-style high-price positive spike filter,positive,0.19896756666666685,45.14974021812508,0.3
+Corrected paper-style high-price positive spike filter,positive,0.20346679444444463,44.608059295682025,0.3
+Corrected paper-style high-price positive spike filter,positive,0.2079660222222224,44.05534747442604,0.3
+Corrected paper-style high-price positive spike filter,positive,0.2124652500000002,43.49105365261905,0.3
+Corrected paper-style high-price positive spike filter,positive,0.21696447777777797,42.91410260358474,0.3
+Corrected paper-style high-price positive spike filter,positive,0.22146370555555575,42.32335558313843,0.3
+Corrected paper-style high-price positive spike filter,positive,0.22596293333333356,41.71904051637465,0.3
+Corrected paper-style high-price positive spike filter,positive,0.23046216111111134,41.0997596640227,0.3
+Corrected paper-style high-price positive spike filter,positive,0.23496138888888912,40.46427512616834,0.3
+Corrected paper-style high-price positive spike filter,positive,0.2394606166666669,39.81125700426408,0.3
+Corrected paper-style high-price positive spike filter,positive,0.24395984444444468,39.13916693280332,0.3
+Corrected paper-style high-price positive spike filter,positive,0.24845907222222247,38.44688864040326,0.3
+Corrected paper-style high-price positive spike filter,positive,0.25295830000000025,37.73271450123802,0.3
+Corrected paper-style high-price positive spike filter,positive,0.25745752777777803,36.99557969305182,0.3
+Corrected paper-style high-price positive spike filter,positive,0.2619567555555558,36.233301999233966,0.3
+Corrected paper-style high-price positive spike filter,positive,0.2664559833333336,35.44336659592825,0.3
+Corrected paper-style high-price positive spike filter,positive,0.27095521111111137,34.62885392878598,0.3
+Corrected paper-style high-price positive spike filter,positive,0.27545443888888915,33.78681702530839,0.3
+Corrected paper-style high-price positive spike filter,positive,0.27995366666666693,32.9093166383137,0.3
+Corrected paper-style high-price positive spike filter,positive,0.2844528944444447,31.993285097560257,0.3
+Corrected paper-style high-price positive spike filter,positive,0.2889521222222225,31.035594568571277,0.3
+Corrected paper-style high-price positive spike filter,positive,0.2934513500000003,30.032708456897566,0.3
+Corrected paper-style high-price positive spike filter,positive,0.29795057777777806,28.98021880992822,0.3
+Corrected paper-style high-price positive spike filter,positive,0.30244980555555584,27.886619847739563,0.3
+Corrected paper-style high-price positive spike filter,positive,0.3069490333333336,26.77933778748544,0.3
+Corrected paper-style high-price positive spike filter,positive,0.3114482611111114,25.68425411279434,0.3
+Corrected paper-style high-price positive spike filter,positive,0.3159474888888892,24.627286522152097,0.3
+Corrected paper-style high-price positive spike filter,positive,0.32044671666666696,23.56868710298966,0.3
+Corrected paper-style high-price positive spike filter,positive,0.32494594444444475,22.530950406979972,0.3
+Corrected paper-style high-price positive spike filter,positive,0.3294451722222225,21.499882313387666,0.3
+Corrected paper-style high-price positive spike filter,positive,0.3339444000000003,20.51860101919675,0.3
+Corrected paper-style high-price positive spike filter,positive,0.3384436277777781,19.5895635335999,0.3
+Corrected paper-style high-price positive spike filter,positive,0.34294285555555587,18.759031722103515,0.3
+Corrected paper-style high-price positive spike filter,positive,0.34744208333333365,18.030185370763018,0.3
+Corrected paper-style high-price positive spike filter,positive,0.35194131111111143,17.410422601089486,0.3
+Corrected paper-style high-price positive spike filter,positive,0.3564405388888892,16.837049915262526,0.3
+Corrected paper-style high-price positive spike filter,positive,0.360939766666667,16.292329864294242,0.3
+Corrected paper-style high-price positive spike filter,positive,0.3654389944444448,15.764530604657613,0.3
+Corrected paper-style high-price positive spike filter,positive,0.36993822222222256,15.260737014733557,0.3
+Corrected paper-style high-price positive spike filter,positive,0.37443745000000034,14.818470817008977,0.3
+Corrected paper-style high-price positive spike filter,positive,0.3789366777777781,14.411475254774679,0.3
+Corrected paper-style high-price positive spike filter,positive,0.3834359055555559,14.008873397756291,0.3
+Corrected paper-style high-price positive spike filter,positive,0.3879351333333337,13.594614955584689,0.3
+Corrected paper-style high-price positive spike filter,positive,0.39243436111111146,13.188608650885131,0.3
+Corrected paper-style high-price positive spike filter,positive,0.39693358888888924,12.781052892308756,0.3
+Corrected paper-style high-price positive spike filter,positive,0.401432816666667,12.3760151758922,0.3
+Corrected paper-style high-price positive spike filter,positive,0.4059320444444448,11.999249147372177,0.3
+Corrected paper-style high-price positive spike filter,positive,0.4104312722222226,11.616530219148812,0.3
+Corrected paper-style high-price positive spike filter,positive,0.41493050000000037,11.232088301194734,0.3
+Corrected paper-style high-price positive spike filter,positive,0.41942972777777815,10.862927415262753,0.3
+Corrected paper-style high-price positive spike filter,positive,0.42392895555555593,10.51326833815955,0.3
+Corrected paper-style high-price positive spike filter,positive,0.4284281833333337,10.213910935537767,0.3
+Corrected paper-style high-price positive spike filter,positive,0.4329274111111115,9.9363830249262,0.3
+Corrected paper-style high-price positive spike filter,positive,0.4374266388888893,9.685911676170097,0.3
+Corrected paper-style high-price positive spike filter,positive,0.4419258666666671,9.437823626856515,0.3
+Corrected paper-style high-price positive spike filter,positive,0.4464250944444449,9.199211998766026,0.3
+Corrected paper-style high-price positive spike filter,positive,0.4509243222222227,8.957478339140463,0.3
+Corrected paper-style high-price positive spike filter,positive,0.45542355000000045,8.703024307756769,0.3
+Corrected paper-style high-price positive spike filter,positive,0.45992277777777824,8.42849089637611,0.3
+Corrected paper-style high-price positive spike filter,positive,0.464422005555556,8.16366932642386,0.3
+Corrected paper-style high-price positive spike filter,positive,0.4689212333333338,7.8954429040852965,0.3
+Corrected paper-style high-price positive spike filter,positive,0.4734204611111116,7.656592317647461,0.3
+Corrected paper-style high-price positive spike filter,positive,0.47791968888888936,7.436286716786787,0.3
+Corrected paper-style high-price positive spike filter,positive,0.48241891666666714,7.220485065890726,0.3
+Corrected paper-style high-price positive spike filter,positive,0.4869181444444449,7.034878969342207,0.3
+Corrected paper-style high-price positive spike filter,positive,0.4914173722222227,6.837118593497125,0.3
+Corrected paper-style high-price positive spike filter,positive,0.4959166000000005,6.630554293209667,0.3
+Corrected paper-style high-price positive spike filter,positive,0.5004158277777783,6.450772838298382,0.3
+Corrected paper-style high-price positive spike filter,positive,0.504915055555556,6.266061349924162,0.3
+Corrected paper-style high-price positive spike filter,positive,0.5094142833333338,6.109934954986761,0.3
+Corrected paper-style high-price positive spike filter,positive,0.5139135111111116,5.944232532693239,0.3
+Corrected paper-style high-price positive spike filter,positive,0.5184127388888894,5.769609684102771,0.3
+Corrected paper-style high-price positive spike filter,positive,0.5229119666666672,5.625764158788426,0.3
+Corrected paper-style high-price positive spike filter,positive,0.527411194444445,5.50717786146188,0.3
+Corrected paper-style high-price positive spike filter,positive,0.5319104222222227,5.3775610532673985,0.3
+Corrected paper-style high-price positive spike filter,positive,0.5364096500000005,5.263641248144282,0.3
+Corrected paper-style high-price positive spike filter,positive,0.5409088777777783,5.16077492611411,0.3
+Corrected paper-style high-price positive spike filter,positive,0.5454081055555561,5.060730751578172,0.3
+Corrected paper-style high-price positive spike filter,positive,0.5499073333333339,5.003820998990483,0.3
+Corrected paper-style high-price positive spike filter,positive,0.5544065611111116,4.98395736204572,0.3
+Corrected paper-style high-price positive spike filter,positive,0.5589057888888894,4.958632784559779,0.3
+Corrected paper-style high-price positive spike filter,positive,0.5634050166666672,4.9280690511740035,0.3
+Corrected paper-style high-price positive spike filter,positive,0.567904244444445,4.891824779497506,0.3
+Corrected paper-style high-price positive spike filter,positive,0.5724034722222228,4.849261619632838,0.3
+Corrected paper-style high-price positive spike filter,positive,0.5769027000000005,4.800320071968387,0.3
+Corrected paper-style high-price positive spike filter,positive,0.5814019277777783,4.748716184040056,0.3
+Corrected paper-style high-price positive spike filter,positive,0.5859011555555561,4.722940571005644,0.3
+Corrected paper-style high-price positive spike filter,positive,0.5904003833333339,4.691912536785684,0.3
+Corrected paper-style high-price positive spike filter,positive,0.5948996111111117,4.655316080263141,0.3
+Corrected paper-style high-price positive spike filter,positive,0.5993988388888895,4.639839389308886,0.3
+Corrected paper-style high-price positive spike filter,positive,0.6038980666666672,4.632216884449419,0.3
+Corrected paper-style high-price positive spike filter,positive,0.608397294444445,4.620577442722024,0.3
+Corrected paper-style high-price positive spike filter,positive,0.6128965222222228,4.604808928531785,0.3
+Corrected paper-style high-price positive spike filter,positive,0.6173957500000006,4.5846038683545896,0.3
+Corrected paper-style high-price positive spike filter,positive,0.6218949777777784,4.5597083439814075,0.3
+Corrected paper-style high-price positive spike filter,positive,0.6263942055555561,4.52995272290368,0.3
+Corrected paper-style high-price positive spike filter,positive,0.6308934333333339,4.494518656572122,0.3
+Corrected paper-style high-price positive spike filter,positive,0.6353926611111117,4.45303560249682,0.3
+Corrected paper-style high-price positive spike filter,positive,0.6398918888888895,4.405257112648216,0.3
+Corrected paper-style high-price positive spike filter,positive,0.6443911166666673,4.350900345549471,0.3
+Corrected paper-style high-price positive spike filter,positive,0.648890344444445,4.289496329936284,0.3
+Corrected paper-style high-price positive spike filter,positive,0.6533895722222228,4.251745973252114,0.3
+Corrected paper-style high-price positive spike filter,positive,0.6578888000000006,4.225877372894908,0.3
+Corrected paper-style high-price positive spike filter,positive,0.6623880277777784,4.194734258694407,0.3
+Corrected paper-style high-price positive spike filter,positive,0.6668872555555562,4.1577145640068816,0.3
+Corrected paper-style high-price positive spike filter,positive,0.671386483333334,4.114516899831044,0.3
+Corrected paper-style high-price positive spike filter,positive,0.6758857111111117,4.065275363240129,0.3
+Corrected paper-style high-price positive spike filter,positive,0.6803849388888895,4.009553356331917,0.3
+Corrected paper-style high-price positive spike filter,positive,0.6848841666666673,3.946964846147801,0.3
+Corrected paper-style high-price positive spike filter,positive,0.6893833944444451,3.8772253390789952,0.3
+Corrected paper-style high-price positive spike filter,positive,0.6938826222222229,3.7998600282310826,0.3
+Corrected paper-style high-price positive spike filter,positive,0.6983818500000006,3.714220432707394,0.3
+Corrected paper-style high-price positive spike filter,positive,0.7028810777777784,3.6201348974614316,0.3
+Corrected paper-style high-price positive spike filter,positive,0.7073803055555562,3.5170102646545898,0.3
+Corrected paper-style high-price positive spike filter,positive,0.711879533333334,3.4041715191372184,0.3
+Corrected paper-style high-price positive spike filter,positive,0.7163787611111118,3.281285092893179,0.3
+Corrected paper-style high-price positive spike filter,positive,0.7208779888888895,3.147982212518889,0.3
+Corrected paper-style high-price positive spike filter,positive,0.7253772166666673,3.0036535877605526,0.3
+Corrected paper-style high-price positive spike filter,positive,0.7298764444444451,2.8469653716047234,0.3
+Corrected paper-style high-price positive spike filter,positive,0.7343756722222229,2.741852314486524,0.3
+Corrected paper-style high-price positive spike filter,positive,0.7388749000000007,2.6359767519498654,0.3
+Corrected paper-style high-price positive spike filter,positive,0.7433741277777784,2.520443149016413,0.3
+Corrected paper-style high-price positive spike filter,positive,0.7478733555555562,2.45275615149419,0.3
+Corrected paper-style high-price positive spike filter,positive,0.752372583333334,2.3980194698441184,0.3
+Corrected paper-style high-price positive spike filter,positive,0.7568718111111118,2.3371930945526325,0.3
+Corrected paper-style high-price positive spike filter,positive,0.7613710388888896,2.2699362423944582,0.3
+Corrected paper-style high-price positive spike filter,positive,0.7658702666666674,2.19552651960097,0.3
+Corrected paper-style high-price positive spike filter,positive,0.7703694944444451,2.1137479583204057,0.3
+Corrected paper-style high-price positive spike filter,positive,0.7748687222222229,2.024391121663245,0.3
+Corrected paper-style high-price positive spike filter,positive,0.7793679500000007,1.9269671476308727,0.3
+Corrected paper-style high-price positive spike filter,positive,0.7838671777777785,1.821025247482741,0.3
+Corrected paper-style high-price positive spike filter,positive,0.7883664055555563,1.7057863895613756,0.3
+Corrected paper-style high-price positive spike filter,positive,0.792865633333334,1.5804933806508572,0.3
+Corrected paper-style high-price positive spike filter,positive,0.7973648611111118,1.4448196638502249,0.3
+Corrected paper-style high-price positive spike filter,positive,0.8018640888888896,1.3789801694241344,0.3
+Corrected paper-style high-price positive spike filter,positive,0.8063633166666674,1.331913401359244,0.3
+Corrected paper-style high-price positive spike filter,positive,0.8108625444444452,1.2799872175721265,0.3
+Corrected paper-style high-price positive spike filter,positive,0.815361772222223,1.2227796103734931,0.3
+Corrected paper-style high-price positive spike filter,positive,0.8198610000000007,1.1598569562694683,0.3

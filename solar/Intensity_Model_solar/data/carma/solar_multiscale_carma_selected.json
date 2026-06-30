@@ -1,0 +1,144 @@
+{
+  "selected": {
+    "Kr": 3,
+    "Kc": 1,
+    "order": 5
+  },
+  "roots": [
+    [
+      -0.34657359027997264,
+      0.0
+    ],
+    [
+      -0.008702524295986535,
+      0.0
+    ],
+    [
+      -0.008704589721072907,
+      0.0
+    ],
+    [
+      -0.005329398074316307,
+      0.2617993877991494
+    ],
+    [
+      -0.005329398074316307,
+      -0.2617993877991494
+    ]
+  ],
+  "ar_coefficients": [
+    0.37463950044566474,
+    0.0785555159698211,
+    0.025048546038969867,
+    0.00041913003098614066,
+    1.8001396725132353e-06
+  ],
+  "b_coefficients": [
+    1.8338019821568055e-05,
+    0.002714270569766593,
+    0.07034043966988746,
+    0.07572328530444067,
+    1.0
+  ],
+  "metrics": {
+    "rmse_multiscale": 0.054525172204390376,
+    "wssr_multiscale": 2.8166693387047563,
+    "rmse_spectral": 0.054525172202656284,
+    "wssr_spectral": 2.8166693387012147
+  },
+  "components": [
+    {
+      "component": "real_fast",
+      "kind": "real",
+      "half_life_h": 2.0,
+      "half_life_d": 0.08333333333333333,
+      "period_h": null,
+      "share": 0.664970955121409
+    },
+    {
+      "component": "real_mid",
+      "kind": "real",
+      "half_life_h": 79.64897965060709,
+      "half_life_d": 3.318707485441962,
+      "period_h": null,
+      "share": 1.9662817726706124e-05
+    },
+    {
+      "component": "real_slow",
+      "kind": "real",
+      "half_life_h": 79.63008054037378,
+      "half_life_d": 3.3179200225155743,
+      "period_h": null,
+      "share": 0.1935661897818424
+    },
+    {
+      "component": "osc_daily",
+      "kind": "osc",
+      "half_life_h": 130.0610633497981,
+      "half_life_d": 5.419210972908254,
+      "period_h": 24.0,
+      "share": 0.1414431922790218
+    }
+  ],
+  "calibration": {
+    "max_fit_lag_h": 4320,
+    "max_fit_lag_d": 180.0,
+    "dense_lag_max_h": 336,
+    "dense_lag_max_d": 14.0,
+    "long_anchor_lags_h": [
+      384,
+      432,
+      504,
+      600,
+      720,
+      960,
+      1200,
+      1440,
+      1800,
+      2160,
+      2520,
+      2880,
+      3600,
+      4320
+    ],
+    "half_life_bounds_h": {
+      "real_fast": {
+        "lower": 2.0,
+        "upper": 24.0
+      },
+      "real_mid": {
+        "lower": 5.0,
+        "upper": 168.0
+      },
+      "real_slow": {
+        "lower": 72.0,
+        "upper": 8760.0
+      },
+      "osc_daily": {
+        "lower": 12.0,
+        "upper": 4320.0
+      }
+    },
+    "half_life_bounds_d": {
+      "real_fast": {
+        "lower": 0.08333333333333333,
+        "upper": 1.0
+      },
+      "real_mid": {
+        "lower": 0.20833333333333334,
+        "upper": 7.0
+      },
+      "real_slow": {
+        "lower": 3.0,
+        "upper": 365.0
+      },
+      "osc_daily": {
+        "lower": 0.5,
+        "upper": 180.0
+      }
+    },
+    "acf_plot_max_lag_h": 500,
+    "n_fit_lags": 350
+  },
+  "note": "Solar XtQ. Kr=3 Kc=1 period=24h fixed; all half-lives are optimised inside explicit manual bounds. CARMA(5,4). Monic b[-1]=1 (book convention)."
+}

@@ -1,0 +1,48 @@
+{
+  "method": "state_residual_covariance_matching",
+  "paper_reference": "Gachon-Karbach Proposition 2.10 covariance of residuals",
+  "solar_factor": "solar_XtQ: cloudiness / solar shortfall latent residual",
+  "timezone_policy": "solar timestamps localized as Europe/Berlin, converted to UTC; non-1h UTC intervals dropped",
+  "lambda_hat": -7.968458622324685e-06,
+  "n_common_hourly_intervals": 23103,
+  "corr_price_marginal_solar": -0.001001688030767306,
+  "corr_price_idio_solar": 0.0007781114593692802,
+  "lambda_ols_on_increments_diagnostic": -4.484724467098024e-06,
+  "carma": {
+    "solar": {
+      "order": [
+        4,
+        3
+      ],
+      "path": "C:\\Users\\gabri\\Documents\\quant-projects\\FR_carma_quanto\\solar\\Intensity_Model_solar\\data\\carma\\solar_carma43_joint_qmle_result.json",
+      "nu2": 8.718572082204119
+    },
+    "price": {
+      "order": [
+        5,
+        4
+      ],
+      "path": "C:\\Users\\gabri\\Documents\\quant-projects\\FR_carma_quanto\\germany\\germany23+24+25\\data\\kalman\\price_carma54_joint_qmle_result.json",
+      "nu2": 0.0001753614657878658
+    }
+  },
+  "nig_price_idiosyncratic_driver": {
+    "scipy_a": 0.3565891259440799,
+    "scipy_b": -0.04493338651048538,
+    "loc": 0.0008705762916548427,
+    "scale": 0.006851853459845007,
+    "alpha": 52.04272508655579,
+    "beta": -6.557844059832213,
+    "delta": 0.006851853459845007,
+    "mu": 0.0008705762916548427,
+    "gamma": 51.62789861810905,
+    "mean": 2.447904086442902e-07,
+    "variance": 0.00013485739892929354,
+    "std": 0.011612811844221603,
+    "loglik": 74016.54943488688,
+    "AIC": -148025.09886977376,
+    "BIC": -147992.90799874093
+  },
+  "simulation_identity": "dW_price_total_sim = dL_price_idio_sim + lambda_hat * dW_solar_sim",
+  "warning": "Do not simulate marginal_NIG_price + lambda_hat*dW_solar_sim; that double-counts solar."
+}

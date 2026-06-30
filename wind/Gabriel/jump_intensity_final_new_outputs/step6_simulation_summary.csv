@@ -1,0 +1,3 @@
+branch,n_paths,n_hours,start,end
+constant_covariance,1000,2949,2025-04-20,2025-08-20 20:00:00
+stochastic_covariance,1000,2949,2025-04-20,2025-08-20 20:00:00

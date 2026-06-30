@@ -1,0 +1,48 @@
+{
+  "method": "state_residual_covariance_matching",
+  "paper_reference": "Gachon-Karbach Proposition 2.10 covariance of residuals",
+  "wind_factor": "wind_XtQ: deseasonalised wind residual",
+  "timezone_policy": "wind and price timestamps interpreted as UTC; non-1h intervals dropped",
+  "lambda_hat": -0.0016912959580251362,
+  "n_common_hourly_intervals": 26304,
+  "corr_price_marginal_wind": -0.04023663694977567,
+  "corr_price_idio_wind": 3.685755457986397e-05,
+  "lambda_ols_on_increments_diagnostic": -0.0016897493676884187,
+  "carma": {
+    "wind": {
+      "order": [
+        4,
+        3
+      ],
+      "path": "C:\\Users\\gabri\\Documents\\quant-projects\\FR_carma_quanto\\wind\\carma_coupling\\data\\carma\\wind_carma43_joint_qmle_result.json",
+      "nu2": 0.09934486421183525
+    },
+    "price": {
+      "order": [
+        5,
+        4
+      ],
+      "path": "C:\\Users\\gabri\\Documents\\quant-projects\\FR_carma_quanto\\germany\\germany23+24+25\\data\\kalman\\price_carma54_joint_qmle_result.json",
+      "nu2": 0.0001753614657878658
+    }
+  },
+  "nig_price_idiosyncratic_driver": {
+    "scipy_a": 0.3238085781551217,
+    "scipy_b": -0.03337324562008507,
+    "loc": 0.0007093862592245077,
+    "scale": 0.0068391520126185965,
+    "alpha": 47.34630514977263,
+    "beta": -4.8797344405431655,
+    "delta": 0.0068391520126185965,
+    "mu": 0.0007093862592245077,
+    "gamma": 47.09416952368056,
+    "mean": 7.370578981343153e-07,
+    "variance": 0.00014678207204696486,
+    "std": 0.012115365122313272,
+    "loglik": 83508.0571749578,
+    "AIC": -167008.1143499156,
+    "BIC": -166975.40444472418
+  },
+  "simulation_identity": "dW_price_total_sim = dL_price_idio_sim + lambda_hat * dW_wind_sim",
+  "warning": "Do not simulate marginal_NIG_price + lambda_hat*dW_wind_sim; that double-counts wind."
+}

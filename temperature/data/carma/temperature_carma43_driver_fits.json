@@ -1,0 +1,31 @@
+{
+  "gaussian": {
+    "mean": -0.0002583161327906834,
+    "variance": 0.15452020741615657,
+    "std": 0.3930905842374714,
+    "m_rate": -0.0002583161327906834,
+    "nu2_rate": 0.15452020741615657,
+    "N": 26303
+  },
+  "nig": {
+    "mu": 0.03724268751290465,
+    "delta": 0.29888063629989636,
+    "alpha": 2.06405498939785,
+    "beta": -0.2569652739451186,
+    "gamma": 2.04799703301652,
+    "scipy_a": 0.6169060685892053,
+    "scipy_b": -0.07680194458369423,
+    "scipy_loc": 0.03724268751290465,
+    "scipy_scale": 0.29888063629989636,
+    "loglik": -9716.399486739669,
+    "mean": -0.0002583163193966634,
+    "variance": 0.14823553885496296,
+    "std": 0.3850136865813512,
+    "skew": -0.4773763256285575,
+    "excess_kurtosis": 5.2049575184341546,
+    "success": true,
+    "message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "N": 26303
+  },
+  "source": "recovered hourly Levy increments from temperature/02mle_temperature.ipynb"
+}

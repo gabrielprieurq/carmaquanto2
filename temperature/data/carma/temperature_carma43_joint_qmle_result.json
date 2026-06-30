@@ -1,0 +1,72 @@
+{
+  "m_qmle": 0.0002853528968238985,
+  "nu2_qmle": 0.16065788236677428,
+  "loglik_qmle": -22940.64527727593,
+  "reduced_likelihood_qmle": -1.0936065921639129,
+  "acf_weighted_mse": 0.0007637899132587366,
+  "penalized_objective": -1.093530213172587,
+  "lambda_acf": 0.1,
+  "stationary_mean": 0.02851215864343249,
+  "carma_order": [
+    4,
+    3
+  ],
+  "ar_coefficients": [
+    1.3458485326743514,
+    0.11773647059434703,
+    0.09151094436077854,
+    0.001634346436887525
+  ],
+  "b_coefficients": [
+    0.1633021616585287,
+    0.20108678625926973,
+    2.5676747128943442,
+    1.0
+  ],
+  "ar_roots": [
+    [
+      -1.3085871362068688,
+      0.0
+    ],
+    [
+      -0.01819822064909775,
+      0.0
+    ],
+    [
+      -0.00953158790919229,
+      0.2617993877991494
+    ],
+    [
+      -0.00953158790919229,
+      -0.2617993877991494
+    ]
+  ],
+  "ma_roots": [
+    [
+      -2.51352067489185,
+      0.0
+    ],
+    [
+      -0.027077019001246976,
+      0.25344886496713365
+    ],
+    [
+      -0.027077019001246976,
+      -0.25344886496713365
+    ]
+  ],
+  "ar_real_half_lives_h": [
+    0.5296912688360469,
+    38.08873372432216
+  ],
+  "ar_complex_half_life_h": 72.72106045326112,
+  "ar_complex_period_h": 24.0,
+  "ar_complex_half_life_fixed_from_04": 72.72106045326112,
+  "ma_real_half_lives_h": [
+    0.2757674474230332
+  ],
+  "ma_complex_half_life_h": 25.59909495679801,
+  "ma_complex_period_h": 24.79074154857378,
+  "source": "temperature/02mle_temperature.ipynb",
+  "note": "Joint exact Riccati QMLE over labelled real AR roots and MA roots; daily AR pair fixed from 01order; b[-1]=1."
+}

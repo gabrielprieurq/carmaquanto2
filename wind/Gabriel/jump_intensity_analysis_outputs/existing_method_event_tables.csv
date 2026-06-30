@@ -1,0 +1,5 @@
+event_type,count,intensity_year_inv,intensity_year_inv_low,intensity_year_inv_high,threshold,method,covariate,covariate_support_min,covariate_support_max,n_low_state_obs,n_high_state_obs,n_low_state_neg_events,n_high_state_neg_events
+positive,55,11.85910847465971,,,,Intensity_model calibration,,,,,,,
+negative,2,,0.3520988548768012,2.1977326078231854,0.58,Intensity_model calibration,,,,,,,
+positive,55,11.85910847465971,,,,Intensity_final wind-reference,wind_reference,0.0027,0.8198624999999999,,,,
+negative,2,,0.3643357451388477,2.7056545995997183,0.6019524999999999,Intensity_final wind-reference,wind_reference,0.0027,0.8198624999999999,38219.0,2407.0,1.0,1.0

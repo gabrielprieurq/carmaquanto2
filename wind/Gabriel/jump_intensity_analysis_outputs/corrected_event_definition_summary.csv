@@ -1,0 +1,2 @@
+threshold_scale,wind_alignment,low_price_quantile,low_price_cut_EUR_MWh,high_price_quantile,high_price_cut_EUR_MWh,all_negative_return_jump_count,corrected_negative_low_price_spike_count,all_positive_return_jump_count,corrected_positive_high_price_spike_count
+2.5,same_hour,0.2,56.96,0.8,164.71600000000007,61,15,246,198

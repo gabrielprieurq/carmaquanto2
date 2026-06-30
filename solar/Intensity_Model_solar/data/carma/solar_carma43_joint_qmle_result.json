@@ -1,0 +1,72 @@
+{
+  "m_qmle": 0.0001269139124738601,
+  "nu2_qmle": 9.122430073272296,
+  "loglik_qmle": -84622.93626637287,
+  "reduced_likelihood_qmle": 1.3279700926904092,
+  "acf_weighted_mse": 0.00255738730428847,
+  "penalized_objective": 3.885357396978879,
+  "lambda_acf": 1000.0,
+  "stationary_mean": 0.0006670955221519655,
+  "carma_order": [
+    4,
+    3
+  ],
+  "ar_coefficients": [
+    1.3920179155662724,
+    0.1205815331858005,
+    0.09468166845559688,
+    0.0017107504226544878
+  ],
+  "b_coefficients": [
+    0.008992189463132705,
+    0.08187719744193903,
+    0.2392272327569579,
+    1.0
+  ],
+  "ar_roots": [
+    [
+      -1.3539187188343766,
+      0.0
+    ],
+    [
+      -0.018409547335119427,
+      0.0
+    ],
+    [
+      -0.00984482469838819,
+      0.2617993877991494
+    ],
+    [
+      -0.00984482469838819,
+      -0.2617993877991494
+    ]
+  ],
+  "ma_roots": [
+    [
+      -0.13274148084692902,
+      0.0
+    ],
+    [
+      -0.05324287595501444,
+      0.25476914492210795
+    ],
+    [
+      -0.05324287595501444,
+      -0.25476914492210795
+    ]
+  ],
+  "ar_real_half_lives_h": [
+    0.51195627249817,
+    37.65150592473537
+  ],
+  "ar_complex_half_life_h": 70.40726491284587,
+  "ar_complex_period_h": 24.0,
+  "ar_complex_half_life_fixed_from_04": 70.40726491284587,
+  "ma_real_half_lives_h": [
+    5.221782792669374
+  ],
+  "ma_complex_half_life_h": 13.018590151771551,
+  "ma_complex_period_h": 24.66226947969143,
+  "source": "solar/Intensity_Model_solar/04mle_solar.ipynb",
+  "note": "Joint exact Riccati QMLE over labelled real AR roots and MA roots; daily AR pair fixed from 04order; b[-1]=1."
+}
