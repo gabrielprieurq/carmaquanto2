@@ -1,0 +1,482 @@
+\section{Data and Deseasonalization}\label{sec:deseasonalization}
+
+\subsection{Electricity Prices}\label{ssec:price-deseasonalization}
+
+\paragraph{Data.}
+We use hourly German day-ahead electricity prices for the DE--LU bidding zone.
+The calibration sample runs from 1 January 2023 to 31 December 2025 and is
+indexed in UTC. The 2021--2025 history is shown in
+\Cref{fig:price-window-2021-2025}. The 2021--2022 period contains exceptional
+crisis spikes, while the 2023--2025 window keeps a recent regime with both
+positive and negative price spikes. Since the German spot market can contain
+negative prices, the price is first shifted before applying the logarithm:
+\begin{equation}
+  \widetilde S_t = \log(S_t + \delta),
+  \qquad
+  \delta = 1000 \ \text{EUR/MWh}.
+  \label{eq:price-log-shift}
+\end{equation}
+The shift is only used to define a positive log-price factor. Physical prices
+are recovered by the inverse map \(S_t = \exp(\widetilde S_t)-\delta\).
+
+\paragraph{Deseasonalization.}
+The price model is specified in the shifted log-price coordinate:
+\begin{equation}
+  \widetilde S_t = \Lambda^P_t + X^P_t .
+  \label{eq:price-additive-decomposition}
+\end{equation}
+Here \(\Lambda^P_t\) is deterministic and \(X^P_t\) is the stochastic price
+factor later modeled by CARMA dynamics. We estimate \(\Lambda^P_t\) with a
+Paraschiv-style seasonal weight in the transformed coordinate. Let \(\bar p\)
+be the sample mean of \(\widetilde S_t\), and let \(d\) be the calendar day
+containing hour \(t\). The fitted seasonal component is
+\begin{equation}
+  \widehat\Lambda^P_t
+  =
+  \bar p\, \widehat F^{Y}_{d}\,\widehat F^{D}_{t},
+  \qquad
+  \widehat X^P_t = \widetilde S_t - \widehat\Lambda^P_t .
+  \label{eq:price-seasonality}
+\end{equation}
+
+The day-level factor \(\widehat F^Y_d\) is estimated from daily average
+log-prices. If \(\bar S_d^{\log}\) is the daily mean of \(\widetilde S_t\), the
+observed factor is
+\begin{equation}
+  F^{Y,\mathrm{obs}}_d
+  =
+  \frac{\bar S_d^{\log}}
+       {\text{yearly mean of } \bar S_d^{\log}} .
+  \label{eq:price-f2y-observed}
+\end{equation}
+We regress \(F^{Y,\mathrm{obs}}_d\) on weekday and month indicators, with August
+split into early and late subperiods. The fitted daily values are broadcast to
+the hourly grid.
+
+The intraday factor is estimated on 20 profile classes. Weekdays are grouped by
+month, while Saturdays and Sundays are grouped by season. Within a profile class
+\(c\), the shifted log-price is regressed on hour-of-day indicators:
+\begin{equation}
+  \widetilde S_t
+  =
+  a_0^{(c)}
+  +
+  \sum_{h=1}^{23} a_h^{(c)}
+  \mathbf 1_{\{\operatorname{hour}(t)=h\}}
+  +
+  \varepsilon_t^{(c)},
+  \qquad t \in c .
+  \label{eq:price-f2d-regression}
+\end{equation}
+The fitted intraday curve is normalized by its class mean, which gives
+\(\widehat F^D_t\). This normalization makes \(\widehat F^D_t\) a shape factor
+rather than a level factor.
+
+This construction removes the main calendar, monthly, and hourly price patterns
+before the CARMA calibration. The remaining series \(\widehat X^P\) is treated
+as the deseasonalized stochastic log-price factor.
+
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=0.97\textwidth]{deseasonalization/price_window_2021_2025.pdf}
+  \caption{Hourly German day-ahead electricity prices from 2021 to 2025.
+  The shaded region is the 2023--2025 calibration window used for the price
+  deseasonalization and CARMA calibration.}
+  \label{fig:price-window-2021-2025}
+\end{figure}
+
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=0.97\textwidth]{deseasonalization/price_seasonal_fit_distribution.pdf}
+  \caption{Price deseasonalization diagnostics. Left: observed shifted log-price
+  and fitted deterministic component over one week in March 2025. Right:
+  marginal distributions of the shifted log-price and of the fitted deterministic
+  component over the calibration sample.}
+  \label{fig:price-seasonal-fit-distribution}
+\end{figure}
+
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=0.97\textwidth]{deseasonalization/price_acf_before_after_240.pdf}
+  \caption{Empirical autocorrelation of the shifted log-price and of the
+  deseasonalized price residual over 240 hourly lags. The deterministic
+  deseasonalization removes the main calendar peaks, while the remaining serial
+  dependence motivates the CARMA calibration.}
+  \label{fig:price-acf-before-after}
+\end{figure}
+
+\FloatBarrier
+
+\subsection{Temperature}\label{ssec:temperature-deseasonalization}
+
+\paragraph{Data.}
+We use hourly 2-meter temperature for Berlin over the same 2023--2025 UTC
+sample. The temperature factor is modeled in physical units, without a
+positivity transform:
+\begin{equation}
+  T_t = \Lambda^T_t + X^T_t ,
+  \label{eq:temperature-additive-decomposition}
+\end{equation}
+where \(\Lambda^T_t\) is deterministic seasonality and \(X^T_t\) is the
+deseasonalized stochastic temperature factor.
+
+\paragraph{Deseasonalization.}
+The deterministic component is estimated by a Fourier regression with a linear
+trend, a daily cycle, an annual cycle, and interactions between the two cycles.
+Let \(\tau_t\) be the number of hours elapsed since the beginning of the sample
+and set \(P_y=365.25\times24\). The seasonal component is
+\begin{equation}
+  \begin{aligned}
+  \Lambda^T_t(\theta)
+  =
+  \beta_0+\beta_1\tau_t
+  &+
+  \sum_{k=1}^{3}
+  \left[
+    a_k\cos\left(\frac{2\pi k\tau_t}{24}\right)
+    +
+    b_k\sin\left(\frac{2\pi k\tau_t}{24}\right)
+  \right] \\
+  &+
+  a_y\cos\left(\frac{2\pi\tau_t}{P_y}\right)
+  +
+  b_y\sin\left(\frac{2\pi\tau_t}{P_y}\right) \\
+  &+
+  \sum_{k=1}^{3}
+  \left[
+    u_k\cos\left(\frac{2\pi k\tau_t}{24}\right)
+    +
+    v_k\sin\left(\frac{2\pi k\tau_t}{24}\right)
+  \right]\cos\left(\frac{2\pi\tau_t}{P_y}\right) \\
+  &+
+  \sum_{k=1}^{3}
+  \left[
+    \widetilde u_k\cos\left(\frac{2\pi k\tau_t}{24}\right)
+    +
+    \widetilde v_k\sin\left(\frac{2\pi k\tau_t}{24}\right)
+  \right]\sin\left(\frac{2\pi\tau_t}{P_y}\right).
+  \end{aligned}
+  \label{eq:temperature-seasonality}
+\end{equation}
+The first sum captures the deterministic intraday pattern, the annual sine and
+cosine capture the low-frequency seasonal level, and the last two sums allow the
+intraday profile to vary smoothly over the year. All coefficients are estimated
+by ordinary least squares:
+\begin{equation}
+  \widehat\theta
+  =
+  \arg\min_\theta
+  \sum_t \bigl(T_t-\Lambda^T_t(\theta)\bigr)^2,
+  \qquad
+  \widehat X^T_t = T_t-\Lambda^T_t(\widehat\theta).
+  \label{eq:temperature-ols}
+\end{equation}
+
+\Cref{fig:temperature-seasonal-fit-distribution} shows the fitted deterministic
+component over the same week used for the price diagnostics and compares the
+marginal distributions of observed and seasonal temperature. The ACF comparison
+in \Cref{fig:temperature-acf-before-after} shows that the deterministic
+regression removes the dominant periodic component, while the residual retains
+serial dependence to be modeled by the temperature CARMA process.
+
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=0.97\textwidth]{deseasonalization/temperature_seasonal_fit_distribution.pdf}
+  \caption{Temperature deseasonalization diagnostics. Left: observed temperature
+  and fitted deterministic component over one week in March 2025. Right:
+  marginal distributions of observed temperature and of the fitted deterministic
+  component over the calibration sample.}
+  \label{fig:temperature-seasonal-fit-distribution}
+\end{figure}
+
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=0.97\textwidth]{deseasonalization/temperature_acf_before_after_240.pdf}
+  \caption{Empirical autocorrelation of observed temperature and of the
+  deseasonalized temperature residual over 240 hourly lags.}
+  \label{fig:temperature-acf-before-after}
+\end{figure}
+
+\FloatBarrier
+
+\subsection{Solar Capacity Factors}\label{ssec:solar-deseasonalization}
+
+\paragraph{Data and clear-sky proxy.}
+We use hourly German solar capacity factors \(Q_t\in[0,1]\). Solar production
+has structural zeros at night and a daylight window that changes over the year,
+as shown in \Cref{fig:solar-raw-three-days}. These features make a direct
+additive regression on \(Q_t\) inappropriate, since the seasonal level and the
+support of the process vary jointly over the calendar.
+
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=0.97\textwidth]{deseasonalization/solar_raw_three_days.pdf}
+  \caption{Raw hourly German solar capacity factor over three days in June 2025.
+  The series combines deterministic daylight availability, cloud-driven
+  reductions during daylight hours, and structural nighttime zeros.}
+  \label{fig:solar-raw-three-days}
+\end{figure}
+
+We therefore first estimate an empirical clear-sky proxy. Let \(d(t)\) denote
+the day of year and \(h(t)\) the hour of day. For each calendar cell \((d,h)\),
+the raw clear-sky level is defined as the upper-tail climatology
+\begin{equation}
+  C^{\mathrm{raw}}_{d,h}
+  =
+  q_{0.98}\{Q_t:\ d(t)=d,\ h(t)=h\},
+  \label{eq:solar-raw-clearsky}
+\end{equation}
+where \(q_{0.98}\) is the empirical 98\% quantile. Missing cells are filled by
+coarser calendar averages, and each hourly day-of-year profile is smoothed with
+a circular 21-day moving average. The resulting proxy is denoted
+\begin{equation}
+  \widehat C_t = \widehat C_{d(t),h(t)} .
+  \label{eq:solar-clearsky-proxy}
+\end{equation}
+This proxy is an empirical capacity-factor envelope. It captures the seasonal
+and intraday availability of solar radiation while keeping the subsequent
+stochastic factor bounded.
+
+\paragraph{Latent transformation and deseasonalization.}
+The stochastic solar factor is defined from the shortfall of production relative
+to the clear-sky proxy:
+\begin{equation}
+  R_t
+  =
+  \operatorname{clip}_{[0,1]}
+  \left(
+    1-\frac{Q_t}{\max(\widehat C_t,\varepsilon_C)}
+  \right),
+  \qquad
+  \varepsilon_C=10^{-4}.
+  \label{eq:solar-risk-driver}
+\end{equation}
+The bounded risk driver is then mapped to a real-valued latent coordinate by a
+logit transform,
+\begin{equation}
+  Z_t
+  =
+  \operatorname{clip}_{[\varepsilon,1-\varepsilon]}
+  \left(
+    \frac{R_t-\alpha}{\beta}
+  \right),
+  \qquad
+  Y^Q_t = \log\left(\frac{Z_t}{1-Z_t}\right),
+  \label{eq:solar-logit-transform}
+\end{equation}
+with \(\alpha=10^{-4}\), \(\beta=0.9998\), and \(\varepsilon=10^{-4}\) in the
+present calibration. Deseasonalization is performed in this latent coordinate:
+\begin{equation}
+  Y^Q_t = \Lambda^Q_t + X^Q_t .
+  \label{eq:solar-additive-decomposition}
+\end{equation}
+
+The deterministic latent component is estimated by ordinary least squares. It
+combines hour indicators, month indicators, annual Fourier terms, and
+hour-by-annual interactions. With \(H_h(t)=\mathbf 1_{\{h(t)=h\}}\),
+\(M_m(t)=\mathbf 1_{\{\operatorname{month}(t)=m\}}\), and
+\(\phi_t=2\pi d(t)/365.25\), we use
+\begin{equation}
+  \begin{aligned}
+  \Lambda^Q_t(\theta)
+  =
+  \gamma_0
+  &+
+  \sum_{h=1}^{23}\gamma_h H_h(t)
+  +
+  \sum_{m=2}^{12}\eta_m M_m(t) \\
+  &+
+  \sum_{k=1}^{3}
+  \left[
+    a_k\cos(k\phi_t)
+    +
+    b_k\sin(k\phi_t)
+  \right] \\
+  &+
+  \sum_{h=1}^{23} H_h(t)
+  \sum_{k=1}^{2}
+  \left[
+    u_{h,k}\cos(k\phi_t)
+    +
+    v_{h,k}\sin(k\phi_t)
+  \right].
+  \end{aligned}
+  \label{eq:solar-seasonality}
+\end{equation}
+The residual is
+\begin{equation}
+  \widehat\theta
+  =
+  \arg\min_\theta
+  \sum_t \bigl(Y^Q_t-\Lambda^Q_t(\theta)\bigr)^2,
+  \qquad
+  \widehat X^Q_t=Y^Q_t-\Lambda^Q_t(\widehat\theta).
+  \label{eq:solar-ols}
+\end{equation}
+For visualization in physical units, the fitted latent seasonality is mapped
+back to capacity factors through
+\begin{equation}
+  \widehat Q^{\mathrm{det}}_t
+  =
+  \widehat C_t
+  \left[
+    1-\alpha-\beta\sigma\bigl(\Lambda^Q_t(\widehat\theta)\bigr)
+  \right],
+  \qquad
+  \sigma(x)=\frac{1}{1+\exp(-x)} .
+  \label{eq:solar-inverse-transform}
+\end{equation}
+
+\Cref{fig:solar-transformation-steps} displays the main transformations over
+one week. The top panel shows observed production, the clear-sky envelope, and
+the latent seasonal component mapped back to capacity-factor scale. The middle
+panel shows the bounded shortfall and its normalized version. The bottom panel
+shows the latent coordinate \(Y^Q_t\) and its fitted seasonality.
+
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=0.97\textwidth]{deseasonalization/solar_transformation_steps.pdf}
+  \caption{Solar clear-sky transformation over one week in June 2025. Top:
+  observed capacity factor, clear-sky proxy, and latent seasonality mapped to
+  capacity-factor scale. Middle: shortfall and normalized shortfall. Bottom:
+  latent coordinate and latent seasonality.}
+  \label{fig:solar-transformation-steps}
+\end{figure}
+
+\Cref{fig:solar-clearsky-fit-distribution} gives the corresponding one-week
+fit and compares the marginal distributions of the latent coordinate and fitted
+latent deterministic component. The ACF comparison in
+\Cref{fig:solar-acf-before-after} shows the reduction in calendar-driven
+dependence after the latent deseasonalization.
+
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=0.97\textwidth]{deseasonalization/solar_clearsky_fit_distribution.pdf}
+  \caption{Solar clear-sky deseasonalization diagnostics. Left: observed solar
+  capacity factor, clear-sky proxy, and latent seasonality mapped to
+  capacity-factor scale over one week in March 2025. Right: marginal
+  distributions of the latent coordinate and latent seasonality.}
+  \label{fig:solar-clearsky-fit-distribution}
+\end{figure}
+
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=0.97\textwidth]{deseasonalization/solar_acf_before_after_240.pdf}
+  \caption{Empirical autocorrelation of the latent solar coordinate and of the
+  deseasonalized solar residual over 240 hourly lags.}
+  \label{fig:solar-acf-before-after}
+\end{figure}
+
+\FloatBarrier
+
+\subsection{Wind Capacity Factors}\label{ssec:wind-deseasonalization}
+
+\paragraph{Data and bounded transform.}
+We use hourly German wind capacity factors \(W_t\in[0,1]\), aligned on the
+same UTC calendar as the German price panel. Wind does not have structural
+nighttime zeros, but the capacity factor is bounded and can spend long periods
+near low production levels. \Cref{fig:wind-raw-three-days} shows the raw series
+over three days. The model is therefore specified after a logit transformation
+of the clipped capacity factor:
+\begin{equation}
+  W^{\varepsilon}_t
+  =
+  \operatorname{clip}_{[\varepsilon,1-\varepsilon]}(W_t),
+  \qquad
+  Y^W_t
+  =
+  \log\left(\frac{W^{\varepsilon}_t}{1-W^{\varepsilon}_t}\right),
+  \qquad
+  \varepsilon=10^{-4}.
+  \label{eq:wind-logit-transform}
+\end{equation}
+The clipping only avoids infinite logit values at the boundaries. The inverse
+map used for physical diagnostics is
+\begin{equation}
+  W_t=\sigma(Y^W_t),
+  \qquad
+  \sigma(x)=\frac{1}{1+\exp(-x)} .
+  \label{eq:wind-inverse-logit}
+\end{equation}
+
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=0.97\textwidth]{deseasonalization/wind_raw_three_days.pdf}
+  \caption{Raw hourly German wind capacity factor over three days in March 2025.
+  The process is bounded, persistent, and irregular, without the deterministic
+  day-night support constraint present in solar production.}
+  \label{fig:wind-raw-three-days}
+\end{figure}
+
+\paragraph{Deseasonalization.}
+Deseasonalization is performed in the logit coordinate:
+\begin{equation}
+  Y^W_t = \Lambda^W_t + X^W_t .
+  \label{eq:wind-additive-decomposition}
+\end{equation}
+The deterministic component combines intraday, weekly, monthly, and annual
+calendar effects. Let \(H_h(t)=\mathbf 1_{\{\operatorname{hour}(t)=h\}}\),
+\(D_j(t)=\mathbf 1_{\{\operatorname{weekday}(t)=j\}}\),
+\(M_m(t)=\mathbf 1_{\{\operatorname{month}(t)=m\}}\), and
+\(\phi_t=2\pi d(t)/365\), where \(d(t)\) is the day of year. The fitted
+seasonality is
+\begin{equation}
+  \begin{aligned}
+  \Lambda^W_t(\theta)
+  =
+  \gamma_0
+  &+
+  \sum_{h=1}^{23}\gamma_h H_h(t)
+  +
+  \sum_{j=1}^{6}\delta_j D_j(t)
+  +
+  \sum_{m=2}^{12}\eta_m M_m(t) \\
+  &+
+  \sum_{k=1}^{2}
+  \left[
+    a_k\sin(k\phi_t)
+    +
+    b_k\cos(k\phi_t)
+  \right].
+  \end{aligned}
+  \label{eq:wind-seasonality}
+\end{equation}
+All coefficients are estimated by ordinary least squares:
+\begin{equation}
+  \widehat\theta
+  =
+  \arg\min_\theta
+  \sum_t \bigl(Y^W_t-\Lambda^W_t(\theta)\bigr)^2,
+  \qquad
+  \widehat X^W_t=Y^W_t-\Lambda^W_t(\widehat\theta).
+  \label{eq:wind-ols}
+\end{equation}
+The blue physical-scale curve in the diagnostics is not fitted directly on
+\(W_t\). It is the logit seasonality mapped back as
+\(\widehat W^{\mathrm{sea}}_t=\sigma(\Lambda^W_t(\widehat\theta))\).
+
+\Cref{fig:wind-seasonal-fit-distribution} gives the one-week physical-scale
+view and compares the marginal distributions in the logit coordinate. The ACF
+comparison in \Cref{fig:wind-acf-before-after} shows that calendar
+deseasonalization removes part of the deterministic periodicity, while the
+remaining serial dependence is left for the wind CARMA calibration.
+
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=0.97\textwidth]{deseasonalization/wind_seasonal_fit_distribution.pdf}
+  \caption{Wind deseasonalization diagnostics. Left: observed wind capacity
+  factor and fitted logit seasonality mapped to capacity-factor scale over one
+  week in March 2025. Right: marginal distributions of the logit capacity factor
+  and fitted logit seasonality.}
+  \label{fig:wind-seasonal-fit-distribution}
+\end{figure}
+
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=0.97\textwidth]{deseasonalization/wind_acf_before_after_240.pdf}
+  \caption{Empirical autocorrelation of the logit wind capacity factor and of
+  the deseasonalized wind residual over 240 hourly lags.}
+  \label{fig:wind-acf-before-after}
+\end{figure}
+
+\FloatBarrier
