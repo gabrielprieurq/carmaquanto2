@@ -88,10 +88,9 @@ as the deseasonalized stochastic log-price factor.
 \begin{figure}[!htbp]
   \centering
   \includegraphics[width=0.97\textwidth]{deseasonalization/price_seasonal_fit_distribution.pdf}
-  \caption{Price deseasonalization diagnostics. Left: observed shifted log-price
-  and fitted deterministic component over one week in March 2025. Right:
-  marginal distributions of the shifted log-price and of the fitted deterministic
-  component over the calibration sample.}
+  \caption{Price deseasonalization diagnostics showing the one-week fit of the
+  deterministic component in shifted log-price coordinates and the marginal
+  distributions of the observed and fitted seasonal series.}
   \label{fig:price-seasonal-fit-distribution}
 \end{figure}
 
@@ -182,10 +181,9 @@ serial dependence to be modeled by the temperature CARMA process.
 \begin{figure}[!htbp]
   \centering
   \includegraphics[width=0.97\textwidth]{deseasonalization/temperature_seasonal_fit_distribution.pdf}
-  \caption{Temperature deseasonalization diagnostics. Left: observed temperature
-  and fitted deterministic component over one week in March 2025. Right:
-  marginal distributions of observed temperature and of the fitted deterministic
-  component over the calibration sample.}
+  \caption{Temperature deseasonalization diagnostics showing the one-week fit of
+  the deterministic component and the marginal distributions of observed and
+  fitted seasonal temperature over the calibration sample.}
   \label{fig:temperature-seasonal-fit-distribution}
 \end{figure}
 
@@ -336,10 +334,9 @@ shows the latent coordinate \(Y^Q_t\) and its fitted seasonality.
 \begin{figure}[!htbp]
   \centering
   \includegraphics[width=0.97\textwidth]{deseasonalization/solar_transformation_steps.pdf}
-  \caption{Solar clear-sky transformation over one week in June 2025. Top:
-  observed capacity factor, clear-sky proxy, and latent seasonality mapped to
-  capacity-factor scale. Middle: shortfall and normalized shortfall. Bottom:
-  latent coordinate and latent seasonality.}
+  \caption{Solar clear-sky transformation over one week in June 2025, including
+  the capacity-factor scale series, the shortfall variables, and the latent
+  logit coordinate used for deseasonalization.}
   \label{fig:solar-transformation-steps}
 \end{figure}
 
@@ -352,10 +349,9 @@ dependence after the latent deseasonalization.
 \begin{figure}[!htbp]
   \centering
   \includegraphics[width=0.97\textwidth]{deseasonalization/solar_clearsky_fit_distribution.pdf}
-  \caption{Solar clear-sky deseasonalization diagnostics. Left: observed solar
-  capacity factor, clear-sky proxy, and latent seasonality mapped to
-  capacity-factor scale over one week in March 2025. Right: marginal
-  distributions of the latent coordinate and latent seasonality.}
+  \caption{Solar clear-sky deseasonalization diagnostics showing the physical
+  capacity-factor reconstruction over one week and the marginal distributions of
+  the latent coordinate and fitted latent seasonality.}
   \label{fig:solar-clearsky-fit-distribution}
 \end{figure}
 
@@ -464,10 +460,9 @@ remaining serial dependence is left for the wind CARMA calibration.
 \begin{figure}[!htbp]
   \centering
   \includegraphics[width=0.97\textwidth]{deseasonalization/wind_seasonal_fit_distribution.pdf}
-  \caption{Wind deseasonalization diagnostics. Left: observed wind capacity
-  factor and fitted logit seasonality mapped to capacity-factor scale over one
-  week in March 2025. Right: marginal distributions of the logit capacity factor
-  and fitted logit seasonality.}
+  \caption{Wind deseasonalization diagnostics showing the one-week physical
+  capacity-factor reconstruction from the fitted logit seasonality and the
+  marginal distributions in the logit coordinate.}
   \label{fig:wind-seasonal-fit-distribution}
 \end{figure}
 

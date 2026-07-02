@@ -1,1 +1,465 @@
 \section{Coupling Calibration}\label{sec:coupling-calibration}
+
+\subsection{Temperature--Price Coupling}\label{ssec:temperature-price-coupling}
+
+\Cref{fig:temperature-price-raw-residual-scatter} reports the joint cloud of the
+deseasonalized temperature residual and the deseasonalized German log-price
+residual. The dependence is not visually sharp, but the negative sample
+correlation is consistent with the winter heating channel: below-seasonal
+temperatures tend to increase electricity demand and spot prices. This relation
+is only a reduced-form diagnostic, since the coupled CARMA model acts on shocks
+rather than on residual levels.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.72\textwidth]{coupling/temperature_price_raw_residual_scatter.pdf}
+  \caption{Raw residual relation between the deseasonalized German temperature
+  residual and the deseasonalized German log-price residual.}
+  \label{fig:temperature-price-raw-residual-scatter}
+\end{figure}
+
+\paragraph{Model.}
+The marginal CARMA models from \cref{sec:marginal-carma-calibration} are kept
+fixed. Let \(Z^T\) be the temperature state and \(Z^P\) the price state. The
+one-way coupled model is
+\begin{align}
+  dZ_t^T
+  &=
+  A_T Z_t^T\,dt
+  +
+  \sigma_T e_T\,dW_t^T,
+  &
+  Y_t^T &= b_T^\top Z_t^T ,
+  \label{eq:temperature-coupling-temperature-state}
+  \\
+  dZ_t^P
+  &=
+  A_P Z_t^P\,dt
+  +
+  \lambda\,\sigma_T e_P\,dW_t^T
+  +
+  e_P\,dL_t^{P,\mathrm{id}},
+  &
+  Y_t^P &= b_P^\top Z_t^P .
+  \label{eq:temperature-coupling-price-state}
+\end{align}
+The parameter \(\lambda\) multiplies the common temperature shock in the price
+driver. It does not modify the price drift or the deterministic seasonality. A
+positive shock in \(Y^T\) is a warmer-than-seasonal temperature shock. Hence a
+negative \(\lambda\) means that warmer-than-seasonal shocks lower price shocks,
+or equivalently that colder-than-seasonal shocks raise price shocks. This is the
+expected winter heating sign, since cold weather increases electric heating
+demand. The sign is not structurally constant over the year: in summer,
+warmer-than-seasonal shocks can increase cooling demand and therefore raise
+prices. The pooled estimate should therefore be read as an average shock
+transmission over the calibration window.
+
+\paragraph{Estimator.}
+For one-hour intervals, filtered state residuals are computed from the fixed
+marginal models:
+\begin{equation}
+  \widehat R_i^T
+  =
+  \widehat Z_{t_i+\Delta}^T
+  -
+  \exp(A_T\Delta)\widehat Z_{t_i}^T,
+  \qquad
+  \widehat R_i^P
+  =
+  \widehat Z_{t_i+\Delta}^P
+  -
+  \exp(A_P\Delta)\widehat Z_{t_i}^P .
+  \label{eq:temperature-coupling-state-residuals}
+\end{equation}
+Under the independence assumption
+\(dW^T\perp dL^{P,\mathrm{id}}\), their cross-covariance satisfies
+\begin{equation}
+  \operatorname{Cov}(R_i^T,R_i^P)
+  =
+  \lambda\,\sigma_T^2
+  \int_0^\Delta
+  \exp(A_Tu)e_T e_P^\top \exp(A_P^\top u)\,du .
+  \label{eq:temperature-coupling-covariance-identity}
+\end{equation}
+With
+\[
+  \widehat D_{TP}
+  =
+  \frac{1}{n}\sum_{i=1}^{n}
+  (\widehat R_i^T-\overline R^T)
+  (\widehat R_i^P-\overline R^P)^\top
+\]
+and \(K_{TP}\) denoting the integral in
+\cref{eq:temperature-coupling-covariance-identity} for \(\lambda=1\), the scalar
+estimate is obtained by projecting through the observable CARMA directions:
+\begin{equation}
+  \widehat\lambda
+  =
+  \frac{b_T^\top \widehat D_{TP} b_P}
+       {b_T^\top K_{TP} b_P}.
+  \label{eq:temperature-coupling-lambda-estimator}
+\end{equation}
+This gives
+\[
+  \widehat\lambda = -1.3689\times 10^{-3}
+\]
+on \(26303\) common hourly intervals.
+
+\begin{table}[H]
+  \centering
+  \caption{Temperature--price coupling diagnostics.}
+  \label{tab:temperature-price-coupling-diagnostics}
+  \begin{tabular}{@{}lr@{}}
+    \toprule
+    Quantity & Value \\
+    \midrule
+    Raw residual correlation & \(-0.2387\) \\
+    Projected state-residual correlation & \(-0.0405\) \\
+    \(\widehat\lambda\) from state-residual covariance & \(-1.3689{\times}10^{-3}\) \\
+    Corr.\((dL^{P,\mathrm{marg}},dL^T)\) & \(-0.0416\) \\
+    Corr.\((dL^{P,\mathrm{id}},dL^T)\) & \(-0.0009\) \\
+    Pearson p-value after removal & \(0.8790\) \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+After removing \(\widehat\lambda dL^T\), the linear correlation between the
+temperature driver and the idiosyncratic price driver is close to zero, and the
+zero-correlation hypothesis is not rejected by the Pearson test. This supports
+the independence assumption at the covariance level, while not proving full
+distributional independence.
+
+\paragraph{Idiosyncratic driver.}
+The recovered marginal price driver contains the historical temperature
+component. The driver used for joint simulation is therefore decomposed as
+\begin{equation}
+  dL_i^{P,\mathrm{marg}}
+  =
+  dL_i^{P,\mathrm{id}}
+  +
+  \widehat\lambda\,dL_i^T,
+  \qquad
+  dL_i^{P,\mathrm{id}}
+  =
+  dL_i^{P,\mathrm{marg}}
+  -
+  \widehat\lambda\,dL_i^T .
+  \label{eq:temperature-coupling-driver-decomposition}
+\end{equation}
+Both a Gaussian law and a NIG law are fitted to
+\(dL^{P,\mathrm{id}}\). The NIG law is retained for simulation.
+
+\begin{table}[H]
+  \centering
+  \caption{Distribution fits for the idiosyncratic price driver after removing
+  the temperature component.}
+  \label{tab:temperature-price-idio-driver-fit}
+  \begin{tabular}{@{}lrrrr@{}}
+    \toprule
+    Component & Mean & Std. dev. & Log-likelihood & Comment \\
+    \midrule
+    Gaussian \(dL^{P,\mathrm{id}}\)
+    & \(1.3444{\times}10^{-6}\) & \(1.3224{\times}10^{-2}\)
+    & \(76456.33\) & benchmark \\
+    NIG \(dL^{P,\mathrm{id}}\)
+    & \(1.0837{\times}10^{-6}\) & \(1.2127{\times}10^{-2}\)
+    & \(83475.92\) & retained \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+The transmitted temperature component is much narrower than the idiosyncratic
+price driver: the standard deviation of \(\widehat\lambda dL^T\) is
+\(5.3811{\times}10^{-4}\), about \(4.4\%\) of the fitted NIG standard
+deviation. Thus the coupling is detected in covariance diagnostics, but most of
+the marginal price-driver dispersion remains idiosyncratic.
+
+\subsection{Solar--Price Coupling}\label{ssec:solar-price-coupling}
+
+\Cref{fig:solar-price-raw-residual-scatter} reports the same diagnostic for the
+solar latent residual. The solar factor is the deseasonalized clear-sky
+shortfall variable from \cref{ssec:solar-deseasonalization}, so a positive value
+corresponds to a larger latent solar shortfall, not to higher solar production.
+The raw residual correlation is positive but small, which is the expected sign
+in this transformed coordinate. As for temperature, this is only a level
+diagnostic; the coupled model is estimated on the CARMA shocks.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.72\textwidth]{coupling/solar_price_raw_residual_scatter.pdf}
+  \caption{Raw residual relation between the deseasonalized German solar latent
+  residual and the deseasonalized German log-price residual.}
+  \label{fig:solar-price-raw-residual-scatter}
+\end{figure}
+
+\paragraph{Model.}
+The marginal solar and price CARMA models are kept fixed. Let \(Z^S\) be the
+solar latent state and \(Z^P\) the price state. The one-way coupled model is
+\begin{align}
+  dZ_t^S
+  &=
+  A_S Z_t^S\,dt
+  +
+  \sigma_S e_S\,dW_t^S,
+  &
+  Y_t^S &= b_S^\top Z_t^S ,
+  \label{eq:solar-coupling-solar-state}
+  \\
+  dZ_t^P
+  &=
+  A_P Z_t^P\,dt
+  +
+  \lambda\,\sigma_S e_P\,dW_t^S
+  +
+  e_P\,dL_t^{P,\mathrm{id}},
+  &
+  Y_t^P &= b_P^\top Z_t^P .
+  \label{eq:solar-coupling-price-state}
+\end{align}
+The parameter \(\lambda\) again acts only through the common shock. The sign must
+be interpreted in the transformed coordinate. Since \(Y^S\) is increasing with
+latent solar shortfall, a positive \(dW^S\) represents less effective solar
+availability, not more production. The merit-order argument therefore predicts a
+positive coupling coefficient: larger solar shortfall should increase residual
+demand and raise price shocks. Conversely, if the CARMA factor had been defined
+directly as above-seasonal production, the expected sign would be negative. The
+estimated coefficient below is slightly negative, but its magnitude is
+negligible and the driver correlations are statistically indistinguishable from
+zero. It is therefore not interpreted as an economic solar-price sign.
+
+\paragraph{Estimator and diagnostics.}
+The same covariance projection as in
+\cref{eq:temperature-coupling-lambda-estimator} is applied with the solar CARMA
+matrices replacing the temperature matrices:
+\begin{equation}
+  \widehat\lambda
+  =
+  \frac{b_S^\top \widehat D_{SP} b_P}
+       {b_S^\top K_{SP} b_P},
+  \qquad
+  \widehat D_{SP}
+  =
+  \frac{1}{n}\sum_{i=1}^{n}
+  (\widehat R_i^S-\overline R^S)
+  (\widehat R_i^P-\overline R^P)^\top .
+  \label{eq:solar-coupling-lambda-estimator}
+\end{equation}
+This gives
+\[
+  \widehat\lambda = -7.9685\times 10^{-6}
+\]
+on \(23103\) common hourly intervals.
+
+\begin{table}[H]
+  \centering
+  \caption{Solar--price coupling diagnostics.}
+  \label{tab:solar-price-coupling-diagnostics}
+  \begin{tabular}{@{}lr@{}}
+    \toprule
+    Quantity & Value \\
+    \midrule
+    Raw residual correlation & \(0.0627\) \\
+    Projected state-residual correlation & \(-0.0018\) \\
+    \(\widehat\lambda\) from state-residual covariance & \(-7.9685{\times}10^{-6}\) \\
+    Corr.\((dL^{P,\mathrm{marg}},dL^S)\) & \(-0.0010\) \\
+    Pearson p-value before removal & \(0.8790\) \\
+    Corr.\((dL^{P,\mathrm{id}},dL^S)\) & \(0.0008\) \\
+    Pearson p-value after removal & \(0.9059\) \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+The zero-correlation hypothesis is not rejected even before removing the
+estimated solar component, and it remains clearly not rejected afterwards. Hence
+the solar coupling is negligible at the shock level in this calibration. This
+contrasts with temperature, where the raw and marginal-driver correlations are
+weak but still statistically detectable before the decomposition.
+
+\paragraph{Idiosyncratic driver.}
+The simulation identity is
+\begin{equation}
+  dL_i^{P,\mathrm{marg}}
+  =
+  dL_i^{P,\mathrm{id}}
+  +
+  \widehat\lambda\,dL_i^S,
+  \qquad
+  dL_i^{P,\mathrm{id}}
+  =
+  dL_i^{P,\mathrm{marg}}
+  -
+  \widehat\lambda\,dL_i^S .
+  \label{eq:solar-coupling-driver-decomposition}
+\end{equation}
+As for temperature, the NIG law is fitted to the idiosyncratic price driver
+rather than to the marginal price driver.
+
+\begin{table}[H]
+  \centering
+  \caption{Distribution fits for the idiosyncratic price driver after removing
+  the solar component.}
+  \label{tab:solar-price-idio-driver-fit}
+  \begin{tabular}{@{}lrrrr@{}}
+    \toprule
+    Component & Mean & Std. dev. & Log-likelihood & Comment \\
+    \midrule
+    Gaussian \(dL^{P,\mathrm{id}}\)
+    & \(2.5179{\times}10^{-7}\) & \(1.2721{\times}10^{-2}\)
+    & \(68051.53\) & benchmark \\
+    NIG \(dL^{P,\mathrm{id}}\)
+    & \(2.4479{\times}10^{-7}\) & \(1.1613{\times}10^{-2}\)
+    & \(74016.55\) & retained \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+The transmitted solar component has standard deviation
+\(2.2641{\times}10^{-5}\), about \(0.2\%\) of the fitted NIG standard deviation.
+It is therefore negligible for the marginal dispersion of the price driver. The
+solar marginal remains necessary for quanto payoffs through the payoff
+definition, but this calibration does not identify a material linear shock
+transmission from solar to spot prices.
+
+\subsection{Wind--Price Coupling}\label{ssec:wind-price-coupling}
+
+\Cref{fig:wind-price-raw-residual-scatter} shows the raw relation between the
+wind logit residual and the German log-price residual. The wind transform is
+monotone in the capacity factor, so a positive wind residual corresponds to
+above-seasonal wind production. In contrast with solar, the level relation is
+visually and statistically clear: high wind residuals are associated with lower
+price residuals. This is consistent with the merit-order effect, since
+above-seasonal wind production reduces residual demand and therefore puts
+downward pressure on spot prices.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.72\textwidth]{coupling/wind_price_raw_residual_scatter.pdf}
+  \caption{Raw residual relation between the deseasonalized German wind logit
+  residual and the deseasonalized German log-price residual.}
+  \label{fig:wind-price-raw-residual-scatter}
+\end{figure}
+
+\paragraph{Model.}
+The marginal wind and price CARMA models are kept fixed. Let \(Z^W\) be the wind
+state and \(Z^P\) the price state. The one-way coupled model is
+\begin{align}
+  dZ_t^W
+  &=
+  A_W Z_t^W\,dt
+  +
+  \sigma_W e_W\,dW_t^W,
+  &
+  Y_t^W &= b_W^\top Z_t^W ,
+  \label{eq:wind-coupling-wind-state}
+  \\
+  dZ_t^P
+  &=
+  A_P Z_t^P\,dt
+  +
+  \lambda\,\sigma_W e_P\,dW_t^W
+  +
+  e_P\,dL_t^{P,\mathrm{id}},
+  &
+  Y_t^P &= b_P^\top Z_t^P .
+  \label{eq:wind-coupling-price-state}
+\end{align}
+The parameter \(\lambda\) is a shock-transmission coefficient. It does not
+change the price drift. Because the wind logit transform is increasing in the
+physical capacity factor, a positive \(dW^W\) is an above-seasonal wind
+production shock. The expected merit-order sign is therefore negative: higher
+wind production lowers residual demand and is transmitted as a negative price
+shock. This interpretation is direct for wind, unlike solar where the latent
+coordinate is a shortfall variable.
+
+\paragraph{Estimator and diagnostics.}
+Using the same state-residual covariance projection,
+\begin{equation}
+  \widehat\lambda
+  =
+  \frac{b_W^\top \widehat D_{WP} b_P}
+       {b_W^\top K_{WP} b_P},
+  \qquad
+  \widehat D_{WP}
+  =
+  \frac{1}{n}\sum_{i=1}^{n}
+  (\widehat R_i^W-\overline R^W)
+  (\widehat R_i^P-\overline R^P)^\top .
+  \label{eq:wind-coupling-lambda-estimator}
+\end{equation}
+This gives
+\[
+  \widehat\lambda = -1.6913\times 10^{-3}
+\]
+on \(26304\) common hourly intervals.
+
+\begin{table}[H]
+  \centering
+  \caption{Wind--price coupling diagnostics.}
+  \label{tab:wind-price-coupling-diagnostics}
+  \begin{tabular}{@{}lr@{}}
+    \toprule
+    Quantity & Value \\
+    \midrule
+    Raw residual correlation & \(-0.4976\) \\
+    Projected state-residual correlation & \(-0.0402\) \\
+    \(\widehat\lambda\) from state-residual covariance & \(-1.6913{\times}10^{-3}\) \\
+    Corr.\((dL^{P,\mathrm{marg}},dL^W)\) & \(-0.0402\) \\
+    Pearson p-value before removal & \(6.6602{\times}10^{-11}\) \\
+    Corr.\((dL^{P,\mathrm{id}},dL^W)\) & \(3.6858{\times}10^{-5}\) \\
+    Pearson p-value after removal & \(0.9952\) \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+The wind channel is therefore identified more clearly than the solar channel.
+The marginal price driver has a small but statistically significant negative
+correlation with the wind driver. After removing
+\(\widehat\lambda dL^W\), the remaining idiosyncratic price driver has no
+detectable linear correlation with the wind driver.
+
+\paragraph{Idiosyncratic driver.}
+The coupled simulation identity is
+\begin{equation}
+  dL_i^{P,\mathrm{marg}}
+  =
+  dL_i^{P,\mathrm{id}}
+  +
+  \widehat\lambda\,dL_i^W,
+  \qquad
+  dL_i^{P,\mathrm{id}}
+  =
+  dL_i^{P,\mathrm{marg}}
+  -
+  \widehat\lambda\,dL_i^W .
+  \label{eq:wind-coupling-driver-decomposition}
+\end{equation}
+The price driver law used in joint simulation is again fitted after removing the
+wind component.
+
+\begin{table}[H]
+  \centering
+  \caption{Distribution fits for the idiosyncratic price driver after removing
+  the wind component.}
+  \label{tab:wind-price-idio-driver-fit}
+  \begin{tabular}{@{}lrrrr@{}}
+    \toprule
+    Component & Mean & Std. dev. & Log-likelihood & Comment \\
+    \midrule
+    Gaussian \(dL^{P,\mathrm{id}}\)
+    & \(1.4198{\times}10^{-6}\) & \(1.3225{\times}10^{-2}\)
+    & \(76458.21\) & benchmark \\
+    NIG \(dL^{P,\mathrm{id}}\)
+    & \(7.3706{\times}10^{-7}\) & \(1.2115{\times}10^{-2}\)
+    & \(83508.06\) & retained \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+The transmitted wind component has standard deviation
+\(5.3305{\times}10^{-4}\), about \(4.4\%\) of the fitted NIG standard deviation.
+This is close to the relative size of the temperature component, while solar is
+two orders of magnitude smaller. Among the renewable factors, wind is therefore
+the only one for which the current calibration detects a material linear
+shock-transmission channel to German spot prices.
+
+\FloatBarrier

@@ -1,0 +1,14 @@
+,value
+raw_residual_corr,-0.49757570260940837
+raw_residual_pvalue,0.0
+lambda_hat,-0.0016912959580251362
+state_residual_output_corr,-0.0402409763913202
+corr_before,-0.04023663694977567
+corr_before_pvalue,6.660231709291669e-11
+corr_after,3.685755457986397e-05
+corr_after_pvalue,0.9952307042820557
+std_gaussian_idio,0.0132249147526574
+std_nig_idio,0.0121153651223132
+std_lambda_wind,0.0005330549402747909
+mean_lambda_wind,4.708512133782173e-07
+n_common,26304.0

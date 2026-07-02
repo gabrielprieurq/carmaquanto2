@@ -1,0 +1,12 @@
+,value
+raw_residual_corr,-0.23870812676652786
+lambda_hat,-0.0013688828077749833
+corr_before,-0.04159236471245598
+corr_before_pvalue,1.497605736907788e-11
+corr_after,-0.0009388155566233384
+corr_after_pvalue,0.8789883562729386
+std_gaussian_idio,0.013224400316003
+std_nig_idio,0.0121273466875653
+std_lambda_temperature,0.0005381051717276647
+mean_lambda_temperature,3.536045131480854e-07
+n_common,26303.0

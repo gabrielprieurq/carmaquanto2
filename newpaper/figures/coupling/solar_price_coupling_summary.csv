@@ -1,0 +1,14 @@
+,value
+raw_residual_corr,0.06267016791610995
+raw_residual_pvalue,1.4968972785549146e-21
+lambda_hat,-7.968458622324685e-06
+state_residual_output_corr,-0.0017950545695045
+corr_before,-0.001001688030767306
+corr_before_pvalue,0.8789936350323184
+corr_after,0.0007781114593692802
+corr_after_pvalue,0.9058584803162023
+std_gaussian_idio,0.0127208912069005
+std_nig_idio,0.0116128118442216
+std_lambda_solar,2.2641128228733372e-05
+mean_lambda_solar,5.4804495793407637e-08
+n_common,23103.0
