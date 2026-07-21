@@ -1,1 +1,19 @@
 \section{Conclusion}\label{sec:conclusion}
+
+The calibration procedure used in this paper provides accurate continuous-time
+CARMA marginals for prices, temperature, solar production and wind production.
+The ACF initialization gives interpretable persistence scales, while the QMLE
+step improves the likelihood without losing the main autocorrelation structure.
+Compared with discrete ARMA benchmarks, the CARMA specification keeps a
+continuous-time state-space representation that is directly usable for joint
+simulation.
+
+For the coupled model, the relevant dependence is measured at the state-space
+and driver level rather than on raw residual levels. Temperature and wind
+transmit small but visible shocks to the price driver, with standard-deviation
+ratios around \(4\%\), while the solar coupling is much weaker. This questions
+the relevance of a linear coupled price--solar shock model on this dataset. More
+generally, the present framework lets physical factors affect prices only
+through shocks. Allowing temperature, wind or solar to also enter the price
+drift could capture slower structural effects, and a multivariate CARMA
+specification is a natural direction for such an extension.

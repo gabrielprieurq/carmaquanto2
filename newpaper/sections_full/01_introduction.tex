@@ -1,0 +1,37 @@
+\section{Introduction}\label{sec:introduction}
+
+Electricity prices are increasingly exposed to weather and renewable generation.
+Temperature affects demand, while wind and solar production affect both the level
+and the intraday shape of spot prices. Energy contracts written on such markets
+therefore carry hybrid risk, since their value depends on the joint behavior of
+electricity prices and physical factors that are non-traded or only partially
+traded.
+
+This paper develops an empirical CARMA framework for these joint risks. We first
+remove deterministic seasonal patterns from German day-ahead prices,
+temperature, wind capacity factors, and solar capacity factors. The resulting
+stochastic factors are then modeled with continuous-time autoregressive
+moving-average dynamics, which provide a state-space representation for
+calibration, dependence estimation, and pricing.
+
+The preprocessing is factor-specific because the deterministic component differs
+across markets and weather variables. Electricity prices contain calendar and
+intraday effects, temperature has smooth daily and annual cycles, and wind
+capacity factors are naturally treated through a logit transformation. Solar
+requires an additional clear-sky normalization before the latent logit
+transformation, as night hours and moving sunrise and sunset times induce
+deterministic boundary effects.
+
+The contribution is threefold. First, we build a consistent preprocessing
+pipeline for electricity, temperature, wind, and solar data. Second, we calibrate
+marginal CARMA models and recover their driving noise, allowing heavy-tailed
+Levy specifications when Gaussian innovations are insufficient. Third, we use
+the calibrated factors to estimate price-weather and price-renewable dependence
+channels and to price energy contracts exposed to these joint risks.
+
+The paper is organized as follows. \Cref{sec:deseasonalization} describes the
+data transformations and the construction of the stochastic factors.
+\Cref{sec:marginal-carma-calibration} presents the marginal CARMA calibration
+and driver diagnostics. \Cref{sec:coupling-calibration} estimates the dependence
+channels. \Cref{sec:pricing} discusses the pricing implementation, and
+\Cref{sec:conclusion} concludes.

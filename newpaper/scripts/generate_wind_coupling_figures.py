@@ -31,6 +31,13 @@ plt.rcParams.update(
 )
 
 
+def fmt_sig(x, digits=2):
+    if x == 0:
+        return "0.0"
+    decimals = max(digits - int(np.floor(np.log10(abs(x)))) - 1, 0)
+    return f"{x:.{decimals}f}"
+
+
 def savefig(fig, name):
     fig.savefig(OUT / f"{name}.pdf", bbox_inches="tight")
     fig.savefig(OUT / f"{name}.png", dpi=180, bbox_inches="tight")
@@ -88,7 +95,7 @@ ax.scatter(
 )
 ax.axhline(0.0, color=BLACK, lw=0.7, alpha=0.45)
 ax.axvline(0.0, color=BLACK, lw=0.7, alpha=0.45)
-ax.set_title(f"Raw residual levels, correlation = {raw_corr_test.statistic:.4f}")
+ax.set_title(f"Raw residual levels, correlation = {fmt_sig(raw_corr_test.statistic)}")
 ax.set_xlabel(r"wind logit residual $Y^W_t$")
 ax.set_ylabel(r"log-price residual $Y^P_t$")
 fig.tight_layout()
@@ -100,16 +107,17 @@ corr_after_test = pearsonr(dL_price_idio, dW_wind)
 
 summary = {
     "raw_residual_corr": float(raw_corr_test.statistic),
-    "raw_residual_pvalue": float(raw_corr_test.pvalue),
     "lambda_hat": lambda_hat,
     "state_residual_output_corr": float(diagnostics["state_residual_output_corr"]),
     "corr_before": float(corr_before_test.statistic),
-    "corr_before_pvalue": float(corr_before_test.pvalue),
     "corr_after": float(corr_after_test.statistic),
-    "corr_after_pvalue": float(corr_after_test.pvalue),
+    "std_idio": float(np.std(dL_price_idio, ddof=1)),
     "std_gaussian_idio": float(gaussian_row["std"]),
     "std_nig_idio": float(nig_row["std"]),
     "std_lambda_wind": float(np.std(lambda_wind_component, ddof=1)),
+    "std_lambda_to_idio_ratio": float(
+        np.std(lambda_wind_component, ddof=1) / np.std(dL_price_idio, ddof=1)
+    ),
     "mean_lambda_wind": float(np.mean(lambda_wind_component)),
     "n_common": int(result["n_common_hourly_intervals"]),
 }
