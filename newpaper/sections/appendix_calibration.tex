@@ -1,0 +1,308 @@
+\section{Marginal Calibration Diagnostics}
+
+\label{app:marginal-calibration}
+
+
+
+\subsection{German Spot Prices}
+
+\label{app:price-calibration}
+
+\begin{table}[H]
+  \centering
+  \caption{Full German spot price CARMA(5,4) calibration parameters.}
+  \label{tab:app-price-carma-params}
+  \small
+  \begin{tabular}{@{}lll@{}}
+    \toprule
+    Quantity & ACF initialization & QMLE \\
+    \midrule
+    Log-likelihood & \(77562\) & \(77709\) \\
+    Levy drift \(m\) & \(1.40{\times}10^{-5}\) & \(8.47{\times}10^{-6}\) \\
+    Levy variance \(\nu^2\) & \(1.88{\times}10^{-4}\) & \(1.75{\times}10^{-4}\) \\
+    \midrule
+    \(\lambda_1\) & \(-0.263\) & \(-0.153\) \\
+    \(\lambda_2\) & \(-0.0242\) & \(-0.0193\) \\
+    \(\lambda_3\) & \(-2.41{\times}10^{-4}\) & \(-3.51{\times}10^{-4}\) \\
+    \(\lambda_o\) & \(-0.00400\pm0.262i\) & \(-0.00400\pm0.262i\) \\
+    \midrule
+    \(a_1\) & \(0.296\) & \(0.181\) \\
+    \(a_2\) & \(0.0773\) & \(0.0730\) \\
+    \(a_3\) & \(0.0198\) & \(0.0119\) \\
+    \(a_4\) & \(4.41{\times}10^{-4}\) & \(2.07{\times}10^{-4}\) \\
+    \(a_5\) & \(1.05{\times}10^{-7}\) & \(7.11{\times}10^{-8}\) \\
+    \midrule
+    \(b_0\) & \(7.84{\times}10^{-6}\) & \(4.89{\times}10^{-6}\) \\
+    \(b_1\) & \(0.00719\) & \(0.00387\) \\
+    \(b_2\) & \(0.0713\) & \(0.0672\) \\
+    \(b_3\) & \(0.130\) & \(0.0809\) \\
+    \(b_4\) & \(1.00\) & \(1.00\) \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+
+
+\begin{table}[H]
+  \centering
+  \caption{NIG fit for recovered hourly Levy increments in the German spot price model.}
+  \label{tab:app-price-nig-params}
+  \small
+  \begin{tabular}{@{}lr@{}}
+    \toprule
+    Quantity & Value \\
+    \midrule
+    \(\alpha\) & \(47.5\) \\
+    \(\beta\) & \(-5.07\) \\
+    \(\delta\) & \(0.00687\) \\
+    \(\mu\) & \(7.40{\times}10^{-4}\) \\
+    \(\gamma\) & \(47.2\) \\
+    Mean & \(1.89{\times}10^{-6}\) \\
+    Standard deviation & \(0.0121\) \\
+    Skewness & \(-0.563\) \\
+    Excess kurtosis & \(9.68\) \\
+    Log-likelihood & \(83442\) \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.82\textwidth]{calibration/price_spot_distribution_checks.pdf}
+  \caption{Distribution checks for the German price marginal model at the residual factor, shifted log-price, and EUR/MWh price levels.}
+  \label{fig:app-price-distribution-checks}
+\end{figure}
+
+
+
+\FloatBarrier
+
+\clearpage
+
+
+
+\subsection{Temperature}
+
+\label{app:temperature-calibration}
+
+\begin{table}[H]
+  \centering
+  \caption{Full temperature CARMA(4,3) calibration parameters.}
+  \label{tab:app-temperature-carma-params}
+  \small
+  \begin{tabular}{@{}lll@{}}
+    \toprule
+    Quantity & ACF initialization & QMLE \\
+    \midrule
+    Log-likelihood & \(-23760\) & \(-22941\) \\
+    Levy drift \(m\) & \(5.48{\times}10^{-4}\) & \(2.85{\times}10^{-4}\) \\
+    Levy variance \(\nu^2\) & \(0.350\) & \(0.161\) \\
+    \midrule
+    \(\lambda_1\) & \(-0.0272\) & \(-1.31\) \\
+    \(\lambda_2\) & \(-0.0119\) & \(-0.0182\) \\
+    \(\lambda_o\) & \(-0.00953\pm0.262i\) & \(-0.00953\pm0.262i\) \\
+    \midrule
+    \(a_1\) & \(0.0582\) & \(1.35\) \\
+    \(a_2\) & \(0.0697\) & \(0.118\) \\
+    \(a_3\) & \(0.00269\) & \(0.0915\) \\
+    \(a_4\) & \(2.23{\times}10^{-5}\) & \(0.00163\) \\
+    \midrule
+    \(b_0\) & \(0.00136\) & \(0.163\) \\
+    \(b_1\) & \(0.0690\) & \(0.201\) \\
+    \(b_2\) & \(0.0782\) & \(2.57\) \\
+    \(b_3\) & \(1.00\) & \(1.00\) \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+
+
+\begin{table}[H]
+  \centering
+  \caption{NIG fit for recovered hourly Levy increments in the temperature model.}
+  \label{tab:app-temperature-nig-params}
+  \small
+  \begin{tabular}{@{}lr@{}}
+    \toprule
+    Quantity & Value \\
+    \midrule
+    \(\alpha\) & \(2.06\) \\
+    \(\beta\) & \(-0.257\) \\
+    \(\delta\) & \(0.299\) \\
+    \(\mu\) & \(0.0372\) \\
+    \(\gamma\) & \(2.05\) \\
+    Mean & \(-2.58{\times}10^{-4}\) \\
+    Standard deviation & \(0.385\) \\
+    Skewness & \(-0.477\) \\
+    Excess kurtosis & \(5.20\) \\
+    Log-likelihood & \(-9716\) \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.97\textwidth]{calibration/temperature_distribution_checks.pdf}
+  \caption{Distribution checks for the German temperature marginal model at the deseasonalized residual, hourly residual-increment, and physical temperature levels.}
+  \label{fig:app-temperature-distribution-checks}
+\end{figure}
+
+
+
+\FloatBarrier
+
+\clearpage
+
+
+
+\subsection{Solar Capacity Factor}
+
+\label{app:solar-calibration}
+
+\begin{table}[H]
+  \centering
+  \caption{Full solar capacity factor CARMA(4,3) calibration parameters.}
+  \label{tab:app-solar-carma-params}
+  \small
+  \begin{tabular}{@{}lll@{}}
+    \toprule
+    Quantity & ACF initialization & QMLE \\
+    \midrule
+    Log-likelihood & \(-84637\) & \(-84623\) \\
+    Levy drift \(m\) & \(1.14{\times}10^{-4}\) & \(1.27{\times}10^{-4}\) \\
+    Levy variance \(\nu^2\) & \(9.27\) & \(9.12\) \\
+    \midrule
+    \(\lambda_1\) & \(-1.37\) & \(-1.35\) \\
+    \(\lambda_2\) & \(-0.0166\) & \(-0.0184\) \\
+    \(\lambda_o\) & \(-0.00984\pm0.262i\) & \(-0.00984\pm0.262i\) \\
+    \midrule
+    \(a_1\) & \(1.41\) & \(1.39\) \\
+    \(a_2\) & \(0.119\) & \(0.121\) \\
+    \(a_3\) & \(0.0957\) & \(0.0947\) \\
+    \(a_4\) & \(0.00156\) & \(0.00171\) \\
+    \midrule
+    \(b_0\) & \(0.00848\) & \(0.00899\) \\
+    \(b_1\) & \(0.0836\) & \(0.0819\) \\
+    \(b_2\) & \(0.231\) & \(0.239\) \\
+    \(b_3\) & \(1.00\) & \(1.00\) \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+
+
+\begin{table}[H]
+  \centering
+  \caption{NIG fit for recovered hourly Levy increments in the solar capacity factor model.}
+  \label{tab:app-solar-nig-params}
+  \small
+  \begin{tabular}{@{}lr@{}}
+    \toprule
+    Quantity & Value \\
+    \midrule
+    \(\alpha\) & \(0.136\) \\
+    \(\beta\) & \(-0.0149\) \\
+    \(\delta\) & \(1.24\) \\
+    \(\mu\) & \(0.136\) \\
+    \(\gamma\) & \(0.135\) \\
+    Mean & \(1.33{\times}10^{-4}\) \\
+    Standard deviation & \(3.04\) \\
+    Skewness & \(-0.803\) \\
+    Excess kurtosis & \(18.8\) \\
+    Log-likelihood & \(-91910\) \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.97\textwidth]{calibration/solar_distribution_checks.pdf}
+  \caption{Distribution checks for the German solar marginal model at the deseasonalized latent residual, hourly residual-increment, and physical capacity-factor levels.}
+  \label{fig:app-solar-distribution-checks}
+\end{figure}
+
+
+
+\FloatBarrier
+
+\clearpage
+
+
+
+\subsection{Wind Capacity Factor}
+
+\label{app:wind-calibration}
+
+\begin{table}[H]
+  \centering
+  \caption{Full wind capacity factor CARMA(4,3) calibration parameters.}
+  \label{tab:app-wind-carma-params}
+  \small
+  \begin{tabular}{@{}lll@{}}
+    \toprule
+    Quantity & ACF initialization & QMLE \\
+    \midrule
+    Log-likelihood & \(-7013\) & \(-6984\) \\
+    Levy drift \(m\) & \(6.36{\times}10^{-5}\) & \(1.57{\times}10^{-5}\) \\
+    Levy variance \(\nu^2\) & \(0.102\) & \(0.0993\) \\
+    \midrule
+    \(\lambda_1\) & \(-0.0431\) & \(-0.0331\) \\
+    \(\lambda_2\) & \(-0.00388\) & \(-7.68{\times}10^{-4}\) \\
+    \(\lambda_o\) & \(-0.00880\pm0.262i\) & \(-0.00880\pm0.262i\) \\
+    \midrule
+    \(a_1\) & \(0.0646\) & \(0.0515\) \\
+    \(a_2\) & \(0.0696\) & \(0.0692\) \\
+    \(a_3\) & \(0.00323\) & \(0.00233\) \\
+    \(a_4\) & \(1.15{\times}10^{-5}\) & \(1.75{\times}10^{-6}\) \\
+    \midrule
+    \(b_0\) & \(4.27{\times}10^{-4}\) & \(9.23{\times}10^{-5}\) \\
+    \(b_1\) & \(0.0685\) & \(0.0689\) \\
+    \(b_2\) & \(0.0472\) & \(0.0539\) \\
+    \(b_3\) & \(1.00\) & \(1.00\) \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+
+
+\begin{table}[H]
+  \centering
+  \caption{NIG fit for recovered hourly Levy increments in the wind capacity factor model.}
+  \label{tab:app-wind-nig-params}
+  \small
+  \begin{tabular}{@{}lr@{}}
+    \toprule
+    Quantity & Value \\
+    \midrule
+    \(\alpha\) & \(1.53\) \\
+    \(\beta\) & \(-0.0851\) \\
+    \(\delta\) & \(0.132\) \\
+    \(\mu\) & \(0.00707\) \\
+    \(\gamma\) & \(1.53\) \\
+    Mean & \(-2.78{\times}10^{-4}\) \\
+    Standard deviation & \(0.294\) \\
+    Skewness & \(-0.370\) \\
+    Excess kurtosis & \(15.0\) \\
+    Log-likelihood & \(1625\) \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.97\textwidth]{calibration/wind_distribution_checks.pdf}
+  \caption{Distribution checks for the German wind marginal model at the deseasonalized logit residual, hourly residual-increment, and physical capacity-factor levels.}
+  \label{fig:app-wind-distribution-checks}
+\end{figure}
+
+
+
+\FloatBarrier

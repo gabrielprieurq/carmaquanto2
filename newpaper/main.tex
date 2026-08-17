@@ -9,6 +9,7 @@
 \usepackage{booktabs}
 \usepackage{graphicx}
 \usepackage{float}
+\usepackage[justification=raggedright,singlelinecheck=false]{caption}
 \usepackage[numbers,sort&compress]{natbib}
 \usepackage{placeins}
 \usepackage{hyperref}
@@ -44,6 +45,17 @@
 \input{sections/03_marginal_carma_calibration}
 \input{sections/04_coupling_calibration}
 \input{sections/06_conclusion}
+
+\clearpage
+\appendix
+\numberwithin{figure}{section}
+\numberwithin{table}{section}
+\section*{Appendix}
+The appendix reports supplementary graphical and numerical diagnostics. It is
+organized into data and deseasonalization checks, marginal CARMA calibration
+outputs, and residual scatter plots for the coupling calibration.
+
+\input{sections/appendix}
 
 \bibliographystyle{unsrtnat}
 \bibliography{references}

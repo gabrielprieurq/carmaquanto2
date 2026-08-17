@@ -1,0 +1,163 @@
+\section{Data and Deseasonalization Diagnostics}
+\label{app:data-deseasonalization}
+
+This section reports additional preprocessing diagnostics. Weekly plots use
+1--8 June 2025, while the price daily factor is shown over the first semester of
+2025.
+
+\subsection{Electricity Prices}
+\label{app:price-deseasonalization}
+
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=0.92\textwidth]{appendix/price_raw_and_shifted_log_week.pdf}
+  \caption{German day-ahead price and shifted log-price over the common
+  appendix week. The shift makes the logarithmic coordinate well-defined when
+  hourly prices are negative.}
+  \label{fig:app-price-raw-log-week}
+\end{figure}
+
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=0.88\textwidth]{appendix/price_f2d_week.pdf}
+  \caption{Observed and fitted intraday price factor over the common appendix
+  week. The observed factor is the shifted log-price divided by its daily mean.}
+  \label{fig:app-price-f2d-week}
+\end{figure}
+
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=0.88\textwidth]{appendix/price_f2y_first_semester.pdf}
+  \caption{Observed and fitted daily price factor over the first semester of
+  2025. The observed factor is the daily mean shifted log-price divided by its
+  yearly mean.}
+  \label{fig:app-price-f2y-semester}
+\end{figure}
+
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=0.92\textwidth]{appendix/price_final_fit_and_residual_week.pdf}
+  \caption{Final deterministic price seasonality and resulting deseasonalized
+  log-price residual over the common appendix week.}
+  \label{fig:app-price-final-fit-week}
+\end{figure}
+
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=0.72\textwidth]{appendix/price_log_distribution.pdf}
+  \caption{Marginal distribution of the shifted log-price and of its fitted
+  deterministic seasonal component over the 2023--2025 calibration sample.}
+  \label{fig:app-price-log-distribution}
+\end{figure}
+
+\FloatBarrier
+
+\clearpage
+\subsection{Temperature}
+\label{app:temperature-deseasonalization}
+
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=0.92\textwidth]{appendix/temperature_fit_and_residual_week.pdf}
+  \caption{Temperature seasonal fit and resulting deseasonalized residual over
+  the common appendix week.}
+  \label{fig:app-temperature-fit-week}
+\end{figure}
+
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=0.72\textwidth]{appendix/temperature_distribution.pdf}
+  \caption{Marginal distribution of observed temperature and of the fitted
+  deterministic seasonal component over the 2023--2025 calibration sample.}
+  \label{fig:app-temperature-distribution}
+\end{figure}
+
+\FloatBarrier
+
+\clearpage
+\subsection{Solar Capacity Factors}
+\label{app:solar-deseasonalization}
+
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=0.88\textwidth]{appendix/solar_clear_sky_week.pdf}
+  \caption{Observed solar capacity factor and clear-sky proxy over the common
+  appendix week. The clear-sky proxy is the deterministic envelope used before
+  constructing the latent logit coordinate.}
+  \label{fig:app-solar-clear-sky-week}
+\end{figure}
+
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=0.88\textwidth]{appendix/solar_logit_fit_week.pdf}
+  \caption{Solar seasonal fit in the latent logit coordinate over the common
+  appendix week. This is the coordinate in which the deterministic seasonality
+  is estimated.}
+  \label{fig:app-solar-logit-fit-week}
+\end{figure}
+
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=0.88\textwidth]{appendix/solar_logit_residual_week.pdf}
+  \caption{Deseasonalized solar residual in the latent logit coordinate over the
+  common appendix week. This residual is the stochastic component calibrated
+  with a CARMA model.}
+  \label{fig:app-solar-logit-residual-week}
+\end{figure}
+
+\clearpage
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=0.72\textwidth]{appendix/solar_latent_distribution.pdf}
+  \caption{Marginal distribution of the solar latent coordinate and of its
+  fitted deterministic seasonal component over the calibration sample.}
+  \label{fig:app-solar-latent-distribution}
+\end{figure}
+
+\FloatBarrier
+
+\clearpage
+\subsection{Wind Capacity Factors}
+\label{app:wind-deseasonalization}
+
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=0.88\textwidth]{appendix/wind_capacity_factor_week.pdf}
+  \caption{Observed wind capacity factor over the common appendix week.}
+  \label{fig:app-wind-capacity-factor-week}
+\end{figure}
+
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=0.88\textwidth]{appendix/wind_logit_fit_week.pdf}
+  \caption{Wind seasonal fit in the latent logit coordinate over the common
+  appendix week. This is the coordinate in which the deterministic seasonality
+  is estimated.}
+  \label{fig:app-wind-logit-fit-week}
+\end{figure}
+
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=0.88\textwidth]{appendix/wind_logit_residual_week.pdf}
+  \caption{Deseasonalized wind residual in the latent logit coordinate over the
+  common appendix week. This residual is the stochastic component calibrated
+  with a CARMA model.}
+  \label{fig:app-wind-logit-residual-week}
+\end{figure}
+
+\clearpage
+\begin{figure}[!htbp]
+  \centering
+  \includegraphics[width=0.72\textwidth]{appendix/wind_latent_distribution.pdf}
+  \caption{Marginal distribution of the wind latent logit coordinate and of its
+  fitted deterministic seasonal component over the calibration sample.}
+  \label{fig:app-wind-latent-distribution}
+\end{figure}
+
+\FloatBarrier
+
+\clearpage
+\input{sections/appendix_calibration}
+
+\clearpage
+\input{sections/appendix_coupling}

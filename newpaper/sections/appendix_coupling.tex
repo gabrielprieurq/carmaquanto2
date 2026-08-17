@@ -1,0 +1,37 @@
+\section{Coupling Diagnostics}
+\label{app:coupling-diagnostics}
+
+The figures in this appendix compare the raw deseasonalized residual levels
+with the projected state-space residuals used by the covariance estimator in
+\cref{sec:coupling-calibration}. The raw plots describe visible marginal
+co-movement, whereas the projected plots correspond to the CARMA state
+residuals on which the coupling coefficient is estimated.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.97\textwidth]{appendix/coupling_temperature_scatter.pdf}
+  \caption{Temperature--price residual scatter plots. The first panel uses raw
+  deseasonalized residual levels. The second panel uses the projected
+  state-space residuals entering the covariance-based coupling estimator.}
+  \label{fig:app-temperature-coupling-scatter}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.97\textwidth]{appendix/coupling_solar_scatter.pdf}
+  \caption{Solar--price residual scatter plots. The raw residual is the solar
+  latent shortfall coordinate, while the projected residual is obtained from the
+  calibrated CARMA state-space filter.}
+  \label{fig:app-solar-coupling-scatter}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.97\textwidth]{appendix/coupling_wind_scatter.pdf}
+  \caption{Wind--price residual scatter plots. The first panel uses wind logit
+  residual levels and the second panel uses the corresponding projected CARMA
+  state-space residuals.}
+  \label{fig:app-wind-coupling-scatter}
+\end{figure}
+
+\FloatBarrier
